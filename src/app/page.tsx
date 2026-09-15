@@ -11,7 +11,6 @@ import Process from "@/components/Process";
 import ServiceCategories from "@/components/ServiceCategories";
 import Services from "@/components/Services";
 import Testimonials from "@/components/Testimonials";
-import TrustBar from "@/components/TrustBar";
 import { homeFaqs, homeInfo } from "@/lib/content";
 
 export default function Home() {
@@ -20,7 +19,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <TrustBar />
         <ServiceCategories />
         <Services />
         <Packages />
