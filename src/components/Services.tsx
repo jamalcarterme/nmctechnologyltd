@@ -10,6 +10,8 @@ import {
   Lightbulb,
   Home,
   Wrench,
+  Zap,
+  Wifi,
   type LucideIcon,
 } from "lucide-react";
 import { services } from "@/lib/data";
@@ -22,6 +24,8 @@ const icons: Record<string, LucideIcon> = {
   Lightbulb,
   Wrench,
   ClipboardCheck,
+  Zap,
+  Wifi,
 };
 
 export default function Services() {
