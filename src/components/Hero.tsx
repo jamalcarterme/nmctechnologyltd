@@ -31,25 +31,18 @@ export default function Hero() {
     video.addEventListener("loadeddata", markReady);
     video.addEventListener("playing", markReady);
 
-    // Attempt to play with error handling
-    const attemptPlay = async () => {
-      try {
-        await video.play();
-      } catch (err) {
-        // Retry after a short delay if play fails (hydration issue)
-        setTimeout(() => {
-          video.play().catch(() => {
-            // If still fails, that's ok - poster image shows
-          });
-        }, 100);
-      }
-    };
-
-    // Small delay to ensure video element is ready after hydration
-    const playTimeout = setTimeout(attemptPlay, 50);
+    // Try to play immediately
+    const playPromise = video.play();
+    if (playPromise) {
+      playPromise.catch((err) => {
+        // If play fails, retry immediately without delay
+        video.play().catch(() => {
+          // Silent fail - poster stays visible
+        });
+      });
+    }
 
     return () => {
-      clearTimeout(playTimeout);
       video.removeEventListener("loadeddata", markReady);
       video.removeEventListener("playing", markReady);
     };
