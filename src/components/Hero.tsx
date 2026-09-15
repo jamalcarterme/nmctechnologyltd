@@ -23,27 +23,33 @@ export default function Hero() {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    // Setting muted only as a JSX prop doesn't always land before play()
-    // is attempted, which makes browsers silently block autoplay.
-    // Setting it imperatively guarantees it's true first.
+    
     video.muted = true;
     video.defaultMuted = true;
 
-    // Fade the poster out only once the video actually has a frame ready,
-    // so there's never a blank flash — but the video (now ~1MB, faststart)
-    // starts almost immediately instead of waiting seconds to buffer.
     const markReady = () => setVideoReady(true);
     video.addEventListener("loadeddata", markReady);
     video.addEventListener("playing", markReady);
 
-    const playPromise = video.play();
-    if (playPromise) {
-      playPromise.catch(() => {
-        // Autoplay was blocked (e.g. low-power mode) — poster image stays.
-      });
-    }
+    // Attempt to play with error handling
+    const attemptPlay = async () => {
+      try {
+        await video.play();
+      } catch (err) {
+        // Retry after a short delay if play fails (hydration issue)
+        setTimeout(() => {
+          video.play().catch(() => {
+            // If still fails, that's ok - poster image shows
+          });
+        }, 100);
+      }
+    };
+
+    // Small delay to ensure video element is ready after hydration
+    const playTimeout = setTimeout(attemptPlay, 50);
 
     return () => {
+      clearTimeout(playTimeout);
       video.removeEventListener("loadeddata", markReady);
       video.removeEventListener("playing", markReady);
     };
