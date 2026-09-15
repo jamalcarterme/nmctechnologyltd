@@ -9,7 +9,7 @@ import { packagesFaqs, packagesInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Packages & Pricing",
   description:
-    "Transparent solar inverter, battery and panel packages from 3.5KVA to 30KVA, with pricing, backup times and what each tier can power. Serving Lagos, Nigeria.",
+    "Transparent solar inverter, battery and panel packages from 3.5KVA to 30KVA, with pricing, backup times and what each tier can power.",
   alternates: { canonical: "/packages" },
 };
 

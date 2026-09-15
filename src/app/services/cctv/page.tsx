@@ -9,9 +9,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "CCTV Camera Installation in Lagos | NMC Technology",
+  title: "CCTV Camera Installation | NMC Technology",
   description:
-    "Professional CCTV surveillance and security camera system installation for homes and businesses. IP cameras, HD monitoring, and remote access in Lagos, Nigeria.",
+    "Professional CCTV surveillance and security camera system installation for homes and businesses. IP cameras, HD monitoring, and remote access wherever you're located.",
   alternates: { canonical: "/services/cctv" },
 };
 
@@ -19,7 +19,7 @@ const cctvInfo = [
   {
     heading: "Why CCTV security matters",
     paragraphs: [
-      "Property security is a growing concern across Lagos. A professionally designed and installed CCTV system provides peace of mind whether you're home or away, deterring theft and providing evidence in the event of an incident.",
+      "Property security is a growing concern everywhere. A professionally designed and installed CCTV system provides peace of mind whether you're home or away, deterring theft and providing evidence in the event of an incident.",
       "Unlike DIY camera systems, professional installations ensure optimal camera placement, proper wiring, reliable storage, and the infrastructure needed for consistent, round-the-clock monitoring.",
     ],
   },
@@ -99,7 +99,7 @@ export default function CCTVPage() {
                 Professional Security Surveillance Systems
               </h1>
               <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-paper/70">
-                Protect your property with professionally designed CCTV systems. We install IP cameras, HD surveillance, and remote monitoring solutions for homes and businesses across Lagos.
+                Protect your property with professionally designed CCTV systems. We install IP cameras, HD surveillance, and remote monitoring solutions for homes and businesses.
               </p>
             </div>
           </Container>

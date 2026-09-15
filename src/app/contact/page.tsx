@@ -9,7 +9,7 @@ import { contactFaqs, contactInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Call, WhatsApp or send your details to NMC Technology for a free solar site survey and quote in Lagos, Nigeria.",
+    "Call, WhatsApp or send your details to NMC Technology for a free solar site survey and quote.",
   alternates: { canonical: "/contact" },
 };
 

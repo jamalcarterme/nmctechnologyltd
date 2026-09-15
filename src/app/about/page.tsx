@@ -11,7 +11,7 @@ import { aboutFaqs, aboutInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "NMC Technology is a Lagos-based solar engineering company installing inverter, lithium battery and panel systems for homes and businesses since day one, in-house.",
+    "NMC Technology is a solar engineering company installing inverter, lithium battery and panel systems for homes and businesses since day one, in-house.",
   alternates: { canonical: "/about" },
 };
 

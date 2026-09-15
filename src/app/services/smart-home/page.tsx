@@ -9,9 +9,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Home Automation in Lagos | NMC Technology",
+  title: "Smart Home Automation | NMC Technology",
   description:
-    "Professional smart home automation systems for lighting, temperature, security, and energy management. Custom automation solutions for modern homes in Lagos, Nigeria.",
+    "Professional smart home automation systems for lighting, temperature, security, and energy management. Custom automation solutions for modern homes, wherever you are.",
   alternates: { canonical: "/services/smart-home" },
 };
 
@@ -106,7 +106,7 @@ export default function SmartHomePage() {
                 Make Your Home More Comfortable, Convenient & Secure
               </h1>
               <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-paper/70">
-                Control your home intelligently from a single convenient system. Smart lighting, automated climate control, security automation, energy management, and remote access for modern homes in Lagos.
+                Control your home intelligently from a single convenient system. Smart lighting, automated climate control, security automation, energy management, and remote access for modern homes.
               </p>
             </div>
           </Container>

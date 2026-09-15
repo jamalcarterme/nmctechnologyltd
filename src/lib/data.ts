@@ -3,7 +3,7 @@ export const site = {
   tagline: "Turning Ideas Into Reality",
   domain: "https://www.nmctechnology.com",
   description:
-    "NMC Technology provides innovative electrical, solar, security, and automation solutions for homes, offices, and businesses. Solar power installation, CCTV security, smart electrical automation, and smart home automation in Lagos, Nigeria.",
+    "NMC Technology provides innovative electrical, solar, security, and automation solutions for homes, offices, and businesses. Solar power installation, CCTV security, smart electrical automation, and smart home automation.",
   phones: [
     { display: "0901 040 0711", href: "+2349010400711" },
     { display: "0916 456 7887", href: "+2349164567887" },
@@ -54,7 +54,7 @@ export const services = [
     description:
       "Professional surveillance and security camera installations. Remote monitoring and HD systems for properties of all sizes.",
     icon: "Camera",
-    image: "/images/inverter-room-deye-1.jpg",
+    image: "https://images.unsplash.com/photo-1589935447067-5531094415d1?auto=format&fit=crop&w=1200&q=80",
     href: "/services/cctv",
   },
   {
@@ -62,7 +62,7 @@ export const services = [
     description:
       "Transform conventional systems into intelligent, efficient electrical solutions with automated controls and protection.",
     icon: "Zap",
-    image: "/images/rooftop-panels-3.jpg",
+    image: "https://images.unsplash.com/photo-1780342506044-7f4913fe294a?auto=format&fit=crop&w=1200&q=80",
     href: "/services/automation",
   },
   {
@@ -70,7 +70,7 @@ export const services = [
     description:
       "Advanced automation for lighting, climate control, security, and energy management across your entire home.",
     icon: "Wifi",
-    image: "/images/ats-panel.jpg",
+    image: "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?auto=format&fit=crop&w=1200&q=80",
     href: "/services/smart-home",
   },
   {

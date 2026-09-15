@@ -4,7 +4,7 @@ import { Container, Eyebrow } from "./ui";
 const photos = [
   {
     src: "/images/hero-panels.jpg",
-    alt: "Rooftop solar panel array overlooking Lagos skyline",
+    alt: "Rooftop solar panel array overlooking the city skyline",
     span: "lg:col-span-2 lg:row-span-2",
   },
   {
@@ -29,7 +29,7 @@ const photos = [
   },
   {
     src: "/images/rooftop-panels-3.jpg",
-    alt: "Solar panel installation on a commercial rooftop in Lagos",
+    alt: "Solar panel installation on a commercial rooftop",
     span: "lg:col-span-2",
   },
 ];
@@ -44,7 +44,7 @@ export default function Gallery() {
             Real installations, by our own technicians
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-            A look at homes and facilities we&apos;ve powered across Lagos —
+            A look at homes and facilities we&apos;ve powered —
             from rooftop arrays to the plant rooms that keep them running.
           </p>
         </div>

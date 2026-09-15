@@ -8,7 +8,7 @@ import { reviewsInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Client Reviews",
   description:
-    "See what homes and businesses across Lagos say about their solar installation experience with NMC Technology.",
+    "See what homes and businesses say about their solar installation experience with NMC Technology.",
   alternates: { canonical: "/reviews" },
 };
 

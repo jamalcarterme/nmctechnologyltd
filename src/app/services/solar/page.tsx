@@ -10,9 +10,9 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Solar Power Installation in Lagos | NMC Technology",
+  title: "Solar Power Installation | NMC Technology",
   description:
-    "Professional solar power system installation for homes and businesses. Inverters, lithium batteries, solar panels, and complete energy solutions in Lagos, Nigeria.",
+    "Professional solar power system installation for homes and businesses. Inverters, lithium batteries, solar panels, and complete energy solutions, wherever you're located.",
   alternates: { canonical: "/services/solar" },
 };
 
@@ -20,8 +20,8 @@ const solarInfo = [
   {
     heading: "Why solar power matters",
     paragraphs: [
-      "Grid power in Lagos remains unpredictable, and running a generator daily costs significantly more than most households realize once fuel, servicing, and maintenance are considered. A properly sized solar inverter and battery system removes that daily fuel burden and provides reliable power with no noise, emissions, or early-morning fuel runs.",
-      "NMC Technology has spent over 8 years designing and installing these systems across Lagos. Because we install every system ourselves rather than subcontracting, we stand behind the workmanship long after installation — which is critical if something needs attention.",
+      "Grid power remains unpredictable in many places, and running a generator daily costs significantly more than most households realize once fuel, servicing, and maintenance are considered. A properly sized solar inverter and battery system removes that daily fuel burden and provides reliable power with no noise, emissions, or early-morning fuel runs.",
+      "NMC Technology has spent over 8 years designing and installing these systems for homes and businesses. Because we install every system ourselves rather than subcontracting, we stand behind the workmanship long after installation — which is critical if something needs attention.",
     ],
   },
   {
@@ -49,7 +49,7 @@ const solarInfo = [
   {
     heading: "Equipment and brands we install",
     paragraphs: [
-      "We work exclusively with proven inverter brands including Deye, Growatt, and Sirne, paired with high-capacity lithium-ion battery banks. Lithium batteries are our standard recommendation over older lead-acid technology because they charge faster, last significantly longer, and maintain capacity better in Lagos heat.",
+      "We work exclusively with proven inverter brands including Deye, Growatt, and Sirne, paired with high-capacity lithium-ion battery banks. Lithium batteries are our standard recommendation over older lead-acid technology because they charge faster, last significantly longer, and maintain capacity better in hot climates.",
       "Every installation is mounted and wired to withstand seasonal rain and harmattan dust, with distribution boards and automatic transfer switches built so your system fails safely rather than silently.",
     ],
   },
@@ -98,7 +98,7 @@ export default function SolarPage() {
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Solar Power Installation</Eyebrow>
               <h1 className="mt-3 font-display text-[28px] font-semibold text-paper sm:text-[32px]">
-                Professional Solar Solutions for Lagos Homes & Businesses
+                Professional Solar Solutions for Homes & Businesses
               </h1>
               <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-paper/70">
                 Reliable power systems designed around your actual appliances and lifestyle. From 3.5KVA apartment setups to 30KVA off-grid independence, we install complete solar solutions with inverters, lithium batteries, and panel arrays engineered for performance and longevity.
@@ -108,9 +108,9 @@ export default function SolarPage() {
         </section>
 
         <InfoSection
-          eyebrow="Solar power in Lagos"
+          eyebrow="Solar power, done right"
           title="Everything you need to know about solar installation"
-          intro="From sizing and equipment to why solar matters in Lagos, here's the full picture."
+          intro="From sizing and equipment to why solar matters, here's the full picture."
           blocks={solarInfo}
           className="bg-ink"
         />

@@ -9,7 +9,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Smart Electrical Automation in Lagos | NMC Technology",
+  title: "Smart Electrical Automation | NMC Technology",
   description:
     "Professional electrical automation services including ATS systems, generator automation, load management, surge protection, and smart controls for homes and businesses.",
   alternates: { canonical: "/services/automation" },

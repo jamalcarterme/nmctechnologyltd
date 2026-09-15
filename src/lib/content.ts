@@ -24,9 +24,9 @@ export const homeInfo: InfoBlock[] = [
     ],
   },
   {
-    heading: "Service coverage across Lagos",
+    heading: "Where we work",
     paragraphs: [
-      "Our team is based in Satellite Town and works across mainland and island Lagos — including Festac, Amuwo-Odofin, Surulere, Ikeja, Lekki, Ajah, Victoria Island and Ikoyi — as well as select projects in neighboring states for larger installations. Wherever your property is in Lagos, contact us on WhatsApp and we'll confirm coverage before you commit.",
+      "We take on projects wherever you're located, from local installations to larger commercial and estate work further afield. Wherever your property is, contact us on WhatsApp and we'll confirm coverage and logistics before you commit.",
     ],
   },
 ];
@@ -58,9 +58,9 @@ export const homeFaqs: FaqItem[] = [
       "For larger projects, we can discuss staged payment arrangements on a case-by-case basis. Message us on WhatsApp with details of what you're interested in and your budget, and we'll explain current options.",
   },
   {
-    question: "Do you work outside Lagos?",
+    question: "How far do you travel for a project?",
     answer:
-      "Our core coverage is Lagos State, but we take on larger commercial, estate, and specialty projects in neighbouring states including Ogun and Oyo. Send us your location on WhatsApp and we'll confirm feasibility and any travel costs upfront.",
+      "We take on residential, commercial, estate, and specialty projects well beyond our home base. Send us your location on WhatsApp and we'll confirm feasibility and any travel costs upfront.",
   },
 ];
 
@@ -170,7 +170,7 @@ export const aboutInfo: InfoBlock[] = [
   {
     heading: "How NMC Technology started",
     paragraphs: [
-      "NMC Technology was built on a simple frustration shared by most homeowners in Lagos: paying for solar equipment that was either wrongly sized, poorly installed, or abandoned by the seller the moment something needed fixing. We set out to be the company that designs, sells and installs a system with the same team from first phone call to years-later maintenance call.",
+      "NMC Technology was built on a simple frustration shared by most homeowners: paying for solar equipment that was either wrongly sized, poorly installed, or abandoned by the seller the moment something needed fixing. We set out to be the company that designs, sells and installs a system with the same team from first phone call to years-later maintenance call.",
       "That decision to keep installation in-house rather than outsourcing to third-party electricians is still what separates how we work today. When our engineers design a system, they are the same people wiring it into your distribution board — so nothing gets lost in translation, and there's no finger-pointing between a seller and an installer if something isn't right.",
     ],
   },
@@ -193,7 +193,7 @@ export const aboutFaqs: FaqItem[] = [
   {
     question: "Where is NMC Technology based?",
     answer:
-      "Our main office is at Plot 4A, Block XIV, Opposite Unipetrol Estate, Satellite Town, Lagos, and our installation teams work across greater Lagos and select nearby states.",
+      "Our main office is at Plot 4A, Block XIV, Opposite Unipetrol Estate, Satellite Town, Lagos, and our installation teams take on projects well beyond that.",
   },
   {
     question: "Are your technicians employed directly or outsourced?",
@@ -203,7 +203,7 @@ export const aboutFaqs: FaqItem[] = [
   {
     question: "How long has NMC Technology been installing solar systems?",
     answer:
-      "We have spent over 8 years designing and installing inverter, battery and solar panel systems for homes and businesses across Lagos, with more than 500 properties powered to date.",
+      "We have spent over 8 years designing and installing inverter, battery and solar panel systems for homes and businesses, with more than 500 properties powered to date.",
   },
 ];
 

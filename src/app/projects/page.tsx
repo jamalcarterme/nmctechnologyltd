@@ -8,7 +8,7 @@ import { projectsInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "Recent Projects",
   description:
-    "A look at solar installations NMC Technology has completed across Lagos — rooftop arrays, inverter rooms and distribution panels, installed in-house.",
+    "A look at solar installations NMC Technology has completed — rooftop arrays, inverter rooms and distribution panels, installed in-house.",
   alternates: { canonical: "/projects" },
 };
 

@@ -30,7 +30,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-paper/55">
-            {site.tagline}. Innovative electrical, solar, security, and automation solutions for homes and businesses across Lagos.
+            {site.tagline}. Innovative electrical, solar, security, and automation solutions for homes and businesses, wherever you are.
           </p>
           <a
             href={waLink("Hi NMC Technology, I'd like to speak with your team.")}
@@ -118,7 +118,7 @@ export default function Footer() {
 
       <Container className="flex flex-col items-center justify-between gap-4 py-8 text-[13px] text-paper/40 sm:flex-row">
         <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-        <p>Technology & engineering solutions across Lagos, Nigeria.</p>
+        <p>Technology & engineering solutions for homes and businesses.</p>
       </Container>
     </footer>
   );

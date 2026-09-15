@@ -8,9 +8,9 @@ import Services from "@/components/Services";
 import { servicesFaqs, servicesInfo } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Solar Services in Lagos",
+  title: "Our Services",
   description:
-    "Home solar systems, off-grid power, commercial & estate solar, automatic transfer panels, upgrades and repairs — installed by NMC Technology in Lagos, Nigeria.",
+    "Home solar systems, off-grid power, commercial & estate solar, automatic transfer panels, upgrades and repairs — installed by NMC Technology.",
   alternates: { canonical: "/services" },
 };
 
