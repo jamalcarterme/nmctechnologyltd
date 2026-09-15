@@ -86,12 +86,22 @@ export default function Hero() {
           animate="show"
           className="balance max-w-3xl text-[34px] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[44px] lg:text-[56px]"
         >
-          Smart. Reliable. Professional.
+          Turning Ideas Into Reality
         </motion.h1>
 
         <motion.p
           variants={reveal}
           custom={1}
+          initial="hidden"
+          animate="show"
+          className="mt-2 text-[12px] font-semibold uppercase tracking-widest text-paper/60"
+        >
+          Smart. Reliable. Professional.
+        </motion.p>
+
+        <motion.p
+          variants={reveal}
+          custom={2}
           initial="hidden"
           animate="show"
           className="mt-6 max-w-lg text-[16px] leading-relaxed text-paper/80 sm:text-[17px]"
@@ -101,7 +111,7 @@ export default function Hero() {
 
         <motion.div
           variants={reveal}
-          custom={2}
+          custom={3}
           initial="hidden"
           animate="show"
           className="mt-9 flex flex-col gap-3 sm:flex-row"
