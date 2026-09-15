@@ -33,8 +33,17 @@ const solarInfo = [
   },
   {
     heading: "Our solar solutions include",
-    paragraphs: [
-      "Solar panel installation on rooftops or ground mounts • Hybrid and off-grid solar systems • Inverter installation and configuration • Lithium battery storage systems from 5KWH to 75KWH • Solar system upgrades and maintenance • Energy assessment and professional system sizing • Automatic generator start/stop integration • Complete system diagnostics and repair.",
+    paragraphs: [],
+    list: [
+      "Solar panel installation",
+      "Hybrid and off-grid solar systems",
+      "Inverter installation",
+      "Lithium battery storage systems",
+      "Solar system upgrades",
+      "Solar system maintenance",
+      "Energy assessment and system sizing",
+      "Generator integration",
+      "Automated generator start/stop solutions",
     ],
   },
   {

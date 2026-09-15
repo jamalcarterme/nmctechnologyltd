@@ -209,16 +209,28 @@ export const aboutFaqs: FaqItem[] = [
 
 export const projectsInfo: InfoBlock[] = [
   {
+    heading: "Our projects include",
+    paragraphs: [
+      "We have experience delivering technology and electrical solutions across residential, commercial, and business environments. Every project is an opportunity to demonstrate quality, professionalism, and engineering excellence.",
+    ],
+    list: [
+      "Residential solar installations",
+      "Commercial solar power systems",
+      "Inverter and lithium battery installations",
+      "CCTV security installations",
+      "Smart home projects",
+      "Electrical automation",
+      "Generator automation",
+      "Load management systems",
+      "Surge and lightning protection",
+      "Custom electrical solutions",
+    ],
+  },
+  {
     heading: "What goes into every installation you see here",
     paragraphs: [
       "Each project in our gallery — from rooftop panel arrays to plant-room inverter banks — represents the same process: a free load assessment, a system design matched to that specific property's appliances, and installation carried out entirely by our in-house technicians rather than subcontracted labour.",
       "We photograph completed installations partly for our own records and partly so prospective clients can see the standard of cable management, panel mounting and distribution board work they can expect before a single naira changes hands.",
-    ],
-  },
-  {
-    heading: "From rooftop to plant room",
-    paragraphs: [
-      "A finished solar installation is really two projects in one: the visible rooftop or ground-mounted panel array that most people picture, and the less glamorous but equally critical plant room work — the inverter, battery bank, breaker panel and automatic transfer switch that actually determine whether the system performs reliably for the next decade.",
     ],
   },
 ];

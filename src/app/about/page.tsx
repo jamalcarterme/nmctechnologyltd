@@ -4,6 +4,8 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
+import MissionVision from "@/components/MissionVision";
+import WhoWeServe from "@/components/WhoWeServe";
 import { aboutFaqs, aboutInfo } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -25,6 +27,8 @@ export default function AboutPage() {
           blocks={aboutInfo}
           className="bg-charcoal"
         />
+        <MissionVision />
+        <WhoWeServe />
         <Faq title="About NMC Technology" items={aboutFaqs} className="bg-ink" />
       </main>
       <Footer />

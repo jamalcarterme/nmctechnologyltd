@@ -25,8 +25,18 @@ const automationInfo = [
   },
   {
     heading: "Our automation solutions include",
-    paragraphs: [
-      "Automated changeover (ATS) systems for seamless power transitions • Generator automation with remote start/stop controls • Smart load management to prevent overload • Surge protection and lightning protection systems • Voltage protection and regulation devices • Intelligent electrical control systems • System upgrades and retrofits for existing installations • Professional installation and configuration.",
+    paragraphs: [],
+    list: [
+      "Automated changeover systems",
+      "ATS solutions",
+      "Generator automation",
+      "Remote generator start/stop",
+      "Smart load management",
+      "Surge protection",
+      "Lightning protection",
+      "Earthing systems",
+      "Voltage protection",
+      "Electrical control systems",
     ],
   },
   {

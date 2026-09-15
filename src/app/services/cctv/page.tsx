@@ -25,8 +25,16 @@ const cctvInfo = [
   },
   {
     heading: "Our CCTV services include",
-    paragraphs: [
-      "CCTV camera installation for homes and businesses • IP camera systems with remote monitoring capabilities • HD surveillance system design and setup • DVR/NVR (Digital/Network Video Recorder) installation • Residential and commercial security system integration • Remote monitoring from mobile devices and computers • CCTV system upgrades and maintenance • Professional system assessment and recommendations.",
+    paragraphs: [],
+    list: [
+      "CCTV camera installation",
+      "IP camera systems",
+      "HD surveillance systems",
+      "Remote monitoring",
+      "DVR/NVR installation",
+      "Residential security systems",
+      "Commercial security systems",
+      "CCTV system upgrades and maintenance",
     ],
   },
   {

@@ -19,8 +19,8 @@ export default function ProjectsPage() {
       <main className="pt-20">
         <Gallery />
         <InfoSection
-          eyebrow="Behind the photos"
-          title="What every installation in this gallery has in common"
+          eyebrow="Our projects"
+          title="From Ideas to Reality"
           blocks={projectsInfo}
           className="bg-charcoal"
         />

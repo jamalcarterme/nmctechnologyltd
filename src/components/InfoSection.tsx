@@ -1,6 +1,6 @@
 import { Container, Eyebrow } from "./ui";
 
-export type InfoBlock = { heading: string; paragraphs: string[] };
+export type InfoBlock = { heading: string; paragraphs: string[]; list?: string[] };
 
 export default function InfoSection({
   eyebrow,
@@ -42,6 +42,19 @@ export default function InfoSection({
                   {p}
                 </p>
               ))}
+              {block.list && (
+                <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
+                  {block.list.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-2.5 text-[15px] leading-relaxed text-paper/65"
+                    >
+                      <span className="mt-2 h-[5px] w-[5px] shrink-0 rounded-full bg-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </div>
           ))}
         </div>

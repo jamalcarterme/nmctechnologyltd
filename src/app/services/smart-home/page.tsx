@@ -25,8 +25,16 @@ const smartHomeInfo = [
   },
   {
     heading: "Our smart home solutions include",
-    paragraphs: [
-      "Smart lighting with automated scheduling and remote control • Smart switches and outlets for intelligent device control • Automated curtains and blinds • Smart climate control and air conditioning • Home security automation and smart locks • Remote control systems and mobile app interfaces • Energy management and consumption monitoring • Customized automation tailored to your lifestyle.",
+    paragraphs: [],
+    list: [
+      "Smart lighting",
+      "Smart switches",
+      "Automated curtains",
+      "Smart sockets",
+      "Home security automation",
+      "Remote control systems",
+      "Energy management",
+      "Customized home automation",
     ],
   },
   {
