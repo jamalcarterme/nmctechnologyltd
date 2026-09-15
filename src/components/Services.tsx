@@ -42,8 +42,6 @@ export default function Services() {
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => {
             const Icon = icons[service.icon];
-            const isClickable = service.href;
-            const Element = isClickable ? Link : "div";
             
             return (
               <motion.div
@@ -53,34 +51,58 @@ export default function Services() {
                 viewport={{ once: true, margin: "0px 0px -80px 0px" }}
                 transition={{ duration: 0.5, delay: (i % 3) * 0.08, ease: "easeOut" }}
               >
-                <Element
-                  {...(isClickable && { href: service.href })}
-                  className={`group overflow-hidden rounded-2xl border border-paper/10 bg-charcoal transition-colors hover:border-gold/40 h-full flex flex-col ${
-                    isClickable ? "cursor-pointer" : ""
-                  }`}
-                >
-                  <div className="relative h-44 w-full overflow-hidden">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 33vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
-                    <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-ink/80 text-gold backdrop-blur-sm">
-                      <Icon className="h-5 w-5" strokeWidth={1.75} />
-                    </span>
+                {service.href ? (
+                  <Link
+                    href={service.href}
+                    className="group overflow-hidden rounded-2xl border border-paper/10 bg-charcoal transition-colors hover:border-gold/40 h-full flex flex-col cursor-pointer"
+                  >
+                    <div className="relative h-44 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
+                      <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-ink/80 text-gold backdrop-blur-sm">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </span>
+                    </div>
+                    <div className="p-7 pt-5 flex-grow">
+                      <h3 className="font-display text-[19px] font-semibold text-paper">
+                        {service.title}
+                      </h3>
+                      <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
+                        {service.description}
+                      </p>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="group overflow-hidden rounded-2xl border border-paper/10 bg-charcoal transition-colors hover:border-gold/40 h-full flex flex-col">
+                    <div className="relative h-44 w-full overflow-hidden">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/10 to-transparent" />
+                      <span className="absolute bottom-3 left-3 flex h-10 w-10 items-center justify-center rounded-xl bg-ink/80 text-gold backdrop-blur-sm">
+                        <Icon className="h-5 w-5" strokeWidth={1.75} />
+                      </span>
+                    </div>
+                    <div className="p-7 pt-5 flex-grow">
+                      <h3 className="font-display text-[19px] font-semibold text-paper">
+                        {service.title}
+                      </h3>
+                      <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
-                  <div className="p-7 pt-5 flex-grow">
-                    <h3 className="font-display text-[19px] font-semibold text-paper">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
-                      {service.description}
-                    </p>
-                  </div>
-                </Element>
+                )}
               </motion.div>
             );
           })}
