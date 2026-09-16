@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Container, Eyebrow } from "./ui";
 
@@ -5,36 +8,133 @@ const photos = [
   {
     src: "/images/hero-panels.jpg",
     alt: "Rooftop solar panel array overlooking the city skyline",
-    span: "lg:col-span-2 lg:row-span-2",
+    caption: "Rooftop solar array",
   },
   {
     src: "/images/inverter-room-deye-1.jpg",
     alt: "Deye hybrid inverters and battery bank installed in a plant room",
-    span: "",
+    caption: "Deye hybrid inverter room",
   },
   {
     src: "/images/installer-panel-1.jpg",
     alt: "NMC Technology technician installing a rooftop solar panel",
-    span: "",
+    caption: "On-site panel installation",
   },
   {
     src: "/images/inverter-room-growatt.jpg",
     alt: "Growatt inverter bank with distribution board wiring",
-    span: "",
+    caption: "Growatt inverter bank",
   },
   {
     src: "/images/panelboard-tech.jpg",
     alt: "Technician wiring a solar distribution and breaker panel",
-    span: "",
+    caption: "Distribution panel wiring",
   },
   {
     src: "/images/rooftop-panels-3.jpg",
     alt: "Solar panel installation on a commercial rooftop",
-    span: "lg:col-span-2",
+    caption: "Commercial rooftop installation",
+  },
+  {
+    src: "/images/solar-install-technician.jpg",
+    alt: "NMC Technology technician installing a solar panel",
+    caption: "NMC technician at work",
+  },
+  {
+    src: "/images/solar-inverters-growatt.jpg",
+    alt: "Growatt solar inverters mounted and wired",
+    caption: "Mounted inverter installation",
   },
 ];
 
+function Slide({ photo }: { photo: (typeof photos)[number] }) {
+  return (
+    <div className="px-3">
+      <div className="group relative h-72 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-80 lg:h-96">
+        <Image
+          src={photo.src}
+          alt={photo.alt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
+        <p className="absolute bottom-4 left-5 text-[14px] font-semibold uppercase tracking-wide text-paper">
+          {photo.caption}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+/** Continuously sliding filmstrip, mirroring the homepage services carousel. */
+function SlidingTrack({
+  visible,
+  intervalMs,
+}: {
+  visible: 1 | 2 | 3;
+  intervalMs: number;
+}) {
+  const total = photos.length;
+  const extended = [...photos, ...photos.slice(0, visible)];
+  const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => i + 1);
+    }, intervalMs);
+    return () => clearInterval(id);
+  }, [intervalMs]);
+
+  useEffect(() => {
+    if (index === total) {
+      timeoutRef.current = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+      }, 650);
+    } else if (!animate) {
+      const raf = requestAnimationFrame(() => setAnimate(true));
+      return () => cancelAnimationFrame(raf);
+    }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
+  const step = 100 / visible;
+
+  return (
+    <div className="overflow-hidden">
+      <div
+        className="flex"
+        style={{
+          transform: `translateX(-${index * step}%)`,
+          transition: animate ? "transform 650ms cubic-bezier(0.22,1,0.36,1)" : "none",
+        }}
+      >
+        {extended.map((photo, i) => (
+          <div key={`${photo.src}-${i}`} style={{ flex: `0 0 ${step}%` }}>
+            <Slide photo={photo} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Gallery() {
+  const [dot, setDot] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDot((i) => (i + 1) % photos.length);
+    }, 3200);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section id="projects" className="bg-ink py-24 md:py-28">
       <Container>
@@ -49,21 +149,30 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4 lg:auto-rows-[220px]">
-          {photos.map((photo) => (
-            <div
+        {/* Desktop: three photos visible, sliding filmstrip */}
+        <div className="mt-14 hidden lg:block">
+          <SlidingTrack visible={3} intervalMs={3200} />
+        </div>
+
+        {/* Tablet: two photos visible */}
+        <div className="mt-12 hidden sm:block lg:hidden">
+          <SlidingTrack visible={2} intervalMs={3200} />
+        </div>
+
+        {/* Mobile: one photo visible */}
+        <div className="mt-10 sm:hidden">
+          <SlidingTrack visible={1} intervalMs={3200} />
+        </div>
+
+        <div className="mt-10 flex items-center justify-center gap-2">
+          {photos.map((photo, i) => (
+            <span
               key={photo.src}
-              className={`group relative aspect-square overflow-hidden rounded-2xl bg-charcoal lg:aspect-auto ${photo.span}`}
-            >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 1024px) 50vw, 25vw"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/50 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-            </div>
+              aria-hidden="true"
+              className={`h-2 rounded-full transition-all ${
+                i === dot ? "w-6 bg-gold" : "w-2 bg-paper/25"
+              }`}
+            />
           ))}
         </div>
       </Container>

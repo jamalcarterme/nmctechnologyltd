@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackgroundVideo from "@/components/BackgroundVideo";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -98,8 +99,10 @@ export default function SmartHomePage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="border-t border-paper/10 bg-charcoal py-16 md:py-20">
-          <Container>
+        <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
+          <BackgroundVideo src="/smart-home-bg.mp4" fallbackImage="/images/control-tech.jpg" />
+          <div className="absolute inset-0 bg-ink/75" />
+          <Container className="relative">
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Smart Home Automation</Eyebrow>
               <h1 className="mt-3 font-display text-[28px] font-semibold text-paper sm:text-[32px]">

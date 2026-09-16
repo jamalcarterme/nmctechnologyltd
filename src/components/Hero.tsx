@@ -27,9 +27,22 @@ export default function Hero() {
     video.muted = true;
     video.defaultMuted = true;
 
+    const startAt = 7; // begin playback 7s into the clip
+
+    const seekToStart = () => {
+      if (video.currentTime < startAt) {
+        try {
+          video.currentTime = startAt;
+        } catch {
+          // ignore — some browsers throw until enough data is buffered
+        }
+      }
+    };
+
     const markReady = () => setVideoReady(true);
     
     const attemptPlay = async () => {
+      seekToStart();
       try {
         await video.play();
         markReady();
@@ -40,6 +53,8 @@ export default function Hero() {
     };
 
     // Wait until video can be played before attempting to play
+    const handleLoadedMetadata = () => seekToStart();
+
     const handleCanPlay = () => {
       attemptPlay();
     };
@@ -48,6 +63,7 @@ export default function Hero() {
       markReady();
     };
 
+    video.addEventListener("loadedmetadata", handleLoadedMetadata);
     video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("loadeddata", handleLoadedData);
     video.addEventListener("playing", markReady);
@@ -58,6 +74,7 @@ export default function Hero() {
     }
 
     return () => {
+      video.removeEventListener("loadedmetadata", handleLoadedMetadata);
       video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("loadeddata", handleLoadedData);
       video.removeEventListener("playing", markReady);
@@ -67,7 +84,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[560px] items-center overflow-hidden bg-ink pb-20 pt-32 sm:min-h-[640px] md:min-h-[720px] md:pb-28 md:pt-40"
+      className="relative flex min-h-[520px] items-center overflow-hidden bg-ink pb-16 pt-28 sm:min-h-[560px] md:min-h-[600px] md:pb-20 md:pt-32"
     >
       <div className="pointer-events-none absolute inset-0">
         <img
@@ -79,7 +96,7 @@ export default function Hero() {
         />
         <video
           ref={videoRef}
-          src="/background-video.mp4"
+          src="/background-video-hero.mp4"
           autoPlay
           muted
           loop

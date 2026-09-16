@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -7,6 +8,13 @@ import Process from "@/components/Process";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+const automationHeroImages = [
+  { src: "/images/automation-panel-testing.jpg", alt: "Technician testing an electrical control panel" },
+  { src: "/images/ats-panel.jpg", alt: "Automatic transfer switch panel" },
+  { src: "/images/automation-factory-line.jpg", alt: "Automated control line" },
+  { src: "/images/panelboard-tech.jpg", alt: "Technician wiring a distribution and breaker panel" },
+];
 
 export const metadata: Metadata = {
   title: "Smart Electrical Automation | NMC Technology",
@@ -100,8 +108,10 @@ export default function AutomationPage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="border-t border-paper/10 bg-charcoal py-16 md:py-20">
-          <Container>
+        <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
+          <BackgroundSlider images={automationHeroImages} />
+          <div className="absolute inset-0 bg-ink/75" />
+          <Container className="relative">
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Smart Electrical Automation</Eyebrow>
               <h1 className="mt-3 font-display text-[28px] font-semibold text-paper sm:text-[32px]">

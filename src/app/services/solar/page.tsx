@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -8,6 +9,13 @@ import Process from "@/components/Process";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+const solarHeroImages = [
+  { src: "/images/solar-install-technician.jpg", alt: "NMC Technology technician installing a solar panel" },
+  { src: "/images/solar-rooftop-install.jpg", alt: "Rooftop solar panel array installation" },
+  { src: "/images/solar-inverters-growatt.jpg", alt: "Growatt solar inverters mounted and wired" },
+  { src: "/images/solar-panel-product.jpg", alt: "High-capacity solar panel" },
+];
 
 export const metadata: Metadata = {
   title: "Solar Power Installation | NMC Technology",
@@ -93,8 +101,10 @@ export default function SolarPage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="border-t border-paper/10 bg-charcoal py-16 md:py-20">
-          <Container>
+        <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
+          <BackgroundSlider images={solarHeroImages} />
+          <div className="absolute inset-0 bg-ink/75" />
+          <Container className="relative">
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Solar Power Installation</Eyebrow>
               <h1 className="mt-3 font-display text-[28px] font-semibold text-paper sm:text-[32px]">
