@@ -4,7 +4,8 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
-import MissionVision from "@/components/MissionVision";
+import MissionGrid from "@/components/MissionGrid";
+import PageHero from "@/components/PageHero";
 import WhoWeServe from "@/components/WhoWeServe";
 import { aboutFaqs, aboutInfo } from "@/lib/content";
 
@@ -19,7 +20,13 @@ export default function AboutPage() {
   return (
     <>
       <Header />
-      <main className="pt-20">
+      <main>
+        <PageHero
+          image="/images/team-photo.jpg"
+          eyebrow="NMC Technology"
+          title="About Us"
+          subtitle="Engineering technology, powering possibilities — for homes and businesses across Nigeria."
+        />
         <About />
         <InfoSection
           eyebrow="Our story"
@@ -27,7 +34,7 @@ export default function AboutPage() {
           blocks={aboutInfo}
           className="bg-charcoal"
         />
-        <MissionVision />
+        <MissionGrid />
         <WhoWeServe />
         <Faq title="About NMC Technology" items={aboutFaqs} className="bg-ink" />
       </main>

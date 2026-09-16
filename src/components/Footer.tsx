@@ -14,8 +14,8 @@ const serviceLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink pt-20">
-      <Container className="grid gap-12 border-b border-paper/10 pb-16 md:grid-cols-[1.3fr_1fr_1fr_1.1fr]">
+    <footer className="footer-glow relative overflow-hidden bg-ink pb-24 pt-20 md:pb-20">
+      <Container className="relative grid gap-12 border-b border-paper/10 pb-16 md:grid-cols-[1.3fr_1fr_1fr_1.1fr]">
         <div>
           <Link href="/" className="flex items-center gap-3">
             <Image
@@ -43,9 +43,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/40">
+          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/70">
             Explore
           </p>
+          <span className="mt-2 block h-[2px] w-8 bg-gold" />
           <ul className="mt-5 flex flex-col gap-3">
             {nav.map((item) => (
               <li key={item.href}>
@@ -61,9 +62,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/40">
+          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/70">
             Services
           </p>
+          <span className="mt-2 block h-[2px] w-8 bg-gold" />
           <ul className="mt-5 flex flex-col gap-3">
             {serviceLinks.map((item) => (
               <li key={item.label}>
@@ -79,9 +81,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/40">
+          <p className="text-[13px] font-semibold uppercase tracking-wide text-paper/70">
             Contact
           </p>
+          <span className="mt-2 block h-[2px] w-8 bg-gold" />
           <ul className="mt-5 flex flex-col gap-3 text-[15px] text-paper/65">
             {site.phones.map((phone) => (
               <li key={phone.href} className="flex items-center gap-2.5">

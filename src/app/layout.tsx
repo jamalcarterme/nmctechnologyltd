@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import CtaBar from "@/components/CtaBar";
 import { site } from "@/lib/data";
 import "./globals.css";
 
@@ -124,6 +125,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        <CtaBar />
       </body>
     </html>
   );
