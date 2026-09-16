@@ -115,12 +115,12 @@ export default function HomeShowcase() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col items-center text-center"
         >
-          <Eyebrow>What we do</Eyebrow>
+          <Eyebrow>Our services</Eyebrow>
           <h2 className="balance mt-4 max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-            Manage Everything
+            Complete Solutions
           </h2>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-paper/65">
-            The technology we install lets you micromanage power, security, and comfort across your entire property from anywhere in the world.
+            From solar power to smart home automation, we deliver complete integrated solutions.
           </p>
         </motion.div>
 

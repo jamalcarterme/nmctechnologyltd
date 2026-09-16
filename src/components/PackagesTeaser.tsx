@@ -16,10 +16,10 @@ export default function PackagesTeaser() {
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Our packages</Eyebrow>
           <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-            Packages For Every Property
+            Packages For Every Need
           </h2>
           <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-paper/65">
-            Every tier includes the inverter, battery, panels and professional installation. Compare capacity, backup time and pricing on the packages page.
+            Professional installation included. Find the perfect capacity for your property.
           </p>
         </Reveal>
 

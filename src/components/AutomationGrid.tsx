@@ -28,9 +28,9 @@ export default function AutomationGrid() {
     <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
-          <Eyebrow>Intelligent automation</Eyebrow>
+          <Eyebrow>What we do</Eyebrow>
           <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-            Built To Run Without You Thinking About It
+            Automation That Works For You
           </h2>
         </Reveal>
 

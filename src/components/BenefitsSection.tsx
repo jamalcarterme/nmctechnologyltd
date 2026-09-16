@@ -20,23 +20,17 @@ export default function BenefitsSection() {
           <Reveal variant="fade" delay={0.1}>
             <div>
               <h2 className="balance max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-                5 Benefits of Owning a Smart Home
+                Why Choose Smart Home?
               </h2>
               <p className="mt-6 text-[16px] leading-relaxed text-paper/65">
-                Do you wish to have a home that saves you money, tighten your
-                security, increase your personal productivity, maximize the
-                efficiency of your appliances and increase your home value all
-                at the same time?
+                Save money on energy bills, enhance security, and increase your home's efficiency and value.
               </p>
               <Link
                 href="/about"
                 className="mt-6 inline-block text-[15px] font-semibold text-gold hover:text-gold-light transition-colors"
               >
-                Click Here
-              </Link>{" "}
-              <span className="text-[15px] text-paper/65">
-                to read more on the advantages of home automation or
-              </span>
+                Learn More →
+              </Link>
             </div>
           </Reveal>
         </div>

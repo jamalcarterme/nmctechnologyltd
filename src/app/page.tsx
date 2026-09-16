@@ -23,12 +23,11 @@ export default function Home() {
         <section className="bg-charcoal py-24 md:py-28 border-t border-paper/10">
           <Container className="text-center">
             <Reveal>
-              <Eyebrow>Need a solution?</Eyebrow>
               <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
-                Let&apos;s Turn Your Idea Into Reality.
+                Ready to get started?
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-paper/70">
-                Whether you are planning a solar installation, upgrading your electrical system, securing your property with CCTV, or building a smart home, NMC Technology is ready to help. Explore our services and packages pages for full details.
+                Let us help bring your vision to life with innovative solutions.
               </p>
             </Reveal>
             <Reveal variant="pop" delay={0.2}>
