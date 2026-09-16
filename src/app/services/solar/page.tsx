@@ -102,7 +102,7 @@ export default function SolarPage() {
     <>
       <Header />
       <main className="pt-20">
-        <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
+        <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">
           <BackgroundSlider images={solarHeroImages} />
           <div className="absolute inset-0 bg-ink/75" />
           <Container className="relative">

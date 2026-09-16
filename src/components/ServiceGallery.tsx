@@ -9,7 +9,7 @@ type SlideImage = { src: string; alt: string };
 function Slide({ image }: { image: SlideImage }) {
   return (
     <div className="px-3">
-      <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-80 lg:h-96">
+      <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72 lg:h-80">
         <Image
           src={image.src}
           alt={image.alt}
@@ -39,7 +39,10 @@ function SlidingTrack({
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (total <= visible) return;
+    // Keep the filmstrip moving even when there are only as many images as
+    // are visible at once (e.g. exactly 3 photos on desktop) — it loops
+    // through the same set continuously instead of sitting still.
+    if (total <= 1) return;
     const id = setInterval(() => {
       setIndex((i) => i + 1);
     }, intervalMs);
@@ -91,7 +94,7 @@ export default function ServiceGallery({
   className?: string;
 }) {
   return (
-    <section className={`bg-ink py-16 md:py-20 ${className}`}>
+    <section className={`bg-ink py-12 md:py-16 ${className}`}>
       <Container>
         <div className="hidden lg:block">
           <SlidingTrack images={images} visible={3} intervalMs={3200} />

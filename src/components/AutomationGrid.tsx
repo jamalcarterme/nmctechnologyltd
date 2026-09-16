@@ -1,31 +1,31 @@
-import Image from "next/image";
-import { ClipboardCheck, Wrench, Zap } from "lucide-react";
+import { Lightbulb, MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container, Eyebrow, Reveal } from "./ui";
 
 const items = [
   {
-    title: "Smart Electrical Automation",
-    text: "Transform conventional systems into intelligent, efficient electrical solutions with automated controls and protection.",
-    image: "/images/panelboard-tech.jpg",
-    icon: Zap,
+    title: "Light Automation",
+    text: "Scene-based and scheduled lighting control that adjusts to the time of day, occupancy, and mood — all from one app or wall panel.",
+    video:
+      "https://ritzmansmarthomes.com/wp-content/uploads/2022/01/FIBARO_Home_Automation_System_Your_home_Your_Imagination.gif",
+    icon: Lightbulb,
   },
   {
-    title: "Custom Solutions",
-    text: "Integrated technology solutions tailored to your specific needs, budget, and space requirements.",
-    image: "/images/breaker-board.jpg",
-    icon: Wrench,
+    title: "Media Automation",
+    text: "Whole-home audio and entertainment systems that sync TVs, speakers, and streaming devices with a single, simple control experience.",
+    video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/ezgif.com-gif-maker.gif",
+    icon: MonitorPlay,
   },
   {
-    title: "Professional Support",
-    text: "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
-    image: "/images/control-tech.jpg",
-    icon: ClipboardCheck,
+    title: "Outdoor Automation",
+    text: "Automated gates, outdoor lighting, and perimeter monitoring that keep your property secure and accessible, day or night.",
+    video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/IMG_5287.gif",
+    icon: ShieldCheck,
   },
 ];
 
 export default function AutomationGrid() {
   return (
-    <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
+    <section className="border-t border-paper/10 bg-ink py-20 md:py-24">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>What we do</Eyebrow>
@@ -42,15 +42,15 @@ export default function AutomationGrid() {
             return (
               <Reveal key={item.title} delay={i * 0.1} variant={animationVariant}>
                 <div className="overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03]">
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={item.image}
+                  <div className="relative h-48 w-full bg-charcoal">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.video}
                       alt={item.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 33vw"
-                      className="object-cover"
+                      loading="lazy"
+                      className="h-full w-full object-cover"
                     />
-                    <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-gold text-ink shadow-[0_6px_16px_-4px_rgba(0,0,0,0.5)]">
+                    <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink/70 text-gold shadow-[0_6px_16px_-4px_rgba(0,0,0,0.5)] backdrop-blur-sm">
                       <item.icon className="h-5 w-5" strokeWidth={1.75} />
                     </span>
                   </div>
