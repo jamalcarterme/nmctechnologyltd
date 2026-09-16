@@ -4,20 +4,20 @@ import { Container, Eyebrow, Reveal } from "./ui";
 const items = [
   {
     title: "Light Automation",
-    text: "Scene-based and scheduled lighting control that adjusts to the time of day, occupancy, and mood — all from one app or wall panel.",
+    text: "Tap a scene on your phone and every light in the room responds instantly — dimmed, brightened, or switched off together on one schedule.",
     video:
       "https://ritzmansmarthomes.com/wp-content/uploads/2022/01/FIBARO_Home_Automation_System_Your_home_Your_Imagination.gif",
     icon: Lightbulb,
   },
   {
     title: "Media Automation",
-    text: "Whole-home audio and entertainment systems that sync TVs, speakers, and streaming devices with a single, simple control experience.",
+    text: "TVs, speakers, and streaming devices wired into one system, so your entire entertainment setup turns on and adjusts together, on command.",
     video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/ezgif.com-gif-maker.gif",
     icon: MonitorPlay,
   },
   {
     title: "Outdoor Automation",
-    text: "Automated gates, outdoor lighting, and perimeter monitoring that keep your property secure and accessible, day or night.",
+    text: "Live camera feeds, gate access, and outdoor lighting monitored and controlled remotely, so your property stays secure day and night.",
     video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/IMG_5287.gif",
     icon: ShieldCheck,
   },

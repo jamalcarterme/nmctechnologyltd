@@ -14,6 +14,8 @@ const cctvGalleryImages = [
   { src: "/images/cctv-dome-camera.jpg", alt: "Purevision indoor dome CCTV camera" },
   { src: "/images/cctv-solar-ptz-camera.jpg", alt: "Solar-powered PTZ security camera" },
   { src: "/images/cctv-solar-bullet-camera.jpg", alt: "Solar-powered outdoor bullet camera" },
+  { src: "/images/cctv-cube-camera-studio.jpg", alt: "Compact smart cube security camera on a desk stand" },
+  { src: "/images/cctv-cube-camera-wall.jpg", alt: "Compact smart cube camera mounted on an interior wall" },
 ];
 
 export const metadata: Metadata = {

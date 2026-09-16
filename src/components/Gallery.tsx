@@ -45,6 +45,36 @@ const photos = [
     alt: "Growatt solar inverters mounted and wired",
     caption: "Mounted inverter installation",
   },
+  {
+    src: "/images/avr-voltage-regulator.jpg",
+    alt: "Technician servicing a 30000VA automatic voltage regulator",
+    caption: "AVR installation & servicing",
+  },
+  {
+    src: "/images/inverter-room-deye-3.jpg",
+    alt: "Two Deye hybrid inverters mounted above distribution boards",
+    caption: "Deye hybrid inverter room",
+  },
+  {
+    src: "/images/inverter-room-deye-4.jpg",
+    alt: "Deye inverters and battery bank installed in a plant room",
+    caption: "Inverter & battery bank setup",
+  },
+  {
+    src: "/images/inverter-room-deye-closeup.jpg",
+    alt: "Close-up of Deye hybrid inverter control panels and battery boxes",
+    caption: "Deye inverter close-up",
+  },
+  {
+    src: "/images/srne-battery-tower-technician.jpg",
+    alt: "NMC Technology technician beside a stacked SRNE lithium battery tower",
+    caption: "SRNE lithium battery tower",
+  },
+  {
+    src: "/images/srne-showroom-wall.jpg",
+    alt: "Showroom wall of SRNE inverters and battery storage units",
+    caption: "SRNE equipment showroom",
+  },
 ];
 
 function Slide({ photo }: { photo: (typeof photos)[number] }) {

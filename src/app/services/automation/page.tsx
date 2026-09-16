@@ -15,6 +15,7 @@ const automationHeroImages = [
   { src: "/images/ats-panel.jpg", alt: "Automatic transfer switch panel" },
   { src: "/images/automation-factory-line.jpg", alt: "Automated control line" },
   { src: "/images/panelboard-tech.jpg", alt: "Technician wiring a distribution and breaker panel" },
+  { src: "/images/automation-panel-clamp-meter.jpg", alt: "Technician using a clamp meter to test a relay control panel" },
 ];
 
 export const metadata: Metadata = {
