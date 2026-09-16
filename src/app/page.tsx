@@ -34,7 +34,7 @@ export default function Home() {
             </Reveal>
             <Reveal variant="pop" delay={0.2}>
               <a
-                href="/contact"
+                href="/get-quote"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
               >
                 Request a Quote

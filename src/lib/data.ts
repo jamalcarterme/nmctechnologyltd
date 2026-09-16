@@ -79,14 +79,15 @@ export const services = [
     description:
       "Integrated technology solutions tailored to your specific needs, budget, and space requirements.",
     icon: "Wrench",
-    image: "/images/breaker-board.jpg",
+    image: "/images/installer-panel-2.jpg",
+    href: "/services",
   },
   {
     title: "Professional Support",
     description:
       "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
     icon: "ClipboardCheck",
-    image: "/images/control-tech.jpg",
+    image: "/images/inverter-room-deye-2.jpg",
   },
 ];
 
@@ -209,9 +210,25 @@ export const packageGroups: PackageGroup[] = [
     tiers: [
       {
         kva: "6KVA",
+        price: 7000000,
+        battery: "10KWH Lithium-Ion",
+        panels: "10 solar panels",
+        backup: "4–6 hours",
+        load: "1 x 1.5HP inverter AC, lights, 2–3 fans, 1 fridge, 1 freezer, sockets",
+      },
+      {
+        kva: "6KVA",
         price: 7500000,
         battery: "15KWH Lithium-Ion",
         panels: "12 solar panels",
+        backup: "4–6 hours",
+        load: "1 x 1.5HP inverter AC, lights, 2–3 fans, 1 fridge, 1 freezer, sockets",
+      },
+      {
+        kva: "6KVA",
+        price: 8500000,
+        battery: "20KWH Lithium-Ion",
+        panels: "16 solar panels",
         backup: "4–6 hours",
         load: "1 x 1.5HP inverter AC, lights, 2–3 fans, 1 fridge, 1 freezer, sockets",
       },
@@ -351,6 +368,14 @@ export const packageGroups: PackageGroup[] = [
         price: 35200000,
         battery: "75KWH Lithium-Ion",
         panels: "46 solar panels",
+        backup: "12–15 hours",
+        load: "3 x 2HP AC, 5 x 1.5HP AC, lights, 2 fridges, 2 freezers, pressure pump, elevator, sockets",
+      },
+      {
+        kva: "30KVA off-grid",
+        price: 45200000,
+        battery: "100KWH Lithium-Ion",
+        panels: "56 solar panels",
         backup: "12–15 hours",
         load: "3 x 2HP AC, 5 x 1.5HP AC, lights, 2 fridges, 2 freezers, pressure pump, elevator, sockets",
       },

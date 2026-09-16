@@ -161,7 +161,7 @@ export default function Hero() {
           className="mt-9 flex flex-col gap-3 sm:flex-row"
         >
           <a
-            href="/contact"
+            href="/get-quote"
             className="inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
           >
             Get a Quote

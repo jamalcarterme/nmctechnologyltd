@@ -32,7 +32,7 @@ export default function AutomationGrid() {
     <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
-          <Eyebrow>What we do</Eyebrow>
+          <Eyebrow>Intelligent Automation</Eyebrow>
           <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Automation That Works For You
           </h2>

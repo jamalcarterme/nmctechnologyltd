@@ -22,7 +22,7 @@ export default function CtaBar() {
           Do you want to start a project with {site.name.split(" ")[0]}?
         </p>
         <Link
-          href="/contact"
+          href="/get-quote"
           className="inline-flex shrink-0 items-center justify-center rounded-full bg-gold px-5 py-2.5 text-[13px] font-semibold text-ink transition-colors hover:bg-gold-light"
         >
           Get Started

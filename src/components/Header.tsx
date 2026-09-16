@@ -83,7 +83,7 @@ export default function Header() {
             {site.phones[0].display}
           </a>
           <Link
-            href="/contact"
+            href="/get-quote"
             className="inline-flex items-center justify-center rounded-full bg-gold px-5 py-2.5 text-[14px] font-semibold text-ink transition-colors hover:bg-gold-light"
           >
             Get Free Quote
@@ -126,7 +126,7 @@ export default function Header() {
                 <Phone className="h-4 w-4 text-gold" /> {site.phones[0].display}
               </a>
               <Link
-                href="/contact"
+                href="/get-quote"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-full bg-gold px-5 py-3 text-[15px] font-semibold text-ink"
               >

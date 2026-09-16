@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
 import ServiceGallery from "@/components/ServiceGallery";
+import ServicePricing from "@/components/ServicePricing";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -68,6 +69,43 @@ const automationInfo = [
     paragraphs: [
       "Beyond automation, we install surge protectors, lightning arrestors, earthing systems, and voltage regulators to shield your equipment from electrical faults. Smart load management systems prevent overload by intelligently prioritizing which appliances receive power during high demand.",
       "These systems work together to keep your electrical infrastructure safe, efficient, and reliable.",
+    ],
+  },
+];
+
+const automationPricingTiers = [
+  {
+    name: "Essential",
+    tagline: "Single automation function",
+    bestFor: "Best for one core need, e.g. ATS or generator auto-start",
+    features: [
+      "Automatic Transfer Switch (ATS) or generator automation",
+      "Manual override included",
+      "Basic surge protection",
+      "1-year workmanship warranty",
+    ],
+  },
+  {
+    name: "Standard",
+    tagline: "Multi-system automation",
+    bestFor: "Best for homes combining solar, generator & mains switching",
+    features: [
+      "ATS + generator automation combined",
+      "Load management & prioritization",
+      "Surge protection across panels",
+      "Remote monitoring options",
+    ],
+    popular: true,
+  },
+  {
+    name: "Advanced",
+    tagline: "Full property automation",
+    bestFor: "Best for estates & commercial sites with complex power setups",
+    features: [
+      "Complete power source switching automation",
+      "Custom control panel design & build",
+      "Advanced load management & scheduling",
+      "Priority support & maintenance plan",
     ],
   },
 ];
@@ -136,6 +174,15 @@ export default function AutomationPage() {
           className="bg-ink"
         />
 
+        <ServicePricing
+          id="pricing"
+          eyebrow="Automation Packages"
+          title="Automation Packages Sized by Complexity"
+          description="Pick the tier closest to your setup. Every package includes supply, professional installation and testing."
+          tiers={automationPricingTiers}
+          waIntro="Hi NMC Technology, I'm interested in a Smart Electrical Automation package."
+        />
+
         <Process />
 
         <section className="bg-charcoal py-16 md:py-20">
@@ -150,7 +197,7 @@ export default function AutomationPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 justify-center sm:flex-row">
                 <a
-                  href="/contact"
+                  href="/get-quote/automation"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
                   Request Free Assessment

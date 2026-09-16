@@ -144,7 +144,7 @@ export default function SolarPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 justify-center sm:flex-row">
                 <a
-                  href="/contact"
+                  href="/get-quote/solar"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
                   Request Free Quote

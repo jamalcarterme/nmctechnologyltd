@@ -1,12 +1,36 @@
 import Link from "next/link";
-import { BatteryCharging, Building2, SunMedium, Zap } from "lucide-react";
+import { Camera, SunMedium, Wifi, Zap } from "lucide-react";
 import { Container, Eyebrow, Reveal } from "./ui";
 
 const tiers = [
-  { label: "3.5KVA – 5KVA", note: "1–3 bedroom apartments", icon: BatteryCharging },
-  { label: "10KVA – 12KVA", note: "3–4 bedroom homes", icon: SunMedium },
-  { label: "15KVA – 24KVA", note: "Full off-grid independence", icon: Zap },
-  { label: "30KVA & Custom", note: "Estates & commercial sites", icon: Building2 },
+  {
+    label: "3.5KVA",
+    category: "Solar",
+    note: "Solar Power Installation",
+    icon: SunMedium,
+    href: "/packages",
+  },
+  {
+    label: "10KVA",
+    category: "CCTV",
+    note: "CCTV Camera Installation",
+    icon: Camera,
+    href: "/services/cctv#pricing",
+  },
+  {
+    label: "15KVA",
+    category: "Smart Electrical",
+    note: "Smart Electrical Automation",
+    icon: Zap,
+    href: "/services/automation#pricing",
+  },
+  {
+    label: "30KVA",
+    category: "Smart Home",
+    note: "Smart Home Automation",
+    icon: Wifi,
+    href: "/services/smart-home#pricing",
+  },
 ];
 
 export default function PackagesTeaser() {
@@ -28,14 +52,19 @@ export default function PackagesTeaser() {
             // Alternate animations for each tier
             const animationVariant = i % 2 === 0 ? "pop" : "scale";
             return (
-              <Reveal key={tier.label} delay={i * 0.08} className="flex flex-col items-center gap-3" variant={animationVariant}>
-                <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
-                  <tier.icon className="h-6 w-6" strokeWidth={1.75} />
-                </span>
-                <p className="text-[13px] font-semibold uppercase tracking-wide text-paper">
-                  {tier.label}
-                </p>
-                <p className="text-[13px] text-paper/55">{tier.note}</p>
+              <Reveal key={tier.label} delay={i * 0.08} className="flex" variant={animationVariant}>
+                <Link
+                  href={tier.href}
+                  className="group flex flex-col items-center gap-3 rounded-2xl p-3 transition-colors hover:bg-paper/5"
+                >
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-transform group-hover:scale-105">
+                    <tier.icon className="h-6 w-6" strokeWidth={1.75} />
+                  </span>
+                  <p className="text-[13px] font-semibold uppercase tracking-wide text-paper">
+                    {tier.label}
+                  </p>
+                  <p className="text-[13px] text-paper/55 group-hover:text-gold">{tier.note}</p>
+                </Link>
               </Reveal>
             );
           })}

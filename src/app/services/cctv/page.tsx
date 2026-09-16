@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
 import ServiceGallery from "@/components/ServiceGallery";
+import ServicePricing from "@/components/ServicePricing";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -59,6 +60,43 @@ const cctvInfo = [
     paragraphs: [
       "Once installed, your CCTV system connects to a secure DVR or NVR that stores recorded footage. You can monitor live feed from your phone or computer, receive alerts for motion detection, and review recordings from anywhere.",
       "We configure the system to your preferences and ensure you understand how to use all features before we leave your property.",
+    ],
+  },
+];
+
+const cctvPricingTiers = [
+  {
+    name: "Essential",
+    tagline: "2–4 cameras",
+    bestFor: "Best for small apartments & single entrances",
+    features: [
+      "HD dome or bullet cameras",
+      "NVR/DVR with local storage",
+      "Mobile app remote viewing",
+      "Motion alert notifications",
+    ],
+  },
+  {
+    name: "Standard",
+    tagline: "5–8 cameras",
+    bestFor: "Best for family homes & small offices",
+    features: [
+      "Mix of indoor & outdoor HD/IP cameras",
+      "Extended local storage (2–4 weeks)",
+      "Mobile app + multi-user access",
+      "Motion alerts & night vision coverage",
+    ],
+    popular: true,
+  },
+  {
+    name: "Advanced",
+    tagline: "9+ cameras",
+    bestFor: "Best for estates, commercial sites & multi-building properties",
+    features: [
+      "Full-property IP camera coverage",
+      "High-capacity storage or cloud backup",
+      "PTZ / solar-powered camera options",
+      "Backup power integration & priority support",
     ],
   },
 ];
@@ -127,6 +165,15 @@ export default function CCTVPage() {
           className="bg-ink"
         />
 
+        <ServicePricing
+          id="pricing"
+          eyebrow="CCTV Packages"
+          title="Security Packages Sized by Coverage"
+          description="Pick the tier closest to your property size. Every package includes supply, professional installation and setup of remote monitoring."
+          tiers={cctvPricingTiers}
+          waIntro="Hi NMC Technology, I'm interested in a CCTV package."
+        />
+
         <Process />
 
         <section className="bg-charcoal py-16 md:py-20">
@@ -141,7 +188,7 @@ export default function CCTVPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 justify-center sm:flex-row">
                 <a
-                  href="/contact"
+                  href="/get-quote/cctv"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
                   Request Free Assessment
