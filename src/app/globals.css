@@ -42,6 +42,17 @@
     opacity: 0.6;
   }
 
+  /* Fixed height for testimonials slider to prevent layout shift */
+  .testimonials-slider {
+    height: 280px;
+  }
+
+  @media (max-width: 640px) {
+    .testimonials-slider {
+      height: 320px;
+    }
+  }
+
   /* Diagonal chevron cut used at the base of inner-page heroes */
   .hero-chevron-cut {
     clip-path: polygon(0 0, 100% 0, 100% 88%, 50% 100%, 0 88%);

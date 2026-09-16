@@ -43,8 +43,8 @@ export default function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 relative h-80 md:h-64">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
+        <div className="testimonials-slider mt-14 relative">
+          <AnimatePresence initial={false} custom={direction} mode="popLayout">
             <motion.div
               key={current}
               custom={direction}
