@@ -24,7 +24,7 @@ export default function Faq({
   };
 
   return (
-    <section className={`${className} py-24 md:py-28`}>
+    <section id="faqs" className={`${className} py-24 md:py-28`}>
       <Container>
         <div className="max-w-xl">
           <Eyebrow>FAQs</Eyebrow>

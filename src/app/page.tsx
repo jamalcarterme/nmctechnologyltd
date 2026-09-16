@@ -1,9 +1,11 @@
 import AutomationGrid from "@/components/AutomationGrid";
+import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomeShowcase from "@/components/HomeShowcase";
 import PackagesTeaser from "@/components/PackagesTeaser";
+import Testimonials from "@/components/Testimonials";
 import { Container, Eyebrow, Reveal } from "@/components/ui";
 
 export default function Home() {
@@ -15,6 +17,8 @@ export default function Home() {
         <HomeShowcase />
         <PackagesTeaser />
         <AutomationGrid />
+        <BenefitsSection />
+        <Testimonials />
 
         <section className="bg-charcoal py-24 md:py-28 border-t border-paper/10">
           <Container className="text-center">

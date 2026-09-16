@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import MissionGrid from "@/components/MissionGrid";
+import NmcStory from "@/components/NmcStory";
 import PageHero from "@/components/PageHero";
 import WhoWeServe from "@/components/WhoWeServe";
 import { aboutFaqs, aboutInfo } from "@/lib/content";
@@ -28,6 +29,7 @@ export default function AboutPage() {
           subtitle="Engineering technology, powering possibilities — for homes and businesses across Nigeria."
         />
         <About />
+        <NmcStory />
         <InfoSection
           eyebrow="Our story"
           title="Why we install everything ourselves"

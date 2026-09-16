@@ -1,43 +1,88 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { testimonials } from "@/lib/data";
-import { Container, Eyebrow } from "./ui";
+import { Container, Reveal } from "./ui";
 
 export default function Testimonials() {
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection(1);
+      setCurrent((prev) => (prev + 1) % testimonials.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const slideVariants = {
+    enter: (dir: number) => ({
+      x: dir > 0 ? 1000 : -1000,
+      opacity: 0,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir: number) => ({
+      zIndex: 0,
+      x: dir > 0 ? -1000 : 1000,
+      opacity: 0,
+    }),
+  };
+
   return (
-    <section id="reviews" className="bg-ink py-24 md:py-28">
+    <section className="bg-gold py-24 md:py-28">
       <Container>
-        <div className="max-w-xl">
-          <Eyebrow>Client reviews</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
-            Trusted by the homes and businesses we power
+        <Reveal className="flex flex-col items-center text-center">
+          <h2 className="font-display text-[32px] font-semibold text-ink sm:text-[38px]">
+            Testimonials
           </h2>
+        </Reveal>
+
+        <div className="mt-14 relative h-80 md:h-64">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
+            <motion.div
+              key={current}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute inset-0 flex flex-col items-center justify-center px-4"
+            >
+              <div className="mx-auto max-w-2xl bg-white rounded-xl p-8 md:p-10 text-center">
+                <p className="text-[16px] md:text-[17px] leading-relaxed text-ink">
+                  {testimonials[current].text}
+                </p>
+                <p className="mt-6 font-semibold text-ink">
+                  {testimonials[current].name}
+                </p>
+                <p className="text-[14px] text-ink/60">
+                  {testimonials[current].company}
+                </p>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {testimonials.map((review, i) => (
-            <motion.figure
-              key={review.name}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "0px 0px -60px 0px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="rounded-2xl border border-paper/12 bg-paper/[0.03] p-8"
-            >
-              <div className="flex gap-1 text-gold">
-                {Array.from({ length: review.rating }).map((_, idx) => (
-                  <Star key={idx} className="h-4 w-4 fill-gold" />
-                ))}
-              </div>
-              <blockquote className="mt-5 text-[17px] leading-relaxed text-paper/85">
-                &ldquo;{review.text}&rdquo;
-              </blockquote>
-              <figcaption className="mt-6 text-[14px] font-semibold text-paper/50">
-                {review.name} · Google Review
-              </figcaption>
-            </motion.figure>
+        <div className="mt-10 flex items-center justify-center gap-2">
+          {testimonials.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setDirection(i > current ? 1 : -1);
+                setCurrent(i);
+              }}
+              aria-label={`Go to testimonial ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${
+                i === current ? "w-6 bg-ink/60" : "w-2 bg-ink/25"
+              }`}
+            />
           ))}
         </div>
       </Container>

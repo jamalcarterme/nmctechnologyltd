@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
@@ -7,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import Packages from "@/components/Packages";
 import QuoteForm from "@/components/QuoteForm";
 import { Container, Eyebrow } from "@/components/ui";
-import { packagesFaqs, packagesInfo } from "@/lib/content";
+import { packagesInfo } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Packages & Pricing",
@@ -64,11 +63,6 @@ export default function PackagesPage() {
           title="How to choose the right package for your property"
           blocks={packagesInfo}
           className="bg-ink"
-        />
-        <Faq
-          title="Packages & pricing FAQs"
-          items={packagesFaqs}
-          className="bg-charcoal"
         />
       </main>
       <Footer />
