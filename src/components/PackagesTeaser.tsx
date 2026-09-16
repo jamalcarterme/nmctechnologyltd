@@ -14,9 +14,9 @@ export default function PackagesTeaser() {
     <section className="border-t border-paper/10 bg-charcoal py-24 md:py-28">
       <Container className="flex flex-col items-center text-center">
         <Reveal className="flex flex-col items-center text-center">
-          <Eyebrow>Packages &amp; pricing</Eyebrow>
+          <Eyebrow>Our packages</Eyebrow>
           <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-            Solar Packages For Every Property
+            Packages For Every Property
           </h2>
           <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-paper/65">
             Every tier includes the inverter, battery, panels and professional installation. Compare capacity, backup time and pricing on the packages page.

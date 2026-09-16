@@ -14,9 +14,9 @@ export default function Packages() {
     <section id="packages" className="bg-ink py-24 md:py-28">
       <Container>
         <div className="max-w-xl">
-          <Eyebrow>Packages & pricing</Eyebrow>
+          <Eyebrow>Our packages</Eyebrow>
           <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
-            Transparent solar packages, sized by capacity
+            Packages Sized by Capacity
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/60">
             Pick your inverter capacity to compare battery size, panel count

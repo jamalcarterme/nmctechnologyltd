@@ -11,23 +11,26 @@ type Slide = (typeof services)[number];
 
 function Card({ service }: { service: Slide }) {
   return (
-    <div className="px-3">
-      <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72">
+    <Link
+      href={service.href || "/services"}
+      className="px-3 block group cursor-pointer transition-all hover:opacity-80"
+    >
+      <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72 group-hover:border-gold/50 transition-colors">
         <Image
           src={service.image}
           alt={service.title}
           fill
           sizes="(max-width: 640px) 100vw, 50vw"
-          className="object-cover"
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
         />
       </div>
-      <h3 className="font-display mt-6 text-[20px] font-semibold text-paper">
+      <h3 className="font-display mt-6 text-[20px] font-semibold text-paper group-hover:text-gold transition-colors">
         {service.title}
       </h3>
       <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
         {service.description}
       </p>
-    </div>
+    </Link>
   );
 }
 
@@ -98,7 +101,7 @@ export default function HomeShowcase() {
   useEffect(() => {
     const id = setInterval(() => {
       setDot((i) => (i + 1) % services.length);
-    }, 800);
+    }, 3000);
     return () => clearInterval(id);
   }, []);
 
@@ -123,12 +126,12 @@ export default function HomeShowcase() {
 
         {/* Desktop / tablet: two cards visible, sliding filmstrip */}
         <div className="mt-14 hidden sm:block">
-          <SlidingTrack visible={2} intervalMs={800} />
+          <SlidingTrack visible={2} intervalMs={3000} />
         </div>
 
         {/* Mobile: one card visible, sliding filmstrip, same fast cadence */}
         <div className="mt-12 sm:hidden">
-          <SlidingTrack visible={1} intervalMs={800} />
+          <SlidingTrack visible={1} intervalMs={3000} />
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-2">
