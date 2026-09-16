@@ -6,7 +6,8 @@ import Hero from "@/components/Hero";
 import HomeShowcase from "@/components/HomeShowcase";
 import PackagesTeaser from "@/components/PackagesTeaser";
 import Testimonials from "@/components/Testimonials";
-import { Container, Eyebrow, Reveal } from "@/components/ui";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import { Container, Reveal } from "@/components/ui";
 
 export default function Home() {
   return (
@@ -15,9 +16,10 @@ export default function Home() {
       <main>
         <Hero />
         <HomeShowcase />
+        <BenefitsSection />
         <PackagesTeaser />
         <AutomationGrid />
-        <BenefitsSection />
+        <WhyChooseUs />
         <Testimonials />
 
         <section className="bg-charcoal py-24 md:py-28 border-t border-paper/10">
