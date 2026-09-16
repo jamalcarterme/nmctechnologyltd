@@ -4,6 +4,7 @@ import { Mail, MapPin, Phone, PhoneCall } from "lucide-react";
 import { nav, site, waLink } from "@/lib/data";
 import { Container, Reveal } from "./ui";
 import TikTokIcon from "./TikTokIcon";
+import InstagramIcon from "./InstagramIcon";
 
 export default function Footer() {
   return (
@@ -89,6 +90,15 @@ export default function Footer() {
               className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper transition-colors hover:border-gold hover:text-gold"
             >
               <TikTokIcon className="h-5 w-5" />
+            </a>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on Instagram"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper transition-colors hover:border-gold hover:text-gold"
+            >
+              <InstagramIcon className="h-5 w-5" />
             </a>
           </div>
         </Reveal>

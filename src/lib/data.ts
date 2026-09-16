@@ -12,6 +12,7 @@ export const site = {
   address: "Plot 4A, Block XIV, Opposite Unipetrol Estate, Satellite Town, Lagos, Nigeria",
   addressShort: "Satellite Town, Lagos",
   tiktok: "https://www.tiktok.com/@nmc_solar.ng_1",
+  instagram: "https://www.instagram.com/nmc_solar.ng?stkn=MXVrOWJ5dWZrZ2gwZQ%3D%3D&utm_source=qr",
   email: "nmctechnologi@gmail.com",
 };
 
