@@ -1,5 +1,5 @@
 import { Award, HeartHandshake, Target, Eye } from "lucide-react";
-import { Container, Eyebrow } from "./ui";
+import { Container, Eyebrow, Reveal } from "./ui";
 
 const items = [
   {
@@ -36,8 +36,8 @@ export default function MissionGrid() {
         </div>
 
         <div className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
-            <div key={item.title} className="flex flex-col items-center text-center">
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.08} className="flex flex-col items-center text-center">
               <span className="flex h-24 w-24 items-center justify-center rounded-full border border-paper/25 text-paper">
                 <item.icon className="h-8 w-8" strokeWidth={1.5} />
               </span>
@@ -47,7 +47,7 @@ export default function MissionGrid() {
               <p className="mt-3 text-[15px] leading-relaxed text-paper/65">
                 {item.text}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

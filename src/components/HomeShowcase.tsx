@@ -1,85 +1,120 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { services } from "@/lib/data";
 import { Container, Eyebrow } from "./ui";
 
-function chunk<T>(arr: T[], size: number): T[][] {
-  const out: T[][] = [];
-  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
-  return out;
-}
-
 export default function HomeShowcase() {
-  const slides = useMemo(() => chunk(services, 2), []);
+  const total = services.length;
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % slides.length);
-    }, 5500);
+      setIndex((i) => (i + 1) % total);
+    }, 4200);
     return () => clearInterval(id);
-  }, [slides.length]);
+  }, [total]);
 
-  const slide = slides[index];
+  const a = services[index];
+  const b = services[(index + 1) % total];
 
   return (
     <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
       <Container>
-        <div className="flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex flex-col items-center text-center"
+        >
           <Eyebrow>What we do</Eyebrow>
           <h2 className="balance mt-4 max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
-            Manage Every Part of Your Property
+            Manage Everything
           </h2>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-paper/65">
-            From backup power to security and automation, our technicians handle the full scope of work — designed, installed and supported by one team.
+            The technology we install lets you micromanage power, security, and comfort across your entire property from anywhere in the world.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="mt-14 min-h-[420px] sm:min-h-[440px]">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.45, ease: "easeOut" }}
-              className="grid gap-8 sm:grid-cols-2"
-            >
-              {slide.map((service) => (
-                <div key={service.title}>
-                  <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      className="object-cover"
-                    />
+        {/* Desktop / tablet: two cards visible, sliding one at a time */}
+        <div className="mt-14 hidden sm:block">
+          <div className="min-h-[420px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -24 }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="grid gap-8 sm:grid-cols-2"
+              >
+                {[a, b].map((service) => (
+                  <div key={service.title}>
+                    <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
+                    <h3 className="font-display mt-6 text-[20px] font-semibold text-paper">
+                      {service.title}
+                    </h3>
+                    <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
+                      {service.description}
+                    </p>
                   </div>
-                  <h3 className="font-display mt-6 text-[20px] font-semibold text-paper">
-                    {service.title}
-                  </h3>
-                  <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
-                    {service.description}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
-          </AnimatePresence>
+                ))}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
-        <div className="mt-10 flex items-center justify-center gap-2.5">
-          {slides.map((_, i) => (
+        {/* Mobile: single card, fast auto-advancing grid */}
+        <div className="mt-12 sm:hidden">
+          <div className="min-h-[360px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+              >
+                <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-paper/10">
+                  <Image
+                    src={a.image}
+                    alt={a.title}
+                    fill
+                    sizes="100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <h3 className="font-display mt-5 text-[19px] font-semibold text-paper">
+                  {a.title}
+                </h3>
+                <p className="mt-2 text-[14px] leading-relaxed text-paper/65">
+                  {a.description}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="mt-10 flex items-center justify-center gap-2">
+          {services.map((service, i) => (
             <button
-              key={i}
+              key={service.title}
               aria-label={`Show slide ${i + 1}`}
               onClick={() => setIndex(i)}
-              className={`h-2.5 rounded-full transition-all ${
-                i === index ? "w-7 bg-gold" : "w-2.5 bg-paper/25 hover:bg-paper/40"
+              className={`h-2 rounded-full transition-all ${
+                i === index ? "w-6 bg-gold" : "w-2 bg-paper/25 hover:bg-paper/40"
               }`}
             />
           ))}

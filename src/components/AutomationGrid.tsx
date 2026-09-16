@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ClipboardCheck, Wrench, Zap } from "lucide-react";
-import { Container, Eyebrow } from "./ui";
+import { Container, Eyebrow, Reveal } from "./ui";
 
 const items = [
   {
@@ -27,16 +27,16 @@ export default function AutomationGrid() {
   return (
     <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
       <Container>
-        <div className="flex flex-col items-center text-center">
+        <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Intelligent automation</Eyebrow>
           <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
             Built To Run Without You Thinking About It
           </h2>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-10 sm:grid-cols-3">
-          {items.map((item) => (
-            <div key={item.title} className="text-center">
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={i * 0.1} className="text-center">
               <div className="relative mx-auto h-44 w-full overflow-hidden rounded-2xl">
                 <Image
                   src={item.image}
@@ -55,7 +55,7 @@ export default function AutomationGrid() {
               <p className="mx-auto mt-3 max-w-xs text-[15px] leading-relaxed text-paper/65">
                 {item.text}
               </p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>
