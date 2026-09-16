@@ -19,8 +19,10 @@ export default function ServiceCategories() {
         <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
           {serviceCategories.map((item, i) => {
             const Icon = icons[item.icon];
+            // Alternate between pop and slide-up animations
+            const animationVariant = i % 2 === 0 ? "pop" : "slide-up";
             return (
-              <Reveal key={item.label} delay={i * 0.08}>
+              <Reveal key={item.label} delay={i * 0.08} variant={animationVariant}>
                 <Link
                   href={item.href || "#"}
                   className="group flex flex-col items-center text-center transition-all hover:scale-105"

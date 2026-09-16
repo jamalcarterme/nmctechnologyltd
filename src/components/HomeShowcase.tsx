@@ -98,7 +98,7 @@ export default function HomeShowcase() {
   useEffect(() => {
     const id = setInterval(() => {
       setDot((i) => (i + 1) % services.length);
-    }, 1000);
+    }, 800);
     return () => clearInterval(id);
   }, []);
 
@@ -123,12 +123,12 @@ export default function HomeShowcase() {
 
         {/* Desktop / tablet: two cards visible, sliding filmstrip */}
         <div className="mt-14 hidden sm:block">
-          <SlidingTrack visible={2} intervalMs={1000} />
+          <SlidingTrack visible={2} intervalMs={800} />
         </div>
 
         {/* Mobile: one card visible, sliding filmstrip, same fast cadence */}
         <div className="mt-12 sm:hidden">
-          <SlidingTrack visible={1} intervalMs={1000} />
+          <SlidingTrack visible={1} intervalMs={800} />
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-2">

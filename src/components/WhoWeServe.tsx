@@ -31,16 +31,20 @@ export default function WhoWeServe() {
         </div>
 
         <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {segments.map((segment, i) => (
-            <Reveal key={segment.title} delay={i * 0.08} className="text-center sm:text-left">
-              <h3 className="font-display text-[18px] font-semibold text-paper">
-                {segment.title}
-              </h3>
-              <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
-                {segment.text}
-              </p>
-            </Reveal>
-          ))}
+          {segments.map((segment, i) => {
+            // Alternate animations for each segment
+            const animationVariant = i % 2 === 0 ? "slide-up" : "fade";
+            return (
+              <Reveal key={segment.title} delay={i * 0.08} className="text-center sm:text-left" variant={animationVariant}>
+                <h3 className="font-display text-[18px] font-semibold text-paper">
+                  {segment.title}
+                </h3>
+                <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
+                  {segment.text}
+                </p>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>

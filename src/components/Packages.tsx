@@ -54,9 +54,14 @@ export default function Packages() {
             <div className="mt-6 grid gap-6 lg:grid-cols-3">
               {group.tiers.map((tier, i) => {
                 const popular = group.tiers.length === 3 && i === 1;
+                const animationVariant = i % 3 === 0 ? "scale" : i % 3 === 1 ? "pop" : "slide-up";
                 return (
-                  <div
+                  <motion.div
                     key={`${tier.kva}-${tier.price}`}
+                    initial={animationVariant === "scale" ? { opacity: 0, scale: 0.95 } : animationVariant === "pop" ? { opacity: 0, scale: 0.9 } : { opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    viewport={{ once: true, margin: "0px 0px -80px 0px" }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: i * 0.1 }}
                     className={`relative flex flex-col rounded-2xl border p-7 ${
                       popular
                         ? "border-gold bg-gradient-to-b from-gold/[0.08] to-transparent"
@@ -114,7 +119,7 @@ export default function Packages() {
                     >
                       Get this package
                     </a>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>

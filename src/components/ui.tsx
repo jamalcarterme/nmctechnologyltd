@@ -8,15 +8,38 @@ export function Reveal({
   children,
   className = "",
   delay = 0,
+  variant = "slide-up",
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: "slide-up" | "pop" | "fade" | "scale";
 }) {
+  const variants = {
+    "slide-up": {
+      initial: { opacity: 0, y: 20 },
+      whileInView: { opacity: 1, y: 0 },
+    },
+    pop: {
+      initial: { opacity: 0, scale: 0.9 },
+      whileInView: { opacity: 1, scale: 1 },
+    },
+    fade: {
+      initial: { opacity: 0 },
+      whileInView: { opacity: 1 },
+    },
+    scale: {
+      initial: { opacity: 0, scale: 0.95 },
+      whileInView: { opacity: 1, scale: 1 },
+    },
+  };
+
+  const selected = variants[variant];
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={selected.initial}
+      whileInView={selected.whileInView}
       viewport={{ once: true, margin: "0px 0px -80px 0px" }}
       transition={{ duration: 0.6, ease: "easeOut", delay }}
       className={className}

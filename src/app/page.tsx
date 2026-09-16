@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import HomeShowcase from "@/components/HomeShowcase";
 import PackagesTeaser from "@/components/PackagesTeaser";
-import ServiceCategories from "@/components/ServiceCategories";
 import { Container, Eyebrow, Reveal } from "@/components/ui";
 
 export default function Home() {
@@ -14,7 +13,6 @@ export default function Home() {
       <main>
         <Hero />
         <HomeShowcase />
-        <ServiceCategories />
         <PackagesTeaser />
         <AutomationGrid />
 
@@ -28,6 +26,8 @@ export default function Home() {
               <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-paper/70">
                 Whether you are planning a solar installation, upgrading your electrical system, securing your property with CCTV, or building a smart home, NMC Technology is ready to help. Explore our services and packages pages for full details.
               </p>
+            </Reveal>
+            <Reveal variant="pop" delay={0.2}>
               <a
                 href="/contact"
                 className="mt-8 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"

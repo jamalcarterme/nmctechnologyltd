@@ -24,17 +24,21 @@ export default function PackagesTeaser() {
         </Reveal>
 
         <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-4">
-          {tiers.map((tier, i) => (
-            <Reveal key={tier.label} delay={i * 0.08} className="flex flex-col items-center gap-3">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
-                <tier.icon className="h-6 w-6" strokeWidth={1.75} />
-              </span>
-              <p className="text-[13px] font-semibold uppercase tracking-wide text-paper">
-                {tier.label}
-              </p>
-              <p className="text-[13px] text-paper/55">{tier.note}</p>
-            </Reveal>
-          ))}
+          {tiers.map((tier, i) => {
+            // Alternate animations for each tier
+            const animationVariant = i % 2 === 0 ? "pop" : "scale";
+            return (
+              <Reveal key={tier.label} delay={i * 0.08} className="flex flex-col items-center gap-3" variant={animationVariant}>
+                <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
+                  <tier.icon className="h-6 w-6" strokeWidth={1.75} />
+                </span>
+                <p className="text-[13px] font-semibold uppercase tracking-wide text-paper">
+                  {tier.label}
+                </p>
+                <p className="text-[13px] text-paper/55">{tier.note}</p>
+              </Reveal>
+            );
+          })}
         </div>
 
         <Link

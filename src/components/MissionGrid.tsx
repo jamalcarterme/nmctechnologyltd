@@ -36,19 +36,24 @@ export default function MissionGrid() {
         </div>
 
         <div className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.08} className="flex flex-col items-center text-center">
-              <span className="flex h-24 w-24 items-center justify-center rounded-full border border-paper/25 text-paper">
-                <item.icon className="h-8 w-8" strokeWidth={1.5} />
-              </span>
-              <h3 className="font-display mt-6 text-[15px] font-semibold uppercase tracking-wide text-paper">
-                {item.title}
-              </h3>
-              <p className="mt-3 text-[15px] leading-relaxed text-paper/65">
-                {item.text}
-              </p>
-            </Reveal>
-          ))}
+          {items.map((item, i) => {
+            // Cycle through different animations
+            const variants = ["pop", "scale", "slide-up", "fade"];
+            const animationVariant = variants[i % variants.length] as "pop" | "scale" | "slide-up" | "fade";
+            return (
+              <Reveal key={item.title} delay={i * 0.08} className="flex flex-col items-center text-center" variant={animationVariant}>
+                <span className="flex h-24 w-24 items-center justify-center rounded-full border border-paper/25 text-paper">
+                  <item.icon className="h-8 w-8" strokeWidth={1.5} />
+                </span>
+                <h3 className="font-display mt-6 text-[15px] font-semibold uppercase tracking-wide text-paper">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-paper/65">
+                  {item.text}
+                </p>
+              </Reveal>
+            );
+          })}
         </div>
       </Container>
     </section>
