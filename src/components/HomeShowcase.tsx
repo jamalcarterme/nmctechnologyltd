@@ -1,25 +1,106 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { services } from "@/lib/data";
 import { Container, Eyebrow } from "./ui";
 
-export default function HomeShowcase() {
+type Slide = (typeof services)[number];
+
+function Card({ service }: { service: Slide }) {
+  return (
+    <div className="px-3">
+      <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72">
+        <Image
+          src={service.image}
+          alt={service.title}
+          fill
+          sizes="(max-width: 640px) 100vw, 50vw"
+          className="object-cover"
+        />
+      </div>
+      <h3 className="font-display mt-6 text-[20px] font-semibold text-paper">
+        {service.title}
+      </h3>
+      <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
+        {service.description}
+      </p>
+    </div>
+  );
+}
+
+/** A continuously sliding filmstrip carousel. Shows `visible` cards at a
+ * time and shifts left by one card every `intervalMs`, looping seamlessly. */
+function SlidingTrack({
+  visible,
+  intervalMs,
+}: {
+  visible: 1 | 2;
+  intervalMs: number;
+}) {
   const total = services.length;
+  const extended = [...services, ...services.slice(0, visible)];
   const [index, setIndex] = useState(0);
+  const [animate, setAnimate] = useState(true);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const id = setInterval(() => {
-      setIndex((i) => (i + 1) % total);
-    }, 4200);
+      setIndex((i) => i + 1);
+    }, intervalMs);
     return () => clearInterval(id);
-  }, [total]);
+  }, [intervalMs]);
 
-  const a = services[index];
-  const b = services[(index + 1) % total];
+  useEffect(() => {
+    if (index === total) {
+      // Landed on the cloned card(s) — after the slide finishes, snap
+      // back to the real first card with no transition, then restore it.
+      timeoutRef.current = setTimeout(() => {
+        setAnimate(false);
+        setIndex(0);
+      }, 650);
+    } else if (!animate) {
+      const raf = requestAnimationFrame(() => setAnimate(true));
+      return () => cancelAnimationFrame(raf);
+    }
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [index]);
+
+  const step = 100 / visible;
+
+  return (
+    <div className="overflow-hidden">
+      <div
+        className="flex"
+        style={{
+          transform: `translateX(-${index * step}%)`,
+          transition: animate ? "transform 650ms cubic-bezier(0.22,1,0.36,1)" : "none",
+        }}
+      >
+        {extended.map((service, i) => (
+          <div key={`${service.title}-${i}`} style={{ flex: `0 0 ${step}%` }}>
+            <Card service={service} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function HomeShowcase() {
+  const [dot, setDot] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setDot((i) => (i + 1) % services.length);
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
@@ -40,81 +121,23 @@ export default function HomeShowcase() {
           </p>
         </motion.div>
 
-        {/* Desktop / tablet: two cards visible, sliding one at a time */}
+        {/* Desktop / tablet: two cards visible, sliding filmstrip */}
         <div className="mt-14 hidden sm:block">
-          <div className="min-h-[420px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 24 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -24 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="grid gap-8 sm:grid-cols-2"
-              >
-                {[a, b].map((service) => (
-                  <div key={service.title}>
-                    <div className="relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-                    <h3 className="font-display mt-6 text-[20px] font-semibold text-paper">
-                      {service.title}
-                    </h3>
-                    <p className="mt-2.5 text-[15px] leading-relaxed text-paper/65">
-                      {service.description}
-                    </p>
-                  </div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          <SlidingTrack visible={2} intervalMs={1000} />
         </div>
 
-        {/* Mobile: single card, fast auto-advancing grid */}
+        {/* Mobile: one card visible, sliding filmstrip, same fast cadence */}
         <div className="mt-12 sm:hidden">
-          <div className="min-h-[360px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
-              >
-                <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-paper/10">
-                  <Image
-                    src={a.image}
-                    alt={a.title}
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <h3 className="font-display mt-5 text-[19px] font-semibold text-paper">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-[14px] leading-relaxed text-paper/65">
-                  {a.description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          <SlidingTrack visible={1} intervalMs={1000} />
         </div>
 
         <div className="mt-10 flex items-center justify-center gap-2">
           {services.map((service, i) => (
-            <button
+            <span
               key={service.title}
-              aria-label={`Show slide ${i + 1}`}
-              onClick={() => setIndex(i)}
+              aria-hidden="true"
               className={`h-2 rounded-full transition-all ${
-                i === index ? "w-6 bg-gold" : "w-2 bg-paper/25 hover:bg-paper/40"
+                i === dot ? "w-6 bg-gold" : "w-2 bg-paper/25"
               }`}
             />
           ))}

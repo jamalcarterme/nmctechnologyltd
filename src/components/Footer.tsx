@@ -86,9 +86,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="NMC Technology on TikTok"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-paper/15 text-paper/70 transition-colors hover:border-gold/50 hover:text-gold"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper transition-colors hover:border-gold hover:text-gold"
             >
-              <TikTokIcon className="h-4 w-4" />
+              <TikTokIcon className="h-5 w-5" />
             </a>
           </div>
         </Reveal>
