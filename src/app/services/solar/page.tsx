@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Packages from "@/components/Packages";
 import Process from "@/components/Process";
+import ServiceGallery from "@/components/ServiceGallery";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -116,6 +117,8 @@ export default function SolarPage() {
             </div>
           </Container>
         </section>
+
+        <ServiceGallery images={solarHeroImages} className="border-t border-paper/10" />
 
         <InfoSection
           eyebrow="Solar power, done right"

@@ -5,9 +5,16 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
+import ServiceGallery from "@/components/ServiceGallery";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+
+const cctvGalleryImages = [
+  { src: "/images/cctv-dome-camera.jpg", alt: "Purevision indoor dome CCTV camera" },
+  { src: "/images/cctv-solar-ptz-camera.jpg", alt: "Solar-powered PTZ security camera" },
+  { src: "/images/cctv-solar-bullet-camera.jpg", alt: "Solar-powered outdoor bullet camera" },
+];
 
 export const metadata: Metadata = {
   title: "CCTV Camera Installation | NMC Technology",
@@ -107,6 +114,8 @@ export default function CCTVPage() {
             </div>
           </Container>
         </section>
+
+        <ServiceGallery images={cctvGalleryImages} className="border-t border-paper/10" />
 
         <InfoSection
           eyebrow="CCTV Security"
