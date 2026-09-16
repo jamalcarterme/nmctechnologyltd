@@ -11,11 +11,11 @@ const tiers = [
 
 export default function PackagesTeaser() {
   return (
-    <section className="border-t border-paper/10 bg-charcoal py-24 md:py-28">
+    <section className="border-t border-paper/10 bg-charcoal py-16 md:py-20">
       <Container className="flex flex-col items-center text-center">
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Our packages</Eyebrow>
-          <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
+          <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Packages For Every Need
           </h2>
           <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-paper/65">

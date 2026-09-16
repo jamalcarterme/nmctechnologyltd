@@ -22,10 +22,10 @@ export default function Home() {
         <WhyChooseUs />
         <Testimonials />
 
-        <section className="bg-charcoal py-24 md:py-28 border-t border-paper/10">
+        <section className="bg-charcoal py-16 md:py-20 border-t border-paper/10">
           <Container className="text-center">
             <Reveal>
-              <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+              <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
                 Ready to get started?
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-paper/70">

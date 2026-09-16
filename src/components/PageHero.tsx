@@ -16,7 +16,7 @@ export default function PageHero({
   children?: ReactNode;
 }) {
   return (
-    <section className="hero-chevron-cut relative flex min-h-[440px] items-center justify-center overflow-hidden bg-ink pb-24 pt-32 text-center sm:min-h-[500px] md:pt-40">
+    <section className="hero-chevron-cut relative flex min-h-[360px] items-center justify-center overflow-hidden bg-ink pb-16 pt-24 text-center sm:min-h-[400px] md:pt-28">
       <Image
         src={image}
         alt=""

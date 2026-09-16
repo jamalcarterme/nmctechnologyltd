@@ -17,11 +17,11 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-charcoal py-24 md:py-28">
+    <section className="bg-charcoal py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Why choose us</Eyebrow>
-          <h2 className="balance mt-4 max-w-2xl text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 max-w-2xl text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Why Choose NMC?
           </h2>
         </Reveal>

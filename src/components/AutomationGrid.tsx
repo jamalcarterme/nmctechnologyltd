@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Lightbulb, MonitorPlay, ShieldCheck } from "lucide-react";
 import { Container, Eyebrow, Reveal } from "./ui";
 
@@ -8,28 +9,31 @@ const items = [
     video:
       "https://ritzmansmarthomes.com/wp-content/uploads/2022/01/FIBARO_Home_Automation_System_Your_home_Your_Imagination.gif",
     icon: Lightbulb,
+    href: "/services/smart-home",
   },
   {
     title: "Media Automation",
     text: "TVs, speakers, and streaming devices wired into one system, so your entire entertainment setup turns on and adjusts together, on command.",
     video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/ezgif.com-gif-maker.gif",
     icon: MonitorPlay,
+    href: "/services/smart-home",
   },
   {
     title: "Outdoor Automation",
     text: "Live camera feeds, gate access, and outdoor lighting monitored and controlled remotely, so your property stays secure day and night.",
     video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/IMG_5287.gif",
     icon: ShieldCheck,
+    href: "/services/cctv",
   },
 ];
 
 export default function AutomationGrid() {
   return (
-    <section className="border-t border-paper/10 bg-ink py-20 md:py-24">
+    <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>What we do</Eyebrow>
-          <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
+          <h2 className="balance mt-4 max-w-xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Automation That Works For You
           </h2>
         </Reveal>
@@ -41,14 +45,17 @@ export default function AutomationGrid() {
             const animationVariant = variants[i % variants.length] as "scale" | "slide-up" | "pop";
             return (
               <Reveal key={item.title} delay={i * 0.1} variant={animationVariant}>
-                <div className="overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03]">
-                  <div className="relative h-48 w-full bg-charcoal">
+                <Link
+                  href={item.href}
+                  className="group block overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] transition-colors hover:border-gold/40 cursor-pointer"
+                >
+                  <div className="relative h-48 w-full overflow-hidden bg-charcoal">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={item.video}
                       alt={item.title}
                       loading="lazy"
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink/70 text-gold shadow-[0_6px_16px_-4px_rgba(0,0,0,0.5)] backdrop-blur-sm">
                       <item.icon className="h-5 w-5" strokeWidth={1.75} />
@@ -62,7 +69,7 @@ export default function AutomationGrid() {
                       {item.text}
                     </p>
                   </div>
-                </div>
+                </Link>
               </Reveal>
             );
           })}

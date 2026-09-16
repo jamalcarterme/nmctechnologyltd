@@ -11,11 +11,11 @@ export default function Packages() {
   const group = packageGroups.find((g) => g.id === active) ?? packageGroups[0];
 
   return (
-    <section id="packages" className="bg-ink py-24 md:py-28">
+    <section id="packages" className="bg-ink py-16 md:py-20">
       <Container>
         <div className="max-w-xl">
           <Eyebrow>Our packages</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Packages Sized by Capacity
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/60">

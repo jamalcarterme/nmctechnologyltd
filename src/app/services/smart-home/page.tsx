@@ -33,9 +33,17 @@ const smartHomeInfo = [
       "Automated curtains",
       "Smart sockets",
       "Home security automation",
+      "Home theater & entertainment control",
       "Remote control systems",
       "Energy management",
       "Customized home automation",
+    ],
+  },
+  {
+    heading: "Media and entertainment automation",
+    paragraphs: [
+      "TVs, sound systems, and streaming devices can be brought into the same automation system as your lighting and climate control. One tap on your phone or a single scene button turns on the TV, dims the lights, and starts your sound system together, instead of juggling three remotes.",
+      "This works alongside your existing entertainment equipment, so there's no need to replace TVs or speakers — we integrate what you already own into a system that's simpler to use every day.",
     ],
   },
   {

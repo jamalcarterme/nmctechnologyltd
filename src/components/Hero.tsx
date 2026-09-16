@@ -84,7 +84,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-[520px] items-center overflow-hidden bg-ink pb-16 pt-28 sm:min-h-[560px] md:min-h-[600px] md:pb-20 md:pt-32"
+      className="relative flex min-h-[440px] items-center overflow-hidden bg-ink pb-12 pt-24 sm:min-h-[480px] md:min-h-[520px] md:pb-16 md:pt-28"
     >
       <div className="pointer-events-none absolute inset-0">
         <img
@@ -128,7 +128,7 @@ export default function Hero() {
           custom={1}
           initial="hidden"
           animate="show"
-          className="balance max-w-3xl mt-3 text-[34px] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[44px] lg:text-[56px]"
+          className="balance max-w-3xl mt-3 text-[34px] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[40px] lg:text-[48px]"
         >
           Turning Ideas Into Reality
         </motion.h1>

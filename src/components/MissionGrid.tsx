@@ -26,11 +26,11 @@ const items = [
 
 export default function MissionGrid() {
   return (
-    <section className="bg-ink py-24 md:py-28">
+    <section className="bg-ink py-16 md:py-20">
       <Container>
         <div className="flex flex-col items-center text-center">
           <Eyebrow>What drives us</Eyebrow>
-          <h2 className="balance mt-4 text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
+          <h2 className="balance mt-4 text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Mission &amp; Values
           </h2>
         </div>

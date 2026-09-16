@@ -28,7 +28,7 @@ export default function PackagesPage() {
         />
         <Packages />
 
-        <section className="bg-charcoal py-24 md:py-28">
+        <section className="bg-charcoal py-16 md:py-20">
           <Container className="grid gap-12 lg:grid-cols-[1fr_1fr]">
             <div>
               <Eyebrow>Before you choose</Eyebrow>

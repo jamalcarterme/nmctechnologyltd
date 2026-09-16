@@ -32,10 +32,10 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-gold py-24 md:py-28">
+    <section className="bg-gold py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
-          <h2 className="font-display text-[32px] font-semibold text-ink sm:text-[38px]">
+          <h2 className="font-display text-[32px] font-semibold text-ink sm:text-[34px]">
             Testimonials
           </h2>
         </Reveal>

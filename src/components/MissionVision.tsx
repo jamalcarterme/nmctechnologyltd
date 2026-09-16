@@ -2,7 +2,7 @@ import { Container, Eyebrow } from "./ui";
 
 export default function MissionVision() {
   return (
-    <section className="bg-ink py-24 md:py-28">
+    <section className="bg-ink py-16 md:py-20">
       <Container className="grid gap-14 md:grid-cols-2">
         <div>
           <Eyebrow>Our mission</Eyebrow>

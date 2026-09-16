@@ -96,13 +96,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="NMC Technology on Instagram"
-              className="flex h-10 w-10 items-center justify-center rounded-full text-white shadow-sm transition-transform hover:scale-105"
-              style={{
-                background:
-                  "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
-              }}
+              className="flex h-10 w-10 items-center justify-center transition-transform hover:scale-105"
             >
-              <InstagramIcon className="h-5 w-5" />
+              <InstagramIcon className="h-9 w-9" />
             </a>
           </div>
         </Reveal>

@@ -25,7 +25,7 @@ const points = [
 
 export default function About() {
   return (
-    <section id="about" className="bg-ink py-24 md:py-28">
+    <section id="about" className="bg-ink py-16 md:py-20">
       <Container className="grid gap-14 lg:grid-cols-2 lg:items-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
@@ -45,7 +45,7 @@ export default function About() {
 
         <div>
           <Eyebrow>About NMC Technology</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Engineering Technology. Powering Possibilities.
           </h2>
           <p className="mt-5 text-[16px] leading-relaxed text-paper/70">

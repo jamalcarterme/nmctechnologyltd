@@ -5,11 +5,11 @@ import QuoteForm from "./QuoteForm";
 
 export default function Contact() {
   return (
-    <section id="contact" className="bg-charcoal py-24 md:py-28">
+    <section id="contact" className="bg-charcoal py-16 md:py-20">
       <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <Eyebrow>Get in touch</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Let&apos;s find the right solution for you
           </h2>
           <p className="mt-4 max-w-md text-[16px] leading-relaxed text-paper/70">

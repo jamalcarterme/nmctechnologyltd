@@ -30,11 +30,11 @@ const icons: Record<string, LucideIcon> = {
 
 export default function Services() {
   return (
-    <section id="services" className="bg-ink py-24 md:py-28">
+    <section id="services" className="bg-ink py-16 md:py-20">
       <Container>
         <div className="max-w-xl">
           <Eyebrow>What we do</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Comprehensive technology and engineering solutions
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/70">

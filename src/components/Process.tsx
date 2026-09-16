@@ -6,12 +6,12 @@ import { Container, Eyebrow } from "./ui";
 
 export default function Process() {
   return (
-    <section className="bg-charcoal py-24 md:py-28">
+    <section className="bg-charcoal py-16 md:py-20">
       <Container>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-lg">
             <Eyebrow>Our approach</Eyebrow>
-            <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+            <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
               From consultation to complete support
             </h2>
           </div>

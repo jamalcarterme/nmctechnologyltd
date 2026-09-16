@@ -21,11 +21,11 @@ const segments = [
 
 export default function WhoWeServe() {
   return (
-    <section className="bg-charcoal py-24 md:py-28">
+    <section className="bg-charcoal py-16 md:py-20">
       <Container>
         <div className="flex flex-col items-center text-center">
           <Eyebrow>Who we serve</Eyebrow>
-          <h2 className="balance mt-4 max-w-2xl text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 max-w-2xl text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Who We Serve
           </h2>
         </div>

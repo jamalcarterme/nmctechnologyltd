@@ -106,7 +106,7 @@ export default function HomeShowcase() {
   }, []);
 
   return (
-    <section className="border-t border-paper/10 bg-ink py-24 md:py-28">
+    <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 18 }}
@@ -116,7 +116,7 @@ export default function HomeShowcase() {
           className="flex flex-col items-center text-center"
         >
           <Eyebrow>Our services</Eyebrow>
-          <h2 className="balance mt-4 max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[36px]">
+          <h2 className="balance mt-4 max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Complete Solutions
           </h2>
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-paper/65">

@@ -2,7 +2,7 @@ import { Container, Reveal } from "./ui";
 
 export default function NmcStory() {
   return (
-    <section className="bg-gradient-to-r from-ink to-charcoal py-24 md:py-28 border-t border-paper/10">
+    <section className="bg-gradient-to-r from-ink to-charcoal py-16 md:py-20 border-t border-paper/10">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <h2 className="balance max-w-3xl text-[32px] font-semibold leading-tight text-paper sm:text-[40px]">

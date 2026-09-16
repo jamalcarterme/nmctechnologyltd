@@ -80,7 +80,7 @@ const photos = [
 function Slide({ photo }: { photo: (typeof photos)[number] }) {
   return (
     <div className="px-3">
-      <div className="group relative h-72 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-80 lg:h-96">
+      <div className="group relative h-64 w-full overflow-hidden rounded-2xl border border-paper/10 sm:h-72 lg:h-80">
         <Image
           src={photo.src}
           alt={photo.alt}
@@ -166,11 +166,11 @@ export default function Gallery() {
   }, []);
 
   return (
-    <section id="projects" className="bg-ink py-24 md:py-28">
+    <section id="projects" className="bg-ink py-16 md:py-20">
       <Container>
         <div className="max-w-xl">
           <Eyebrow>Recent projects</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             Real installations, by our own technicians
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/70">

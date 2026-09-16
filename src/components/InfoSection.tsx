@@ -16,11 +16,11 @@ export default function InfoSection({
   className?: string;
 }) {
   return (
-    <section className={`${className} py-24 md:py-28`}>
+    <section className={`${className} py-16 md:py-20`}>
       <Container>
         <div className="max-w-2xl">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[38px]">
+          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
             {title}
           </h2>
           {intro && (
