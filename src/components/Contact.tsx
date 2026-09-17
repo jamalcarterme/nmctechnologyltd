@@ -1,30 +1,12 @@
-import Link from "next/link";
-import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/lib/data";
-import { Container, Eyebrow } from "./ui";
+import { Container } from "./ui";
 
 export default function Contact() {
   return (
     <section id="contact" className="bg-charcoal py-16 md:py-20">
       <Container className="mx-auto max-w-2xl text-center">
-        <Eyebrow>Get in touch</Eyebrow>
-        <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
-          Let&apos;s find the right solution for you
-        </h2>
-        <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-          Call, WhatsApp or send your details on our quote form — we&apos;ll
-          respond with a recommendation the same day.
-        </p>
-
-        <Link
-          href="/get-quote"
-          className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
-        >
-          Get a Free Quote
-          <ArrowRight className="h-4 w-4" />
-        </Link>
-
-        <div className="mx-auto mt-14 grid gap-8 text-left sm:grid-cols-2">
+        <div className="mx-auto grid gap-8 text-left sm:grid-cols-2">
             <div className="flex items-start gap-4">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold/12 text-gold">
                 <Phone className="h-5 w-5" strokeWidth={1.75} />

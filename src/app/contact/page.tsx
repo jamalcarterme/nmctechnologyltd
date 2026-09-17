@@ -27,14 +27,7 @@ export default function ContactPage() {
           eyebrow="Get in touch"
           title="Our Contacts"
           subtitle="Pick the service you're interested in and we'll ask a few quick questions — our phone, email and office details are just below."
-        >
-          <a
-            href={`tel:${site.phones[0].href}`}
-            className="mt-6 inline-flex items-center gap-2.5 text-[16px] font-semibold text-paper hover:text-gold"
-          >
-            Click to Call: {site.phones[0].display}
-          </a>
-        </PageHero>
+        />
 
         <QuoteServiceGrid showContactHint={false} />
 
