@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import PageHero from "@/components/PageHero";
+import QuoteServiceGrid from "@/components/QuoteServiceGrid";
 import { Container } from "@/components/ui";
 import { contactFaqs, contactInfo } from "@/lib/content";
 import { site } from "@/lib/data";
@@ -25,6 +26,7 @@ export default function ContactPage() {
           image="/images/control-tech.jpg"
           eyebrow="Get in touch"
           title="Our Contacts"
+          subtitle="Pick the service you're interested in and we'll ask a few quick questions — our phone, email and office details are just below."
         >
           <a
             href={`tel:${site.phones[0].href}`}
@@ -33,6 +35,10 @@ export default function ContactPage() {
             Click to Call: {site.phones[0].display}
           </a>
         </PageHero>
+
+        <QuoteServiceGrid showContactHint={false} />
+
+        <Contact />
 
         <div className="bg-ink">
           <Container className="py-16 md:py-20">
@@ -50,7 +56,6 @@ export default function ContactPage() {
           </Container>
         </div>
 
-        <Contact />
         <InfoSection
           eyebrow="Before you reach out"
           title="Get the fastest, most accurate response"

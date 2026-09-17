@@ -71,7 +71,7 @@ export const quoteServices: QuoteService[] = [
       "Voice Assistant Integration",
       "Not sure yet",
     ],
-    heroImage: "/images/control-tech.jpg",
+    heroImage: "/images/smart-home-automation.jpg",
   },
 ];
 

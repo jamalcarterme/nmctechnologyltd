@@ -35,7 +35,6 @@ export default function SlidingCarousel<T>({
   const dragging = useRef(false);
   const startX = useRef(0);
   const trackRef = useRef<HTMLDivElement>(null);
-  const resumeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const snapTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const step = 100 / visible;
@@ -67,16 +66,9 @@ export default function SlidingCarousel<T>({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [index]);
 
-  function pauseThenResume() {
-    setPaused(true);
-    if (resumeTimeout.current) clearTimeout(resumeTimeout.current);
-    resumeTimeout.current = setTimeout(() => setPaused(false), 5000);
-  }
-
   function goTo(i: number) {
     setAnimate(true);
     setIndex(i);
-    pauseThenResume();
   }
 
   function handlePointerDown(e: ReactPointerEvent) {
@@ -105,7 +97,7 @@ export default function SlidingCarousel<T>({
       setIndex((i) => i - 1);
     }
     setDragOffsetPct(0);
-    pauseThenResume();
+    setPaused(false);
   }
 
   const visibleDot = ((index % total) + total) % total;
