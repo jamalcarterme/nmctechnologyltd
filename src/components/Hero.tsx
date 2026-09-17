@@ -130,7 +130,7 @@ export default function Hero() {
           custom={1}
           initial="hidden"
           animate="show"
-          className="max-w-full mt-3 whitespace-nowrap text-[19px] font-bold uppercase leading-[1.15] tracking-[0.015em] text-paper sm:text-[40px] lg:text-[48px]"
+          className="max-w-full mt-3 whitespace-nowrap text-[clamp(19px,5.8vw,22px)] font-bold uppercase leading-[1.15] tracking-[0.01em] text-paper sm:text-[40px] lg:text-[48px]"
         >
           Turning Ideas Into Reality
         </motion.h1>
