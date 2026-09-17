@@ -7,6 +7,7 @@ import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
 import ServiceGallery from "@/components/ServiceGallery";
 import ServicePricing from "@/components/ServicePricing";
+import { cctvPricingTiers } from "@/lib/pricing";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -60,43 +61,6 @@ const cctvInfo = [
     paragraphs: [
       "Once installed, your CCTV system connects to a secure DVR or NVR that stores recorded footage. You can monitor live feed from your phone or computer, receive alerts for motion detection, and review recordings from anywhere.",
       "We configure the system to your preferences and ensure you understand how to use all features before we leave your property.",
-    ],
-  },
-];
-
-const cctvPricingTiers = [
-  {
-    name: "Essential",
-    tagline: "2–4 cameras",
-    bestFor: "Best for small apartments & single entrances",
-    features: [
-      "HD dome or bullet cameras",
-      "NVR/DVR with local storage",
-      "Mobile app remote viewing",
-      "Motion alert notifications",
-    ],
-  },
-  {
-    name: "Standard",
-    tagline: "5–8 cameras",
-    bestFor: "Best for family homes & small offices",
-    features: [
-      "Mix of indoor & outdoor HD/IP cameras",
-      "Extended local storage (2–4 weeks)",
-      "Mobile app + multi-user access",
-      "Motion alerts & night vision coverage",
-    ],
-    popular: true,
-  },
-  {
-    name: "Advanced",
-    tagline: "9+ cameras",
-    bestFor: "Best for estates, commercial sites & multi-building properties",
-    features: [
-      "Full-property IP camera coverage",
-      "High-capacity storage or cloud backup",
-      "PTZ / solar-powered camera options",
-      "Backup power integration & priority support",
     ],
   },
 ];

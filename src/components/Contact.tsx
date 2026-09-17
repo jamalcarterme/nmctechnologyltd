@@ -1,23 +1,30 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/lib/data";
 import { Container, Eyebrow } from "./ui";
-import QuoteForm from "./QuoteForm";
 
 export default function Contact() {
   return (
     <section id="contact" className="bg-charcoal py-16 md:py-20">
-      <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-        <div>
-          <Eyebrow>Get in touch</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
-            Let&apos;s find the right solution for you
-          </h2>
-          <p className="mt-4 max-w-md text-[16px] leading-relaxed text-paper/70">
-            Call, WhatsApp or send your details — we&apos;ll respond with
-            a recommendation the same day.
-          </p>
+      <Container className="mx-auto max-w-2xl text-center">
+        <Eyebrow>Get in touch</Eyebrow>
+        <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
+          Let&apos;s find the right solution for you
+        </h2>
+        <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
+          Call, WhatsApp or send your details on our quote form — we&apos;ll
+          respond with a recommendation the same day.
+        </p>
 
-          <div className="mt-10 flex flex-col gap-6">
+        <Link
+          href="/get-quote"
+          className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
+        >
+          Get a Free Quote
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+
+        <div className="mx-auto mt-14 grid gap-8 text-left sm:grid-cols-2">
             <div className="flex items-start gap-4">
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gold/12 text-gold">
                 <Phone className="h-5 w-5" strokeWidth={1.75} />
@@ -85,20 +92,6 @@ export default function Contact() {
               </div>
             </div>
           </div>
-        </div>
-
-        <div className="rounded-3xl border border-paper/10 bg-ink p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] md:p-10">
-          <h3 className="font-display text-[20px] font-semibold text-paper">
-            Request your free quote
-          </h3>
-          <p className="mt-2 text-[15px] text-paper/60">
-            Tell us about your property and we&apos;ll recommend the right
-            package.
-          </p>
-          <div className="mt-7">
-            <QuoteForm compact />
-          </div>
-        </div>
       </Container>
     </section>
   );

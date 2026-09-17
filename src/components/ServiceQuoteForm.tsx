@@ -8,12 +8,16 @@ import type { QuoteService } from "@/lib/quoteServices";
 export default function ServiceQuoteForm({ service }: { service: QuoteService }) {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [email, setEmail] = useState("");
+  const [location, setLocation] = useState("");
   const [interest, setInterest] = useState(service.interestOptions[0]);
   const [sent, setSent] = useState(false);
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const message = `Hi NMC Technology, my name is ${name}. I'm interested in ${service.label} — specifically ${interest}. My phone number is ${phone}.`;
+    const message = `Hi NMC Technology, my name is ${name}. I'm interested in ${service.label} — specifically ${interest}. My phone number is ${phone}${
+      email ? `, my email is ${email}` : ""
+    }. My location is ${location}.`;
     setSent(true);
     window.open(waLink(message), "_blank", "noopener,noreferrer");
   }
@@ -39,6 +43,29 @@ export default function ServiceQuoteForm({ service }: { service: QuoteService })
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             placeholder="080X XXX XXXX"
+            className="rounded-xl border border-paper/15 bg-paper/[0.06] px-4 py-3 text-[15px] text-paper placeholder:text-paper/35 outline-none transition-colors focus:border-gold"
+          />
+        </label>
+      </div>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-paper/70">
+          Email address
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@example.com"
+            className="rounded-xl border border-paper/15 bg-paper/[0.06] px-4 py-3 text-[15px] text-paper placeholder:text-paper/35 outline-none transition-colors focus:border-gold"
+          />
+        </label>
+        <label className="flex flex-col gap-1.5 text-sm font-medium text-paper/70">
+          Location (area, town, city)
+          <input
+            required
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            placeholder="e.g. Satellite Town, Lagos"
             className="rounded-xl border border-paper/15 bg-paper/[0.06] px-4 py-3 text-[15px] text-paper placeholder:text-paper/35 outline-none transition-colors focus:border-gold"
           />
         </label>

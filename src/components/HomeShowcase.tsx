@@ -1,11 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { services } from "@/lib/data";
 import { Container, Eyebrow } from "./ui";
+import SlidingCarousel from "./SlidingCarousel";
 
 type Slide = (typeof services)[number];
 
@@ -34,77 +34,7 @@ function Card({ service }: { service: Slide }) {
   );
 }
 
-/** A continuously sliding filmstrip carousel. Shows `visible` cards at a
- * time and shifts left by one card every `intervalMs`, looping seamlessly. */
-function SlidingTrack({
-  visible,
-  intervalMs,
-}: {
-  visible: 1 | 2;
-  intervalMs: number;
-}) {
-  const total = services.length;
-  const extended = [...services, ...services.slice(0, visible)];
-  const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => i + 1);
-    }, intervalMs);
-    return () => clearInterval(id);
-  }, [intervalMs]);
-
-  useEffect(() => {
-    if (index === total) {
-      // Landed on the cloned card(s) — after the slide finishes, snap
-      // back to the real first card with no transition, then restore it.
-      timeoutRef.current = setTimeout(() => {
-        setAnimate(false);
-        setIndex(0);
-      }, 650);
-    } else if (!animate) {
-      const raf = requestAnimationFrame(() => setAnimate(true));
-      return () => cancelAnimationFrame(raf);
-    }
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
-
-  const step = 100 / visible;
-
-  return (
-    <div className="overflow-hidden">
-      <div
-        className="flex"
-        style={{
-          transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 650ms cubic-bezier(0.22,1,0.36,1)" : "none",
-        }}
-      >
-        {extended.map((service, i) => (
-          <div key={`${service.title}-${i}`} style={{ flex: `0 0 ${step}%` }}>
-            <Card service={service} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function HomeShowcase() {
-  const [dot, setDot] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setDot((i) => (i + 1) % services.length);
-    }, 3000);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
@@ -126,24 +56,28 @@ export default function HomeShowcase() {
 
         {/* Desktop / tablet: two cards visible, sliding filmstrip */}
         <div className="mt-14 hidden sm:block">
-          <SlidingTrack visible={2} intervalMs={3000} />
+          <SlidingCarousel
+            items={services}
+            visible={2}
+            intervalMs={3000}
+            keyExtractor={(service, i) => `${service.title}-${i}`}
+            renderItem={(service) => <Card service={service} />}
+            showDots
+            showArrows
+          />
         </div>
 
         {/* Mobile: one card visible, sliding filmstrip, same fast cadence */}
         <div className="mt-12 sm:hidden">
-          <SlidingTrack visible={1} intervalMs={3000} />
-        </div>
-
-        <div className="mt-10 flex items-center justify-center gap-2">
-          {services.map((service, i) => (
-            <span
-              key={service.title}
-              aria-hidden="true"
-              className={`h-2 rounded-full transition-all ${
-                i === dot ? "w-6 bg-gold" : "w-2 bg-paper/25"
-              }`}
-            />
-          ))}
+          <SlidingCarousel
+            items={services}
+            visible={1}
+            intervalMs={3000}
+            keyExtractor={(service, i) => `${service.title}-${i}`}
+            renderItem={(service) => <Card service={service} />}
+            showDots
+            showArrows
+          />
         </div>
 
         <div className="mt-10 flex justify-center">

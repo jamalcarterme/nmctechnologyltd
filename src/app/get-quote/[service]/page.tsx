@@ -42,7 +42,7 @@ export default async function GetQuoteServicePage({
       <Header />
       <main>
         <PageHero
-          image="/images/installer-panel-1.jpg"
+          image={service.heroImage}
           eyebrow="Get a Free Quote"
           title={service.label}
           subtitle={service.description}

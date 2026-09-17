@@ -87,7 +87,7 @@ export const services = [
     description:
       "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
     icon: "ClipboardCheck",
-    image: "/images/inverter-room-deye-2.jpg",
+    image: "/images/support-engineer-grid.jpg",
   },
 ];
 

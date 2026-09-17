@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Container, Eyebrow } from "./ui";
+import SlidingCarousel from "./SlidingCarousel";
 
 const photos = [
   {
@@ -75,6 +75,31 @@ const photos = [
     alt: "Showroom wall of SRNE inverters and battery storage units",
     caption: "SRNE equipment showroom",
   },
+  {
+    src: "/images/solar-rooftop-technician-nmc.jpg",
+    alt: "NMC Technology technician installing a rooftop solar panel",
+    caption: "NMC technician on-site",
+  },
+  {
+    src: "/images/inverter-install-technician.jpg",
+    alt: "Technician wiring Deye hybrid inverters during installation",
+    caption: "Inverter installation",
+  },
+  {
+    src: "/images/automation-breaker-panel.jpg",
+    alt: "Automatic transfer switch panel being installed and wired",
+    caption: "ATS panel installation",
+  },
+  {
+    src: "/images/automation-panel-wiring.jpg",
+    alt: "Technician wiring an electrical automation control panel",
+    caption: "Automation panel wiring",
+  },
+  {
+    src: "/images/automation-control-panel-field.jpg",
+    alt: "Technician servicing an industrial electrical control panel on-site",
+    caption: "Field control panel service",
+  },
 ];
 
 function Slide({ photo }: { photo: (typeof photos)[number] }) {
@@ -97,74 +122,7 @@ function Slide({ photo }: { photo: (typeof photos)[number] }) {
   );
 }
 
-/** Continuously sliding filmstrip, mirroring the homepage services carousel. */
-function SlidingTrack({
-  visible,
-  intervalMs,
-}: {
-  visible: 1 | 2 | 3;
-  intervalMs: number;
-}) {
-  const total = photos.length;
-  const extended = [...photos, ...photos.slice(0, visible)];
-  const [index, setIndex] = useState(0);
-  const [animate, setAnimate] = useState(true);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setIndex((i) => i + 1);
-    }, intervalMs);
-    return () => clearInterval(id);
-  }, [intervalMs]);
-
-  useEffect(() => {
-    if (index === total) {
-      timeoutRef.current = setTimeout(() => {
-        setAnimate(false);
-        setIndex(0);
-      }, 650);
-    } else if (!animate) {
-      const raf = requestAnimationFrame(() => setAnimate(true));
-      return () => cancelAnimationFrame(raf);
-    }
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [index]);
-
-  const step = 100 / visible;
-
-  return (
-    <div className="overflow-hidden">
-      <div
-        className="flex"
-        style={{
-          transform: `translateX(-${index * step}%)`,
-          transition: animate ? "transform 650ms cubic-bezier(0.22,1,0.36,1)" : "none",
-        }}
-      >
-        {extended.map((photo, i) => (
-          <div key={`${photo.src}-${i}`} style={{ flex: `0 0 ${step}%` }}>
-            <Slide photo={photo} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 export default function Gallery() {
-  const [dot, setDot] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setDot((i) => (i + 1) % photos.length);
-    }, 3200);
-    return () => clearInterval(id);
-  }, []);
-
   return (
     <section id="projects" className="bg-ink py-16 md:py-20">
       <Container>
@@ -181,29 +139,41 @@ export default function Gallery() {
 
         {/* Desktop: three photos visible, sliding filmstrip */}
         <div className="mt-14 hidden lg:block">
-          <SlidingTrack visible={3} intervalMs={3200} />
+          <SlidingCarousel
+            items={photos}
+            visible={3}
+            intervalMs={3200}
+            keyExtractor={(photo, i) => `${photo.src}-${i}`}
+            renderItem={(photo) => <Slide photo={photo} />}
+            showDots
+            showArrows
+          />
         </div>
 
         {/* Tablet: two photos visible */}
         <div className="mt-12 hidden sm:block lg:hidden">
-          <SlidingTrack visible={2} intervalMs={3200} />
+          <SlidingCarousel
+            items={photos}
+            visible={2}
+            intervalMs={3200}
+            keyExtractor={(photo, i) => `${photo.src}-${i}`}
+            renderItem={(photo) => <Slide photo={photo} />}
+            showDots
+            showArrows
+          />
         </div>
 
         {/* Mobile: one photo visible */}
         <div className="mt-10 sm:hidden">
-          <SlidingTrack visible={1} intervalMs={3200} />
-        </div>
-
-        <div className="mt-10 flex items-center justify-center gap-2">
-          {photos.map((photo, i) => (
-            <span
-              key={photo.src}
-              aria-hidden="true"
-              className={`h-2 rounded-full transition-all ${
-                i === dot ? "w-6 bg-gold" : "w-2 bg-paper/25"
-              }`}
-            />
-          ))}
+          <SlidingCarousel
+            items={photos}
+            visible={1}
+            intervalMs={3200}
+            keyExtractor={(photo, i) => `${photo.src}-${i}`}
+            renderItem={(photo) => <Slide photo={photo} />}
+            showDots
+            showArrows
+          />
         </div>
       </Container>
     </section>

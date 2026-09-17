@@ -7,6 +7,7 @@ import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
 import ServiceGallery from "@/components/ServiceGallery";
 import ServicePricing from "@/components/ServicePricing";
+import { automationPricingTiers } from "@/lib/pricing";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -69,43 +70,6 @@ const automationInfo = [
     paragraphs: [
       "Beyond automation, we install surge protectors, lightning arrestors, earthing systems, and voltage regulators to shield your equipment from electrical faults. Smart load management systems prevent overload by intelligently prioritizing which appliances receive power during high demand.",
       "These systems work together to keep your electrical infrastructure safe, efficient, and reliable.",
-    ],
-  },
-];
-
-const automationPricingTiers = [
-  {
-    name: "Essential",
-    tagline: "Single automation function",
-    bestFor: "Best for one core need, e.g. ATS or generator auto-start",
-    features: [
-      "Automatic Transfer Switch (ATS) or generator automation",
-      "Manual override included",
-      "Basic surge protection",
-      "1-year workmanship warranty",
-    ],
-  },
-  {
-    name: "Standard",
-    tagline: "Multi-system automation",
-    bestFor: "Best for homes combining solar, generator & mains switching",
-    features: [
-      "ATS + generator automation combined",
-      "Load management & prioritization",
-      "Surge protection across panels",
-      "Remote monitoring options",
-    ],
-    popular: true,
-  },
-  {
-    name: "Advanced",
-    tagline: "Full property automation",
-    bestFor: "Best for estates & commercial sites with complex power setups",
-    features: [
-      "Complete power source switching automation",
-      "Custom control panel design & build",
-      "Advanced load management & scheduling",
-      "Priority support & maintenance plan",
     ],
   },
 ];

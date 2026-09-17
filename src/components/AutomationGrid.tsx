@@ -6,22 +6,21 @@ const items = [
   {
     title: "Light Automation",
     text: "Tap a scene on your phone and every light in the room responds instantly — dimmed, brightened, or switched off together on one schedule.",
-    video:
-      "https://ritzmansmarthomes.com/wp-content/uploads/2022/01/FIBARO_Home_Automation_System_Your_home_Your_Imagination.gif",
+    video: "/videos/light-automation.mp4",
     icon: Lightbulb,
     href: "/services/smart-home",
   },
   {
     title: "Media Automation",
     text: "TVs, speakers, and streaming devices wired into one system, so your entire entertainment setup turns on and adjusts together, on command.",
-    video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/ezgif.com-gif-maker.gif",
+    video: "/videos/media-automation.mp4",
     icon: MonitorPlay,
     href: "/services/smart-home",
   },
   {
     title: "Outdoor Automation",
     text: "Live camera feeds, gate access, and outdoor lighting monitored and controlled remotely, so your property stays secure day and night.",
-    video: "https://ritzmansmarthomes.com/wp-content/uploads/2022/03/IMG_5287.gif",
+    video: "/videos/outdoor-automation.mp4",
     icon: ShieldCheck,
     href: "/services/cctv",
   },
@@ -50,11 +49,13 @@ export default function AutomationGrid() {
                   className="group block overflow-hidden rounded-2xl border border-paper/10 bg-paper/[0.03] transition-colors hover:border-gold/40 cursor-pointer"
                 >
                   <div className="relative h-48 w-full overflow-hidden bg-charcoal">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
+                    <video
                       src={item.video}
-                      alt={item.title}
-                      loading="lazy"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
                       className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
                     <span className="absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-gold bg-ink/70 text-gold shadow-[0_6px_16px_-4px_rgba(0,0,0,0.5)] backdrop-blur-sm">

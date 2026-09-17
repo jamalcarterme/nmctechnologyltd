@@ -4,32 +4,28 @@ import { Container, Eyebrow, Reveal } from "./ui";
 
 const tiers = [
   {
-    label: "3.5KVA",
-    category: "Solar",
+    label: "Solar",
     note: "Solar Power Installation",
     icon: SunMedium,
-    href: "/packages",
+    href: "/packages/solar",
   },
   {
-    label: "10KVA",
-    category: "CCTV",
+    label: "CCTV",
     note: "CCTV Camera Installation",
     icon: Camera,
-    href: "/services/cctv#pricing",
+    href: "/packages/cctv",
   },
   {
-    label: "15KVA",
-    category: "Smart Electrical",
-    note: "Smart Electrical Automation",
+    label: "Smart Electrical Automation",
+    note: "ATS, generator automation & load management",
     icon: Zap,
-    href: "/services/automation#pricing",
+    href: "/packages/automation",
   },
   {
-    label: "30KVA",
-    category: "Smart Home",
+    label: "Home Automation",
     note: "Smart Home Automation",
     icon: Wifi,
-    href: "/services/smart-home#pricing",
+    href: "/packages/smart-home",
   },
 ];
 

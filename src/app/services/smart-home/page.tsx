@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
 import ServicePricing from "@/components/ServicePricing";
+import { smartHomePricingTiers } from "@/lib/pricing";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -66,43 +67,6 @@ const smartHomeInfo = [
     paragraphs: [
       "Integrate your smart home with security systems for automated alerts, smart locks, and remote access monitoring. Know instantly if doors unlock or motion is detected, and control access remotely.",
       "Energy management systems monitor and report power consumption by device, helping you identify where energy is being wasted and optimize your usage patterns.",
-    ],
-  },
-];
-
-const smartHomePricingTiers = [
-  {
-    name: "Essential",
-    tagline: "Core smart controls",
-    bestFor: "Best for single rooms or apartments getting started",
-    features: [
-      "Smart lighting & switches",
-      "Smart plugs for key appliances",
-      "Single-app remote control",
-      "Voice assistant integration",
-    ],
-  },
-  {
-    name: "Standard",
-    tagline: "Whole-home essentials",
-    bestFor: "Best for family homes wanting full convenience",
-    features: [
-      "Whole-home smart lighting & switches",
-      "Smart locks & video doorbell",
-      "Automated scenes & schedules",
-      "Voice assistant + mobile app control",
-    ],
-    popular: true,
-  },
-  {
-    name: "Advanced",
-    tagline: "Full automation & integration",
-    bestFor: "Best for estates & properties wanting complete integration",
-    features: [
-      "Full home automation across all rooms",
-      "Security, climate & entertainment integration",
-      "Custom automation scenes & routines",
-      "Priority support & ongoing maintenance",
     ],
   },
 ];

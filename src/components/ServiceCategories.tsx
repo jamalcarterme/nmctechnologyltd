@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { Camera, Sun, Wifi, Zap, type LucideIcon } from "lucide-react";
 import { serviceCategories } from "@/lib/data";
+import BackgroundVideo from "./BackgroundVideo";
 import { Container, Eyebrow, Reveal } from "./ui";
 
 const icons: Record<string, LucideIcon> = { Sun, Camera, Zap, Wifi };
 
 export default function ServiceCategories() {
   return (
-    <section className="border-t border-paper/10 bg-charcoal py-16 md:py-20">
-      <Container>
+    <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
+      <BackgroundVideo src="/background-video.mp4" fallbackImage="/images/team-photo.jpg" />
+      <div className="absolute inset-0 bg-charcoal/80" />
+      <Container className="relative">
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>What we offer</Eyebrow>
           <h2 className="mt-3 font-display text-[22px] font-semibold text-paper sm:text-[26px]">

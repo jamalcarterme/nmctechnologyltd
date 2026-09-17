@@ -128,7 +128,7 @@ export default function Hero() {
           custom={1}
           initial="hidden"
           animate="show"
-          className="balance max-w-3xl mt-3 text-[34px] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[40px] lg:text-[48px]"
+          className="max-w-full mt-3 whitespace-nowrap text-[clamp(20px,7.2vw,48px)] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[40px] lg:text-[48px]"
         >
           Turning Ideas Into Reality
         </motion.h1>

@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, Camera, Sun, Wifi, Zap } from "lucide-react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import InfoSection from "@/components/InfoSection";
 import PageHero from "@/components/PageHero";
-import Packages from "@/components/Packages";
-import QuoteForm from "@/components/QuoteForm";
-import { Container, Eyebrow } from "@/components/ui";
-import { packagesInfo } from "@/lib/content";
+import { Container, Reveal } from "@/components/ui";
+import { quoteServices } from "@/lib/quoteServices";
 
 export const metadata: Metadata = {
   title: "Packages & Pricing",
   description:
-    "Transparent solar inverter, battery and panel packages from 3.5KVA to 30KVA, with pricing, backup times and what each tier can power.",
+    "Choose a service — Solar, CCTV, Smart Electrical Automation, or Smart Home Automation — to view NMC Technology's pricing tiers.",
   alternates: { canonical: "/packages" },
 };
+
+const icons = { Sun, Camera, Zap, Wifi };
 
 export default function PackagesPage() {
   return (
@@ -23,47 +24,50 @@ export default function PackagesPage() {
         <PageHero
           image="/images/rooftop-panels-3.jpg"
           eyebrow="NMC Technology"
-          title="Solar Packages"
-          subtitle="Explore NMC Technology packages and select the capacity that best suits your property."
+          title="Which Service Do You Need Pricing For?"
+          subtitle="Pick a service below to see its packages and pricing tiers."
         />
-        <Packages />
 
-        <section className="bg-charcoal py-16 md:py-20">
-          <Container className="grid gap-12 lg:grid-cols-[1fr_1fr]">
-            <div>
-              <Eyebrow>Before you choose</Eyebrow>
-              <h2 className="balance mt-4 text-[28px] font-semibold leading-tight text-paper sm:text-[32px]">
-                Get A Package
-              </h2>
-              <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-                To move ahead with any of our packages, kindly fill the form and our team will reach out to you as soon as possible with next steps and a confirmed site survey date.
-              </p>
-              <ul className="mt-6 flex flex-col gap-3 text-[14px] leading-relaxed text-paper/60">
-                <li>• Installation logistics are confirmed after a free site survey.</li>
-                <li>• Prices reflect current equipment costs and may be revised without prior notice.</li>
-                <li>• A rough appliance list speeds up an accurate recommendation.</li>
-              </ul>
+        <section className="bg-ink py-16 md:py-20">
+          <Container>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {quoteServices.map((service, i) => {
+                const Icon = icons[service.icon];
+                const animationVariant = i % 2 === 0 ? "pop" : "scale";
+                return (
+                  <Reveal key={service.slug} delay={i * 0.08} variant={animationVariant}>
+                    <Link
+                      href={`/packages/${service.slug}`}
+                      className="group flex h-full flex-col rounded-2xl border border-paper/12 bg-paper/[0.03] p-7 transition-colors hover:border-gold/60"
+                    >
+                      <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
+                        <Icon className="h-6 w-6" strokeWidth={1.75} />
+                      </span>
+                      <h2 className="font-display mt-5 text-[20px] font-semibold text-paper">
+                        {service.label}
+                      </h2>
+                      <p className="mt-2 text-[14px] leading-relaxed text-paper/60">
+                        {service.description}
+                      </p>
+                      <span className="mt-6 inline-flex items-center gap-2 text-[14px] font-semibold text-gold">
+                        See pricing
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  </Reveal>
+                );
+              })}
             </div>
-            <div className="rounded-3xl border border-paper/10 bg-ink p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.6)] md:p-10">
-              <h3 className="font-display text-[20px] font-semibold text-paper">
-                Request your free quote
-              </h3>
-              <p className="mt-2 text-[15px] text-paper/60">
-                Tell us about your property and we&apos;ll recommend the right package.
-              </p>
-              <div className="mt-7">
-                <QuoteForm compact />
-              </div>
-            </div>
+
+            <p className="mt-10 text-center text-[14px] text-paper/50">
+              Not sure which service fits your needs?{" "}
+              <Link href="/contact" className="font-semibold text-gold underline decoration-gold/40 underline-offset-4 hover:text-gold-light">
+                Contact us directly
+              </Link>{" "}
+              and we&apos;ll help you figure it out.
+            </p>
           </Container>
         </section>
-
-        <InfoSection
-          eyebrow="Understanding the numbers"
-          title="How to choose the right package for your property"
-          blocks={packagesInfo}
-          className="bg-ink"
-        />
       </main>
       <Footer />
     </>

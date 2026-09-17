@@ -6,6 +6,7 @@ export type QuoteService = {
   icon: "Sun" | "Camera" | "Zap" | "Wifi";
   interestLabel: string;
   interestOptions: string[];
+  heroImage: string;
 };
 
 export const quoteServices: QuoteService[] = [
@@ -22,6 +23,7 @@ export const quoteServices: QuoteService[] = [
       "Hybrid (Grid + Solar)",
       "Not sure yet",
     ],
+    heroImage: "/images/installer-panel-1.jpg",
   },
   {
     slug: "cctv",
@@ -37,6 +39,7 @@ export const quoteServices: QuoteService[] = [
       "System Upgrade",
       "Not sure yet",
     ],
+    heroImage: "/images/cctv-solar-ptz-camera.jpg",
   },
   {
     slug: "automation",
@@ -52,6 +55,7 @@ export const quoteServices: QuoteService[] = [
       "Full Automation Panel",
       "Not sure yet",
     ],
+    heroImage: "/images/breaker-board.jpg",
   },
   {
     slug: "smart-home",
@@ -67,6 +71,7 @@ export const quoteServices: QuoteService[] = [
       "Voice Assistant Integration",
       "Not sure yet",
     ],
+    heroImage: "/images/control-tech.jpg",
   },
 ];
 
