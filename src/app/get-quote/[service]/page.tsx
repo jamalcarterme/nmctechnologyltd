@@ -13,8 +13,13 @@ export function generateStaticParams() {
   return quoteServices.map((s) => ({ service: s.slug }));
 }
 
-export function generateMetadata({ params }: { params: { service: string } }): Metadata {
-  const service = getQuoteService(params.service);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ service: string }>;
+}): Promise<Metadata> {
+  const { service: slug } = await params;
+  const service = getQuoteService(slug);
   if (!service) return { title: "Get a Free Quote" };
   return {
     title: `Get a Free Quote — ${service.label}`,
@@ -23,8 +28,13 @@ export function generateMetadata({ params }: { params: { service: string } }): M
   };
 }
 
-export default function GetQuoteServicePage({ params }: { params: { service: string } }) {
-  const service = getQuoteService(params.service);
+export default async function GetQuoteServicePage({
+  params,
+}: {
+  params: Promise<{ service: string }>;
+}) {
+  const { service: slug } = await params;
+  const service = getQuoteService(slug);
   if (!service) notFound();
 
   return (
