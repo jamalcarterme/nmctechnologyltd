@@ -66,39 +66,45 @@ export const homeFaqs: FaqItem[] = [
 
 export const servicesInfo: InfoBlock[] = [
   {
-    heading: "Home solar systems, sized to your appliances",
+    heading: "Solar power, sized to your appliances",
     paragraphs: [
-      "A home solar installation from NMC Technology begins with understanding exactly what you run day to day — televisions, fans, air conditioners, a pressure pump, a fridge and freezer — rather than pushing a fixed package regardless of fit. From there we recommend an inverter capacity (3.5KVA through 30KVA), a lithium battery size, and a panel count that keeps that load running through outages without you rationing power.",
+      "A solar installation from NMC Technology begins with understanding exactly what you run day to day — televisions, fans, air conditioners, a pressure pump, a fridge and freezer — rather than pushing a fixed package regardless of fit. From there we recommend an inverter capacity, a lithium battery size, and a panel count that keeps that load running through outages without you rationing power, right through to fully off-grid systems for homes and estates that want to cut ties with the grid entirely.",
     ],
   },
   {
-    heading: "Off-grid independence for homes and estates",
+    heading: "CCTV and security systems",
     paragraphs: [
-      "For clients who want to cut ties with the grid entirely, we design fully off-grid systems with larger battery banks — 60KWH and above — and panel arrays big enough to fully recharge overnight usage the following day. These systems are built for households running multiple air conditioners, elevators, pumping systems and freezers around the clock, with 18 to 24 hours of backup as standard on our larger tiers.",
+      "From a single entrance camera to a fully networked estate, we design CCTV systems around your property's layout and risk points — dome, bullet, PTZ and solar-powered cameras with remote viewing on your phone. Every camera, cable run and recorder is installed and configured by our own technicians, not a third-party contractor.",
     ],
   },
   {
-    heading: "Commercial and estate-scale solar",
+    heading: "Smart electrical automation",
     paragraphs: [
-      "Offices, schools, hotels, estates and light industrial sites carry heavier and less predictable daily loads than a typical home. We handle these projects with multi-inverter banks, larger rooftop or ground-mounted arrays, and distribution designs that let the site keep operating even if part of the system needs maintenance — instead of a single point of failure taking the whole building down.",
+      "We build and install automatic transfer switch (ATS) panels, generator automation, load management systems and the breaker and distribution board work needed to wire it all safely into an existing property — new build or retrofit — so power sources switch cleanly without manual intervention.",
     ],
   },
   {
-    heading: "Automatic transfer panels and distribution work",
+    heading: "Smart home automation",
     paragraphs: [
-      "A solar and battery system is only as reliable as the switching gear behind it. We build and install automatic transfer switch (ATS) panels that move cleanly between solar, generator and grid supply, plus the breaker and distribution board work needed to wire it safely into an existing property — new build or retrofit.",
+      "For homes and offices that want convenience and control, we install smart lighting, appliance and security automation that you can manage from your phone from anywhere — switching off air conditioners, lights and other appliances, and cutting energy waste in the process.",
+    ],
+  },
+  {
+    heading: "Commercial and estate-scale projects",
+    paragraphs: [
+      "Offices, schools, hotels, estates and light industrial sites carry heavier and less predictable daily loads and larger footprints than a typical home. We handle these projects — across solar, CCTV, automation or smart home — with equipment and distribution designs sized for scale, so the site keeps operating even if part of a system needs maintenance.",
     ],
   },
   {
     heading: "Repairs, upgrades and second opinions",
     paragraphs: [
-      "Not every system we touch is one we installed. We regularly diagnose underperforming solar setups — batteries that no longer hold charge, inverters that trip under load, wiring that was never sized correctly — and either repair the existing equipment or recommend a targeted upgrade rather than a full replacement where one isn't needed.",
+      "Not every system we touch is one we installed. We regularly diagnose underperforming solar, CCTV, automation or smart home setups and either repair the existing equipment or recommend a targeted upgrade rather than a full replacement where one isn't needed.",
     ],
   },
   {
     heading: "Free site survey and consultation",
     paragraphs: [
-      "Every project, large or small, starts with a free load assessment — either a site visit or a detailed conversation about your appliances and daily routine. This is what lets us quote a system that is neither over-priced nor under-powered, and it costs nothing to find out where you stand.",
+      "Every project, large or small, starts with a free assessment — either a site visit or a detailed conversation about your appliances, property and daily routine. This is what lets us quote a solution that is neither over-priced nor under-powered, and it costs nothing to find out where you stand.",
     ],
   },
 ];
@@ -170,21 +176,21 @@ export const aboutInfo: InfoBlock[] = [
   {
     heading: "How NMC Technology started",
     paragraphs: [
-      "NMC Technology was built on a simple frustration shared by most homeowners: paying for solar equipment that was either wrongly sized, poorly installed, or abandoned by the seller the moment something needed fixing. We set out to be the company that designs, sells and installs a system with the same team from first phone call to years-later maintenance call.",
-      "That decision to keep installation in-house rather than outsourcing to third-party electricians is still what separates how we work today. When our engineers design a system, they are the same people wiring it into your distribution board — so nothing gets lost in translation, and there's no finger-pointing between a seller and an installer if something isn't right.",
+      "NMC Technology was built on a simple frustration shared by most homeowners and businesses: paying for equipment — solar, security, automation or smart home — that was either wrongly specified, poorly installed, or abandoned by the seller the moment something needed fixing. We set out to be the company that designs, sells and installs a solution with the same team from first phone call to years-later maintenance call.",
+      "That decision to keep installation in-house rather than outsourcing to third-party contractors is still what separates how we work today. When our engineers design a system, they are the same people wiring it, mounting it or configuring it on site — so nothing gets lost in translation, and there's no finger-pointing between a seller and an installer if something isn't right.",
     ],
   },
   {
     heading: "Our approach to equipment and workmanship",
     paragraphs: [
-      "We deliberately work with a narrow set of proven brands — Deye, Growatt and Sirne — rather than chasing the cheapest inverter on the market each month. Consistency in the equipment we install means we know its failure points, its firmware quirks and its realistic lifespan, which makes our maintenance and troubleshooting faster and more accurate.",
-      "On the installation side, every rooftop mount, cable run and distribution board we touch is done to the same internal standard regardless of project size, from a single studio apartment to a multi-inverter commercial site.",
+      "We deliberately work with a narrow set of proven brands and equipment across every service line — inverters and batteries, CCTV and security hardware, automation controllers, and smart home devices — rather than chasing the cheapest option on the market each month. Consistency in what we install means we know its failure points, its quirks and its realistic lifespan, which makes our maintenance and troubleshooting faster and more accurate.",
+      "On the installation side, every panel, camera, control cabinet and distribution board we touch is done to the same internal standard regardless of project size, from a single studio apartment to a multi-site commercial or industrial job.",
     ],
   },
   {
     heading: "Life after installation",
     paragraphs: [
-      "A solar system is a ten-to-twenty-year investment, and most of that lifespan happens after our van leaves your compound. We stay reachable by phone and WhatsApp for diagnostics, battery health checks, firmware updates and physical repairs — and because we keep records of exactly what we installed at your property, a call three years later doesn't start from zero.",
+      "Whether it's a solar system, a CCTV network, an automation panel or a smart home setup, most of its lifespan happens after our van leaves your compound. We stay reachable by phone and WhatsApp for diagnostics, health checks, firmware updates and physical repairs — and because we keep records of exactly what we installed at your property, a call years later doesn't start from zero.",
     ],
   },
 ];
@@ -201,9 +207,9 @@ export const aboutFaqs: FaqItem[] = [
       "Every installation is carried out by our own trained technicians. We do not outsource wiring or panel mounting to third-party contractors, which is how we're able to stand behind the workmanship long-term.",
   },
   {
-    question: "How long has NMC Technology been installing solar systems?",
+    question: "How long has NMC Technology been in business?",
     answer:
-      "We have spent over 8 years designing and installing inverter, battery and solar panel systems for homes and businesses, with more than 500 properties powered to date.",
+      "We have spent over 8 years designing and installing solar, CCTV, electrical automation and smart home systems for homes and businesses, with more than 500 properties served to date.",
   },
 ];
 

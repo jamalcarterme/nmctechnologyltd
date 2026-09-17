@@ -22,7 +22,7 @@ export default function PackagesPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/rooftop-panels-3.jpg"
+          image="/images/support-engineer-grid.jpg"
           eyebrow="NMC Technology"
           title="Which Service Do You Need Pricing For?"
           subtitle="Pick a service below to see its packages and pricing tiers."

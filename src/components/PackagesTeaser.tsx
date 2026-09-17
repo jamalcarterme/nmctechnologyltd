@@ -39,7 +39,7 @@ export default function PackagesTeaser() {
             Packages For Every Need
           </h2>
           <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-paper/65">
-            Professional installation included. Find the perfect capacity for your property.
+            Choose from our pricing across solar, CCTV, automation and smart home services — professional installation included with every package.
           </p>
         </Reveal>
 
