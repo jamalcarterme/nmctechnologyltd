@@ -82,8 +82,8 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
-      id="top"
+    <section 
+      id="top" 
       className="relative flex min-h-[440px] items-center overflow-hidden bg-ink pb-12 pt-24 sm:min-h-[480px] md:min-h-[520px] md:pb-16 md:pt-28"
     >
       <div className="pointer-events-none absolute inset-0">
@@ -94,6 +94,7 @@ export default function Hero() {
             videoReady ? "opacity-0" : "opacity-100"
           }`}
         />
+
         <video
           ref={videoRef}
           src="/background-video-hero.mp4"
@@ -107,6 +108,7 @@ export default function Hero() {
             videoReady ? "opacity-100" : "opacity-0"
           }`}
         />
+
         {/* One even, fairly light wash — the video stays the dominant
             visual, just enough contrast for the centered text to read. */}
         <div className="absolute inset-0 bg-ink/30" />
@@ -128,7 +130,7 @@ export default function Hero() {
           custom={1}
           initial="hidden"
           animate="show"
-          className="max-w-full mt-3 whitespace-nowrap text-[clamp(20px,7.2vw,48px)] font-bold uppercase leading-[1.15] tracking-tight text-paper sm:text-[40px] lg:text-[48px]"
+          className="max-w-full mt-3 whitespace-nowrap text-[19px] font-bold uppercase leading-[1.15] tracking-[0.015em] text-paper sm:text-[40px] lg:text-[48px]"
         >
           Turning Ideas Into Reality
         </motion.h1>
@@ -166,6 +168,7 @@ export default function Hero() {
           >
             Get a Quote
           </a>
+
           <a
             href="/contact"
             className="inline-flex items-center justify-center rounded-full border border-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-gold transition-colors hover:bg-gold/10"
