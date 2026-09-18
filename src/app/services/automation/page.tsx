@@ -164,7 +164,7 @@ export default function AutomationPage() {
                   href="/get-quote/automation"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
-                  Request Free Assessment
+                  Request an Assessment
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <Link

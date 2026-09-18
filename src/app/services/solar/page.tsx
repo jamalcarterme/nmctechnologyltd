@@ -18,6 +18,14 @@ const solarHeroImages = [
   { src: "/images/solar-panel-product.jpg", alt: "High-capacity solar panel" },
 ];
 
+const solarGalleryImages = [
+  ...solarHeroImages,
+  ...Array.from({ length: 11 }, (_, i) => ({
+    src: `/images/solar-gallery/solar-install-${String(i + 1).padStart(2, "0")}.jpg`,
+    alt: "NMC Technology solar inverter and battery installation",
+  })),
+];
+
 export const metadata: Metadata = {
   title: "Solar Power Installation | NMC Technology",
   description:
@@ -58,7 +66,7 @@ const solarInfo = [
   {
     heading: "Equipment and brands we install",
     paragraphs: [
-      "We work exclusively with proven inverter brands including Deye, Growatt, and Sirne, paired with high-capacity lithium-ion battery banks. Lithium batteries are our standard recommendation over older lead-acid technology because they charge faster, last significantly longer, and maintain capacity better in hot climates.",
+      "We work with proven inverter brands such as Deye, Growatt and SRNE, paired with high-capacity lithium-ion battery banks. Lithium batteries are our standard recommendation over older lead-acid technology because they charge faster, last significantly longer, and maintain capacity better in hot climates.",
       "Every installation is mounted and wired to withstand seasonal rain and harmattan dust, with distribution boards and automatic transfer switches built so your system fails safely rather than silently.",
     ],
   },
@@ -73,12 +81,12 @@ const solarFaqs = [
   {
     question: "How long does a solar installation take?",
     answer:
-      "Most home installations are completed in 1-3 days once the site survey, equipment, and wiring plan are confirmed. Larger commercial or off-grid projects with bigger panel arrays may take up to a week depending on roof access and distribution board work.",
+      "Most home installations are completed in 1-3 days once the equipment and wiring plan are confirmed. Larger commercial or off-grid projects with bigger panel arrays may take up to a week depending on roof access and distribution board work.",
   },
   {
     question: "Can solar run my air conditioners?",
     answer:
-      "Yes, provided the inverter and battery are sized appropriately. Our 5KVA and above packages are built to run at least one 1.5HP inverter AC alongside lights, fans, fridges, and sockets. We confirm exact AC coverage during your free load assessment.",
+      "Yes, provided the inverter and battery are sized appropriately. Our 5KVA and above packages are built to run at least one 1.5HP inverter AC alongside lights, fans, fridges, and sockets. We confirm exact AC coverage during your load assessment.",
   },
   {
     question: "Do you offer financing or payment plans?",
@@ -112,13 +120,13 @@ export default function SolarPage() {
                 Professional Solar Solutions for Homes & Businesses
               </h1>
               <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-paper/70">
-                Reliable power systems designed around your actual appliances and lifestyle. From 3.5KVA apartment setups to 30KVA off-grid independence, we install complete solar solutions with inverters, lithium batteries, and panel arrays engineered for performance and longevity.
+                Reliable power systems designed around your actual appliances and lifestyle. From 3.5KVA apartment setups to MEGA off-grid systems, we install complete solar solutions with inverters, lithium batteries, and panel arrays engineered for performance and longevity.
               </p>
             </div>
           </Container>
         </section>
 
-        <ServiceGallery images={solarHeroImages} className="border-t border-paper/10" />
+        <ServiceGallery images={solarGalleryImages} className="border-t border-paper/10" />
 
         <InfoSection
           eyebrow="Solar power, done right"
@@ -140,7 +148,7 @@ export default function SolarPage() {
                 Let's design your solar system
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-paper/70">
-                Book your free load assessment and site survey today. No obligation, no cost.
+                Tell us about your appliances and property, and we&apos;ll recommend the right system for you.
               </p>
               <div className="mt-8 flex flex-col gap-3 justify-center sm:flex-row">
                 <a
@@ -163,7 +171,7 @@ export default function SolarPage() {
 
         <Faq
           title="Solar installation questions"
-          intro="Answers to the most common questions from clients before they book a site survey."
+          intro="Answers to the most common questions from clients before they get started."
           items={solarFaqs}
           className="bg-ink"
         />

@@ -9,6 +9,7 @@ import Packages from "@/components/Packages";
 import PageHero from "@/components/PageHero";
 import QuoteForm from "@/components/QuoteForm";
 import ServicePricing from "@/components/ServicePricing";
+import SmartHomePackages from "@/components/SmartHomePackages";
 import { Container, Eyebrow } from "@/components/ui";
 import { packagesInfo } from "@/lib/content";
 import { cctvPricingTiers, automationPricingTiers, smartHomePricingTiers } from "@/lib/pricing";
@@ -69,10 +70,10 @@ export default async function PackagesServicePage({
                   Get A Package
                 </h2>
                 <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-                  To move ahead with any of our packages, kindly fill the form and our team will reach out to you as soon as possible with next steps and a confirmed site survey date.
+                  To move ahead with any of our packages, kindly fill the form and our team will reach out to you as soon as possible with next steps and a confirmed quote.
                 </p>
                 <ul className="mt-6 flex flex-col gap-3 text-[14px] leading-relaxed text-paper/60">
-                  <li>• Installation logistics are confirmed after a free site survey.</li>
+                  <li>• Installation logistics are confirmed once you approve your quote.</li>
                   <li>• Prices reflect current equipment costs and may be revised without prior notice.</li>
                   <li>• A rough appliance list speeds up an accurate recommendation.</li>
                 </ul>
@@ -128,6 +129,9 @@ export default async function PackagesServicePage({
           </Container>
         </section>
 
+        {service.slug === "smart-home" ? (
+          <SmartHomePackages />
+        ) : (
         <ServicePricing
           eyebrow={`${service.shortLabel} Packages`}
           title="Packages Sized by Your Needs"
@@ -135,6 +139,7 @@ export default async function PackagesServicePage({
           tiers={tiers}
           waIntro={`Hi NMC Technology, I'm interested in a ${service.label} package.`}
         />
+        )}
 
         <section className="bg-charcoal py-16 md:py-20">
           <Container className="text-center">

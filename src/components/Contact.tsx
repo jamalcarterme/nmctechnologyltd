@@ -69,7 +69,10 @@ export default function Contact() {
                   Working hours
                 </p>
                 <p className="mt-1 text-[16px] font-medium text-paper">
-                  Mon – Sat, 8:00 AM – 6:00 PM
+                  Mon – Fri, 9:00 AM – 5:00 PM
+                </p>
+                <p className="mt-1 text-[14px] text-paper/60">
+                  Saturday by appointment only
                 </p>
               </div>
             </div>

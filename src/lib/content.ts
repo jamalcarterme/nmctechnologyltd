@@ -13,7 +13,7 @@ export const homeInfo: InfoBlock[] = [
     heading: "Customized solutions for your specific needs",
     paragraphs: [
       "One solar package doesn't fit everyone. Same goes for security, automation, and smart home solutions. We start every project with a consultation to understand exactly what you need, then design a solution around your requirements, budget, and available space.",
-      "This is true for solar load assessment, security camera placement, electrical system design, or home automation features. We listen first, then recommend what actually makes sense for your situation.",
+      "The same approach applies to solar load assessment, security camera placement, electrical system design and home automation features. We listen first, then recommend what actually makes sense for your situation.",
     ],
   },
   {
@@ -38,14 +38,14 @@ export const homeFaqs: FaqItem[] = [
       "Each service solves a different need. Solar provides reliable backup power. CCTV secures your property. Electrical automation optimizes your power management. Smart home automation adds convenience and control. You can also combine services — for example, solar with automation. Contact us and we'll recommend what matches your priorities.",
   },
   {
-    question: "Do you provide free consultations?",
+    question: "Do you offer consultations before I commit to a project?",
     answer:
-      "Yes. Whether it's a solar site survey, security system assessment, automation consultation, or smart home planning, initial consultations are free and carry no obligation. We listen to your needs, assess your property or situation, and recommend solutions that fit.",
+      "Yes. Whether it's solar, security, electrical automation or smart home planning, we begin with a consultation and there is no obligation to proceed. We listen to your needs, review your property and situation, and recommend solutions that fit.",
   },
   {
     question: "How long does a typical installation take?",
     answer:
-      "This varies by service and project scope. Most residential installations are completed in 1-3 days once planning is confirmed. Larger projects, estates, or commercial work may take longer. We provide timelines upfront during consultation.",
+      "This varies by service and project scope. Most residential installations are completed in 1-3 days once planning is confirmed. Larger projects, estates, or commercial work may take longer. We give you a clear timeline during the consultation.",
   },
   {
     question: "What happens after installation — do you provide support?",
@@ -68,7 +68,7 @@ export const servicesInfo: InfoBlock[] = [
   {
     heading: "Solar power, sized to your appliances",
     paragraphs: [
-      "A solar installation from NMC Technology begins with understanding exactly what you run day to day — televisions, fans, air conditioners, a pressure pump, a fridge and freezer — rather than pushing a fixed package regardless of fit. From there we recommend an inverter capacity, a lithium battery size, and a panel count that keeps that load running through outages without you rationing power, right through to fully off-grid systems for homes and estates that want to cut ties with the grid entirely.",
+      "A solar installation from NMC Technology begins with understanding exactly what you run day to day — televisions, fans, air conditioners, a pressure pump, a fridge and a freezer — rather than pushing a fixed package regardless of fit. From there, we recommend the right inverter capacity, lithium battery size and number of panels to keep that load running through power outages without you having to ration electricity. We also design fully off-grid systems for homes and estates that want to be completely independent of the grid.",
     ],
   },
   {
@@ -98,13 +98,13 @@ export const servicesInfo: InfoBlock[] = [
   {
     heading: "Repairs, upgrades and second opinions",
     paragraphs: [
-      "Not every system we touch is one we installed. We regularly diagnose underperforming solar, CCTV, automation or smart home setups and either repair the existing equipment or recommend a targeted upgrade rather than a full replacement where one isn't needed.",
+      "We don't believe every project requires starting from scratch. We assess your existing solar, CCTV, automation, or smart home setup and determine what is actually needed—whether that's maintenance, additional equipment, system improvements, or a complete new installation. Our goal is to provide the right solution for your needs without recommending equipment you don't need.",
     ],
   },
   {
-    heading: "Free site survey and consultation",
+    heading: "Consultation and system assessment",
     paragraphs: [
-      "Every project, large or small, starts with a free assessment — either a site visit or a detailed conversation about your appliances, property and daily routine. This is what lets us quote a solution that is neither over-priced nor under-powered, and it costs nothing to find out where you stand.",
+      "Every project, large or small, starts with a detailed conversation about your appliances, property and daily routine. This is what lets us recommend a solution that is neither over-priced nor under-powered.",
     ],
   },
 ];
@@ -126,9 +126,9 @@ export const servicesFaqs: FaqItem[] = [
       "Yes, we regularly diagnose and repair systems we did not originally install, including Deye, Growatt and other hybrid inverter brands, along with lithium and lead-acid battery banks.",
   },
   {
-    question: "What is included in a free site survey?",
+    question: "How do you decide which system is right for me?",
     answer:
-      "We review your appliance list, check your existing wiring and roof or mounting space where applicable, and walk you through inverter, battery and panel options that fit your budget and load — with no obligation to proceed.",
+      "We review your appliance list, your existing wiring and, where applicable, your roof or mounting space. We then walk you through the inverter, battery and panel options that fit your budget and load, with no obligation to proceed.",
   },
 ];
 
@@ -137,7 +137,7 @@ export const packagesInfo: InfoBlock[] = [
     heading: "How our package tiers are structured",
     paragraphs: [
       "Each capacity tier on our Packages page — from 3.5KVA through 30KVA — includes multiple battery sizes so you can choose between a lower entry price with shorter backup, or a larger lithium battery bank that carries your appliances for longer between charges. Panel counts scale alongside battery size so the system can fully recharge within a normal daily cycle.",
-      "Every listed price includes the inverter, battery, panels, mounting hardware, cabling and professional installation by our own technicians — not just equipment supply. The only variable that can shift the final figure is what a site survey uncovers about your existing wiring or roof access.",
+      "Every listed price includes the inverter, battery, panels, mounting hardware, cabling and professional installation by our own technicians — not just equipment supply. The only thing that can change the final figure is the condition of your existing wiring or your roof access, which we confirm with you before installation.",
     ],
   },
   {
@@ -235,7 +235,7 @@ export const projectsInfo: InfoBlock[] = [
   {
     heading: "What goes into every installation you see here",
     paragraphs: [
-      "Each project in our gallery — from rooftop panel arrays to plant-room inverter banks — represents the same process: a free load assessment, a system design matched to that specific property's appliances, and installation carried out entirely by our in-house technicians rather than subcontracted labour.",
+      "Each project in our gallery — from rooftop panel arrays to plant-room inverter banks — represents the same process: a load assessment, a system design matched to that specific property's appliances, and installation carried out entirely by our in-house technicians rather than subcontracted labour.",
       "We photograph completed installations partly for our own records and partly so prospective clients can see the standard of cable management, panel mounting and distribution board work they can expect before a single naira changes hands.",
     ],
   },
@@ -270,16 +270,11 @@ export const contactInfo: InfoBlock[] = [
 export const contactFaqs: FaqItem[] = [
   {
     question: "What are your working hours?",
-    answer: "We're reachable Monday to Saturday, 8:00 AM to 6:00 PM, with WhatsApp messages typically answered within minutes during that window.",
-  },
-  {
-    question: "Do you offer free site visits?",
-    answer:
-      "Yes, site surveys are free and carry no obligation to proceed. We use the visit to confirm roof access, wiring condition and your actual load before finalising a quote.",
+    answer: "Our working hours are Monday to Friday, 9:00 AM to 5:00 PM. Saturday is by appointment only. WhatsApp messages are typically answered within minutes during working hours.",
   },
   {
     question: "How quickly can installation start after I confirm a package?",
     answer:
-      "Once a package and site survey are confirmed, most home installations are scheduled within a few days, subject to equipment availability for your chosen battery and panel configuration.",
+      "Once your package is confirmed, most home installations are scheduled within a few days, subject to equipment availability for your chosen battery and panel configuration.",
   },
 ];

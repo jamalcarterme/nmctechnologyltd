@@ -4,6 +4,7 @@ import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
+import Leadership from "@/components/Leadership";
 import MissionGrid from "@/components/MissionGrid";
 import NmcStory from "@/components/NmcStory";
 import PageHero from "@/components/PageHero";
@@ -13,7 +14,7 @@ import { aboutFaqs, aboutInfo } from "@/lib/content";
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "NMC Technology is a solar engineering company installing inverter, lithium battery and panel systems for homes and businesses since day one, in-house.",
+    "NMC Technology is a technology and engineering company delivering solar, CCTV, smart electrical automation and smart home solutions for homes and businesses across Nigeria, with every installation done by our own team.",
   alternates: { canonical: "/about" },
 };
 
@@ -29,6 +30,7 @@ export default function AboutPage() {
           subtitle="Engineering technology, powering possibilities — for homes and businesses across Nigeria."
         />
         <About />
+        <Leadership />
         <NmcStory />
         <InfoSection
           eyebrow="Our story"

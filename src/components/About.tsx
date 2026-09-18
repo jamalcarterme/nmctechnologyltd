@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import { motion } from "framer-motion";
 import { Award, HeartHandshake, Users } from "lucide-react";
 import { Container, Eyebrow } from "./ui";
 
@@ -26,23 +24,7 @@ const points = [
 export default function About() {
   return (
     <section id="about" className="bg-ink py-16 md:py-20">
-      <Container className="grid gap-14 lg:grid-cols-2 lg:items-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-3xl"
-        >
-          <Image
-            src="/images/team-photo.jpg"
-            alt="The NMC Technology professional team"
-            width={1200}
-            height={1400}
-            className="h-full w-full object-cover"
-          />
-        </motion.div>
-
+      <Container className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <Eyebrow>About NMC Technology</Eyebrow>
           <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
@@ -52,7 +34,9 @@ export default function About() {
             NMC Technology is a professional technology and engineering company focused on delivering reliable, innovative, and quality solutions for residential, commercial, and industrial clients. We specialize in solar power systems, CCTV security systems, smart electrical automation, and smart home automation. Our approach combines engineering expertise, quality equipment, proper system design, and professional installation to deliver solutions built for performance, safety, and long-term reliability.
           </p>
 
-          <div className="mt-10 flex flex-col gap-7">
+        </div>
+
+        <div className="flex flex-col gap-7 lg:pt-2">
             {points.map((point) => (
               <div key={point.title} className="flex gap-4">
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-paper/10 text-paper">
@@ -68,7 +52,6 @@ export default function About() {
                 </div>
               </div>
             ))}
-          </div>
         </div>
       </Container>
     </section>

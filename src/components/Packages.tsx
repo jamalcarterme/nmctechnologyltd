@@ -127,7 +127,7 @@ export default function Packages() {
         </AnimatePresence>
 
         <p className="mt-8 text-center text-[13px] text-paper/40">
-          Prices reflect current equipment costs and may be revised without prior notice. Final quote confirmed after a free site survey.
+          Prices reflect current equipment costs and may be revised without prior notice. Your final quote is confirmed before installation.
         </p>
 
         <p className="mt-6 text-center text-[15px] text-paper/70">

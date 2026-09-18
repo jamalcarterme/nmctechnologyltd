@@ -1,4 +1,3 @@
-import AutomationGrid from "@/components/AutomationGrid";
 import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -18,7 +17,6 @@ export default function Home() {
         <HomeShowcase />
         <BenefitsSection />
         <PackagesTeaser />
-        <AutomationGrid />
         <WhyChooseUs />
         <Testimonials />
 

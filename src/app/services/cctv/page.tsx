@@ -69,7 +69,7 @@ const cctvFaqs = [
   {
     question: "How many cameras do I need for my property?",
     answer:
-      "This depends on your property layout and security priorities. A small apartment might need 1-2 cameras covering entry points, while a larger home or business may need 4-8 cameras for comprehensive coverage. We assess your property during a free consultation and recommend a system matched to your actual needs.",
+      "This depends on your property layout and security priorities. A small apartment might need 1-2 cameras covering entry points, while a larger home or business may need 4-8 cameras for comprehensive coverage. We assess your property during a consultation and recommend a system matched to your actual needs.",
   },
   {
     question: "Can I monitor my cameras remotely?",
@@ -155,7 +155,7 @@ export default function CCTVPage() {
                   href="/get-quote/cctv"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
-                  Request Free Assessment
+                  Request an Assessment
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <Link

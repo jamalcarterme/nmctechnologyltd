@@ -13,38 +13,36 @@ export default function NmcStory() {
         <Reveal variant="fade" delay={0.1} className="mt-12 max-w-3xl mx-auto">
           <div className="space-y-6 text-[16px] leading-relaxed text-paper/75">
             <p>
-              NMC Technology and Automation was created as a result of the need
-              for ease, comfort and security in our homes, most especially with
-              the significant increase in insecurity in the country.
+              NMC Technology and Automation was created out of a need for ease,
+              comfort and security in our homes, especially with the growing
+              insecurity in the country.
             </p>
 
             <p>
-              Another key factor considered was the utility amount spent in
-              total for light bills and diesel; with our smart home automations
-              these costs were significantly reduced by 40% due to the energy
-              saving abilities proffered by our solution.
+              Another key concern was the amount spent on electricity bills and
+              diesel. With our smart home automation, these costs were reduced
+              by 40% thanks to the energy-saving features of our solutions.
             </p>
 
             <p>
-              Our CEO, when faced with the aforementioned hassles, conceived the
-              idea of automating his home which has proven to be one of the best
-              decisions, due to the ease and lack of worry when leaving his
-              home, as he can switch off appliances, lights, air conditioners,
-              etc all from his phone from anywhere in the world.
+              Faced with these challenges, our CEO decided to automate his own
+              home, and it proved to be one of his best decisions. He now
+              leaves home without worry, because he can switch off appliances,
+              lights, air conditioners and more from his phone, from anywhere
+              in the world.
             </p>
 
             <p>
-              This sparked the idea to extend this service to homes and
-              businesses across Nigeria. With the backing of years of
-              engineering expertise and a passion for customer satisfaction,
-              NMC Technology was born.
+              This inspired him to offer the same service to homes and
+              businesses across Nigeria. Backed by years of engineering
+              expertise and a passion for customer satisfaction, NMC Technology
+              was born.
             </p>
 
             <p>
-              Today, we stand as a trusted partner in providing innovative
-              electrical, solar, security, and automation solutions designed to
-              make homes, offices, and businesses safer, smarter, and more
-              energy-efficient.
+              Today, we are a trusted partner providing innovative electrical,
+              solar, security and automation solutions that make homes, offices
+              and businesses safer, smarter and more energy-efficient.
             </p>
           </div>
         </Reveal>

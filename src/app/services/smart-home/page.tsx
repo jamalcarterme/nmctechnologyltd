@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import BackgroundVideo from "@/components/BackgroundVideo";
+import AutomationGrid from "@/components/AutomationGrid";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
-import ServicePricing from "@/components/ServicePricing";
-import { smartHomePricingTiers } from "@/lib/pricing";
+import ServiceGallery from "@/components/ServiceGallery";
+import SmartHomePackages from "@/components/SmartHomePackages";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -17,6 +17,16 @@ export const metadata: Metadata = {
     "Professional smart home automation systems for lighting, temperature, security, and energy management. Custom automation solutions for modern homes, wherever you are.",
   alternates: { canonical: "/services/smart-home" },
 };
+
+const smartHomeGalleryImages = [
+  { src: "/images/smart-home-gallery/control-panel-01.jpg", alt: "Inverter and control panel installed on a wall" },
+  { src: "/images/smart-home-gallery/control-panel-02.jpg", alt: "Wired distribution board with breakers" },
+  { src: "/images/smart-home-gallery/control-panel-03.jpg", alt: "Wall-mounted control enclosures" },
+  { src: "/images/smart-home-gallery/control-panel-04.jpg", alt: "NMC technician wiring a control panel" },
+  { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a panel from a phone app" },
+  { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a system from a phone app" },
+  { src: "/images/smart-home-gallery/control-panel-07.jpg", alt: "Installed smart control box" },
+];
 
 const smartHomeInfo = [
   {
@@ -110,8 +120,6 @@ export default function SmartHomePage() {
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">
-          <BackgroundVideo src="/smart-home-bg.mp4" fallbackImage="/images/control-tech.jpg" />
-          <div className="absolute inset-0 bg-ink/75" />
           <Container className="relative">
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Smart Home Automation</Eyebrow>
@@ -125,6 +133,10 @@ export default function SmartHomePage() {
           </Container>
         </section>
 
+        <ServiceGallery images={smartHomeGalleryImages} className="border-t border-paper/10" />
+
+        <AutomationGrid />
+
         <InfoSection
           eyebrow="Smart Home Living"
           title="Transform your home with intelligent automation"
@@ -133,14 +145,7 @@ export default function SmartHomePage() {
           className="bg-ink"
         />
 
-        <ServicePricing
-          id="pricing"
-          eyebrow="Smart Home Packages"
-          title="Smart Home Packages Sized by Coverage"
-          description="Pick the tier closest to your property. Every package includes supply, professional installation and app setup."
-          tiers={smartHomePricingTiers}
-          waIntro="Hi NMC Technology, I'm interested in a Smart Home Automation package."
-        />
+        <SmartHomePackages id="pricing" />
 
         <Process />
 
@@ -159,7 +164,7 @@ export default function SmartHomePage() {
                   href="/get-quote/smart-home"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
-                  Request Free Consultation
+                  Request a Consultation
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <Link

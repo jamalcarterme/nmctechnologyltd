@@ -13,7 +13,7 @@ import { site } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Call, WhatsApp or send your details to NMC Technology for a free solar site survey and quote.",
+    "Call, WhatsApp or send your details to NMC Technology for a solar, CCTV, automation or smart home quote.",
   alternates: { canonical: "/contact" },
 };
 

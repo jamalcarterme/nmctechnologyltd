@@ -83,7 +83,6 @@ export const smartHomePricingTiers: ServicePricingTier[] = [
       "Smart lighting & switches",
       "Smart plugs for key appliances",
       "Single-app remote control",
-      "Voice assistant integration",
     ],
   },
   {

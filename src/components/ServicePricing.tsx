@@ -92,7 +92,7 @@ export default function ServicePricing({
         </div>
 
         <p className="mt-8 text-center text-[13px] text-paper/40">
-          Final pricing depends on property size, coverage area and equipment chosen. Confirmed after a free site survey.
+          Final pricing depends on property size, coverage area and equipment chosen. Your final quote is confirmed before installation.
         </p>
 
         <p className="mt-6 text-center text-[15px] text-paper/70">

@@ -79,7 +79,7 @@ export const services = [
     description:
       "Integrated technology solutions tailored to your specific needs, budget, and space requirements.",
     icon: "Wrench",
-    image: "/images/installer-panel-2.jpg",
+    image: "/images/custom-solutions-control-board.jpg",
     href: "/services",
   },
   {
@@ -396,4 +396,4 @@ export const testimonials = [
   },
 ];
 
-export const brands = ["Growatt", "Deye", "Sirne"];
+export const brands = ["Growatt", "Deye", "SRNE"];
