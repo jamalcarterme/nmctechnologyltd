@@ -4,7 +4,7 @@ import { Container, Eyebrow, Reveal } from "./ui";
 /** Leadership block: portrait on top, details card underneath (mobile-first,
  * side by side on large screens). Add the CEO's name to `CEO_NAME` to show it
  * above the job title. */
-const CEO_NAME = "";
+const CEO_NAME = "NwaChukwu Micheal Chigozie";
 
 export default function Leadership() {
   return (
