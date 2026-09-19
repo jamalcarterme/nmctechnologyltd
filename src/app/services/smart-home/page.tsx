@@ -6,7 +6,6 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
-import ServiceGallery from "@/components/ServiceGallery";
 import SmartHomePackages from "@/components/SmartHomePackages";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
@@ -19,20 +18,8 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/smart-home" },
 };
 
-const smartHomeGalleryImages = [
-  { src: "/images/smart-home-gallery/control-panel-01.jpg", alt: "Inverter and control panel installed on a wall" },
-  { src: "/images/smart-home-gallery/control-panel-02.jpg", alt: "Wired distribution board with breakers" },
-  { src: "/images/smart-home-gallery/control-panel-03.jpg", alt: "Wall-mounted control enclosures" },
-  { src: "/images/smart-home-gallery/control-panel-04.jpg", alt: "NMC technician wiring a control panel" },
-  { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a panel from a phone app" },
-  { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a system from a phone app" },
-  { src: "/images/smart-home-gallery/control-panel-07.jpg", alt: "Installed smart control box" },
-];
-
 const smartHomeHeroImages = [
   { src: "/images/smart-home-automation.jpg", alt: "Smart home automation controlled from a phone" },
-  { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a home electrical system from a phone app" },
-  { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a home system from a phone app" },
 ];
 
 const smartHomeInfo = [
@@ -141,8 +128,6 @@ export default function SmartHomePage() {
             </div>
           </Container>
         </section>
-
-        <ServiceGallery images={smartHomeGalleryImages} className="border-t border-paper/10" />
 
         <AutomationGrid />
 

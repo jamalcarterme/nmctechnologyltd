@@ -7,6 +7,7 @@ export const site = {
   phones: [
     { display: "0901 040 0711", href: "+2349010400711" },
     { display: "0916 456 7887", href: "+2349164567887" },
+    { display: "0706 680 8765", href: "+2347066808765" },
   ],
   whatsapp: "2349010400711",
   address: "Plot 4A, Block XIV, Opposite Unipetrol Estate, Satellite Town, Lagos, Nigeria",
