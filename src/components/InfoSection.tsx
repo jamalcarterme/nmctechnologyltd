@@ -9,7 +9,7 @@ export default function InfoSection({
   blocks,
   className = "bg-ink",
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   intro?: string;
   blocks: InfoBlock[];
@@ -19,8 +19,8 @@ export default function InfoSection({
     <section className={`${className} py-16 md:py-20`}>
       <Container>
         <div className="max-w-2xl">
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
+          {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
+          <h2 className={`balance ${eyebrow ? "mt-4" : ""} text-[32px] font-semibold leading-tight text-paper sm:text-[34px]`}>
             {title}
           </h2>
           {intro && (

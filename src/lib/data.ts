@@ -55,7 +55,7 @@ export const services = [
     description:
       "Professional surveillance and security camera installations. Remote monitoring and HD systems for properties of all sizes.",
     icon: "Camera",
-    image: "https://images.unsplash.com/photo-1589935447067-5531094415d1?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/cctv-cube-camera-wall.jpg",
     href: "/services/cctv",
   },
   {
@@ -63,7 +63,7 @@ export const services = [
     description:
       "Transform conventional systems into intelligent, efficient electrical solutions with automated controls and protection.",
     icon: "Zap",
-    image: "https://images.unsplash.com/photo-1780342506044-7f4913fe294a?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/automation-factory-line.jpg",
     href: "/services/automation",
   },
   {
@@ -71,7 +71,7 @@ export const services = [
     description:
       "Advanced automation for lighting, climate control, security, and energy management across your entire home.",
     icon: "Wifi",
-    image: "https://images.unsplash.com/photo-1519558260268-cde7e03a0152?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/smart-home-automation.jpg",
     href: "/services/smart-home",
   },
   {
@@ -87,7 +87,7 @@ export const services = [
     description:
       "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
     icon: "ClipboardCheck",
-    image: "/images/support-engineer-grid.jpg",
+    image: "/images/inverter-room-deye-3.jpg",
   },
 ];
 

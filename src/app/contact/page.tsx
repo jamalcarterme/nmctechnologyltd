@@ -23,7 +23,7 @@ export default function ContactPage() {
       <Header />
       <main>
         <PageHero
-          image="/images/control-tech.jpg"
+          image="/images/nmc-logo-office-wall.jpg"
           eyebrow="Get in touch"
           title="Our Contacts"
           subtitle="Pick the service you're interested in and we'll ask a few quick questions — our phone, email and office details are just below."

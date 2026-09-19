@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import CtaBar from "@/components/CtaBar";
+import MotionProvider from "@/components/MotionProvider";
 import { site } from "@/lib/data";
 import "./globals.css";
 
@@ -110,8 +111,20 @@ const jsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        {/* Enables scroll-reveal styles before first paint (skipped when the
+            visitor prefers reduced motion). Falls back to fully visible content
+            if scripts never finish loading. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var d=document.documentElement;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;d.classList.add("js-reveal");setTimeout(function(){if(!window.__revealReady)d.classList.remove("js-reveal")},8000)}catch(e){}})();`,
+          }}
+        />
         <link
           rel="preload"
           as="video"
@@ -124,8 +137,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
-        <CtaBar />
+        <MotionProvider>
+          {children}
+          <CtaBar />
+        </MotionProvider>
       </body>
     </html>
   );

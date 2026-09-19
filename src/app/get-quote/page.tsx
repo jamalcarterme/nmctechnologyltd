@@ -17,7 +17,7 @@ export default function GetQuotePage() {
       <Header />
       <main>
         <PageHero
-          image="/images/panelboard-tech.jpg"
+          image="/images/team-photo.jpg"
           eyebrow="Get a Free Quote"
           title="Which Service Do You Need?"
           subtitle="Pick a service below and we'll ask a few quick questions so we can put together an accurate, free quote for you."

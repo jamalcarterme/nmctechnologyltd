@@ -33,7 +33,6 @@ export default function AboutPage() {
         <Leadership />
         <NmcStory />
         <InfoSection
-          eyebrow="Our story"
           title="Why we install everything ourselves"
           blocks={aboutInfo}
           className="bg-charcoal"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AutomationGrid from "@/components/AutomationGrid";
+import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -26,6 +27,12 @@ const smartHomeGalleryImages = [
   { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a panel from a phone app" },
   { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a system from a phone app" },
   { src: "/images/smart-home-gallery/control-panel-07.jpg", alt: "Installed smart control box" },
+];
+
+const smartHomeHeroImages = [
+  { src: "/images/smart-home-automation.jpg", alt: "Smart home automation controlled from a phone" },
+  { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a home electrical system from a phone app" },
+  { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a home system from a phone app" },
 ];
 
 const smartHomeInfo = [
@@ -120,6 +127,8 @@ export default function SmartHomePage() {
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">
+          <BackgroundSlider images={smartHomeHeroImages} />
+          <div className="absolute inset-0 bg-ink/75" />
           <Container className="relative">
             <div className="flex flex-col items-center text-center">
               <Eyebrow>Smart Home Automation</Eyebrow>

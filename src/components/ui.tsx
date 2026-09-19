@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import type { ReactNode } from "react";
-import { motion } from "framer-motion";
+import type { CSSProperties, ReactNode } from "react";
 
+/** Scroll-reveal wrapper. Rendered hidden (via CSS, only when JS is active and
+ * motion is allowed) and revealed by <MotionProvider /> when it scrolls into
+ * view. Opacity/transform only, so it never shifts layout. */
 export function Reveal({
   children,
   className = "",
@@ -15,37 +17,14 @@ export function Reveal({
   delay?: number;
   variant?: "slide-up" | "pop" | "fade" | "scale";
 }) {
-  const variants = {
-    "slide-up": {
-      initial: { opacity: 0, y: 20 },
-      whileInView: { opacity: 1, y: 0 },
-    },
-    pop: {
-      initial: { opacity: 0, scale: 0.9 },
-      whileInView: { opacity: 1, scale: 1 },
-    },
-    fade: {
-      initial: { opacity: 0 },
-      whileInView: { opacity: 1 },
-    },
-    scale: {
-      initial: { opacity: 0, scale: 0.95 },
-      whileInView: { opacity: 1, scale: 1 },
-    },
-  };
-
-  const selected = variants[variant];
-
   return (
-    <motion.div
-      initial={selected.initial}
-      whileInView={selected.whileInView}
-      viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+    <div
+      data-reveal={variant}
+      style={{ "--reveal-delay": `${delay}s` } as CSSProperties}
       className={className}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 

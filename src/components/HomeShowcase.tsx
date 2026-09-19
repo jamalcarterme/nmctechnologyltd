@@ -2,9 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { services } from "@/lib/data";
-import { Container, Eyebrow } from "./ui";
+import { Container, Eyebrow, Reveal } from "./ui";
 import SlidingCarousel from "./SlidingCarousel";
 
 type Slide = (typeof services)[number];
@@ -38,13 +37,7 @@ export default function HomeShowcase() {
   return (
     <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -80px 0px" }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex flex-col items-center text-center"
-        >
+        <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Our services</Eyebrow>
           <h2 className="balance mt-4 max-w-2xl text-[30px] font-semibold uppercase tracking-tight text-paper sm:text-[32px]">
             Complete Solutions
@@ -52,7 +45,7 @@ export default function HomeShowcase() {
           <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-paper/65">
             From solar power to smart home automation, we deliver complete integrated solutions.
           </p>
-        </motion.div>
+        </Reveal>
 
         {/* Desktop / tablet: two cards visible, sliding filmstrip */}
         <div className="mt-14 hidden sm:block">

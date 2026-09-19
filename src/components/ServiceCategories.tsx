@@ -9,7 +9,7 @@ const icons: Record<string, LucideIcon> = { Sun, Camera, Zap, Wifi };
 export default function ServiceCategories() {
   return (
     <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-16 md:py-20">
-      <BackgroundVideo src="/background-video.mp4" fallbackImage="/images/team-photo.jpg" />
+      <BackgroundVideo src="/background-video.mp4" fallbackImage="/images/services-bg-fallback.jpg" />
       <div className="absolute inset-0 bg-charcoal/80" />
       <Container className="relative">
         <Reveal className="flex flex-col items-center text-center">

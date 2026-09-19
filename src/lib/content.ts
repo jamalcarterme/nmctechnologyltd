@@ -174,13 +174,6 @@ export const packagesFaqs: FaqItem[] = [
 
 export const aboutInfo: InfoBlock[] = [
   {
-    heading: "How NMC Technology started",
-    paragraphs: [
-      "NMC Technology was built on a simple frustration shared by most homeowners and businesses: paying for equipment — solar, security, automation or smart home — that was either wrongly specified, poorly installed, or abandoned by the seller the moment something needed fixing. We set out to be the company that designs, sells and installs a solution with the same team from first phone call to years-later maintenance call.",
-      "That decision to keep installation in-house rather than outsourcing to third-party contractors is still what separates how we work today. When our engineers design a system, they are the same people wiring it, mounting it or configuring it on site — so nothing gets lost in translation, and there's no finger-pointing between a seller and an installer if something isn't right.",
-    ],
-  },
-  {
     heading: "Our approach to equipment and workmanship",
     paragraphs: [
       "We deliberately work with a narrow set of proven brands and equipment across every service line — inverters and batteries, CCTV and security hardware, automation controllers, and smart home devices — rather than chasing the cheapest option on the market each month. Consistency in what we install means we know its failure points, its quirks and its realistic lifespan, which makes our maintenance and troubleshooting faster and more accurate.",

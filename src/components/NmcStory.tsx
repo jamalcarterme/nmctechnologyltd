@@ -2,47 +2,62 @@ import { Container, Reveal } from "./ui";
 
 export default function NmcStory() {
   return (
-    <section className="bg-gradient-to-r from-ink to-charcoal py-16 md:py-20 border-t border-paper/10">
+    <section className="border-t border-paper/10 bg-gradient-to-r from-ink to-charcoal py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <h2 className="balance max-w-3xl text-[32px] font-semibold leading-tight text-paper sm:text-[40px]">
-            The NMC Story
+            Our Story
           </h2>
         </Reveal>
 
-        <Reveal variant="fade" delay={0.1} className="mt-12 max-w-3xl mx-auto">
+        <Reveal variant="fade" delay={0.1} className="mx-auto mt-12 max-w-3xl">
           <div className="space-y-6 text-[16px] leading-relaxed text-paper/75">
             <p>
-              NMC Technology and Automation was created out of a need for ease,
-              comfort and security in our homes, especially with the growing
-              insecurity in the country.
+              NMC Technology was born from a passion for engineering,
+              innovation, and the desire to create technology solutions that
+              genuinely make everyday life better.
             </p>
 
             <p>
-              Another key concern was the amount spent on electricity bills and
-              diesel. With our smart home automation, these costs were reduced
-              by 40% thanks to the energy-saving features of our solutions.
+              Founded by Michael Nwachukwu, an Electrical &amp; Solar Engineer
+              with a strong passion for technology and quality workmanship, NMC
+              Technology started with a simple vision: to turn ideas into
+              reliable, practical, and intelligent solutions.
             </p>
 
             <p>
-              Faced with these challenges, our CEO decided to automate his own
-              home, and it proved to be one of his best decisions. He now
-              leaves home without worry, because he can switch off appliances,
-              lights, air conditioners and more from his phone, from anywhere
-              in the world.
+              What began as a passion for electrical engineering and power
+              solutions has grown into a technology-driven company providing
+              premium solutions across solar energy, inverter systems, smart
+              electrical automation, CCTV security, and smart home automation.
             </p>
 
             <p>
-              This inspired him to offer the same service to homes and
-              businesses across Nigeria. Backed by years of engineering
-              expertise and a passion for customer satisfaction, NMC Technology
-              was born.
+              At NMC Technology, we believe technology should do more than
+              function—it should deliver comfort, efficiency, security,
+              reliability, and peace of mind. This philosophy guides every
+              project we undertake, from residential installations to complex
+              commercial and industrial solutions.
             </p>
 
             <p>
-              Today, we are a trusted partner providing innovative electrical,
-              solar, security and automation solutions that make homes, offices
-              and businesses safer, smarter and more energy-efficient.
+              Today, NMC Technology continues to grow with a commitment to
+              engineering excellence, innovative thinking, professional
+              execution, and exceptional customer experience.
+            </p>
+          </div>
+
+          <div className="mt-10 flex flex-col items-center text-center">
+            <p className="text-[16px] leading-relaxed text-paper/75">
+              Our journey is still unfolding, but our purpose remains clear:
+            </p>
+            <p className="font-display mt-4 text-[26px] font-semibold leading-tight text-gold sm:text-[32px]">
+              Turning Ideas into Reality.
+            </p>
+            <span className="mt-6 block h-1 w-16 rounded-full bg-gold" />
+            <p className="mt-6 max-w-xl text-[17px] font-medium leading-relaxed text-paper">
+              We are building more than systems. We are building solutions
+              people can trust.
             </p>
           </div>
         </Reveal>
