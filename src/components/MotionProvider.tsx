@@ -4,62 +4,14 @@ import { useEffect, type ReactNode } from "react";
 import { usePathname } from "next/navigation";
 import { MotionConfig } from "framer-motion";
 
-const OFFSCREEN = 0.92; // only hide blocks that start below this fraction of the viewport
-const DURATION_MS = 700;
+/** Text that reveals on scroll. KEEP IN SYNC with the scroll-reveal block in globals.css.
+ * The page hero (first section) is excluded; <Reveal> wrappers ([data-rv]) animate as one
+ * unit; anything inside [data-no-reveal] (carousels, framer-motion areas) is left alone. */
+const TEXT_SELECTOR =
+  "main > section:not(:first-child) :is(h2,h3,h4,p,li,blockquote):not([data-rv] *,[data-no-reveal] *)";
+const PENDING = ":not([data-in]):not([data-rd])";
 
-function isRendered(el: HTMLElement) {
-  return el.getClientRects().length > 0;
-}
-
-/** Marks the main content blocks of every section (except the top hero) so they
- * fade/rise in on scroll. Blocks already on screen are left alone, so nothing
- * flashes on load. */
-function tagBlocks() {
-  const sections = document.querySelectorAll<HTMLElement>("main > section");
-  sections.forEach((section, index) => {
-    if (index === 0) return; // page hero
-    const blocks: HTMLElement[] = [];
-    const isGrid = (el: HTMLElement) =>
-      getComputedStyle(el).display === "grid" && el.children.length > 1;
-    const kids = (el: Element) =>
-      Array.from(el.children).filter(
-        (c): c is HTMLElement =>
-          c instanceof HTMLElement && !c.classList.contains("absolute"),
-      );
-
-    for (const container of kids(section)) {
-      if (isGrid(container)) {
-        blocks.push(...kids(container)); // columns / cards
-      } else {
-        for (const child of kids(container)) {
-          if (isGrid(child)) blocks.push(...kids(child));
-          else blocks.push(child);
-        }
-      }
-    }
-    blocks.forEach((el, i) => {
-      // Leave anything already animated (explicit Reveal, or framer-motion inline styles) alone
-      if (
-        el.closest("[data-reveal]") ||
-        el.style.opacity ||
-        el.style.transform ||
-        el.querySelector('[data-reveal],[style*="opacity"],[style*="transform"]') ||
-        !isRendered(el)
-      )
-        return;
-      if (el.getBoundingClientRect().top < window.innerHeight * OFFSCREEN) return;
-      el.setAttribute("data-reveal", "slide-up");
-      el.style.setProperty("--reveal-delay", `${(i % 4) * 0.08}s`);
-    });
-  });
-}
-
-function scan(observer: IntersectionObserver) {
-  tagBlocks();
-  document
-    .querySelectorAll<HTMLElement>("[data-reveal]:not([data-revealed])")
-    .forEach((el) => observer.observe(el));
-}
+type W = Window & { __revealReady?: boolean };
 
 export default function MotionProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
@@ -67,40 +19,67 @@ export default function MotionProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const root = document.documentElement;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    (window as W).__revealReady = true;
     if (reduce || !("IntersectionObserver" in window)) {
       root.classList.remove("js-reveal");
-      (window as unknown as { __revealReady?: boolean }).__revealReady = true;
       return;
     }
     root.classList.add("js-reveal");
-    (window as unknown as { __revealReady?: boolean }).__revealReady = true;
 
-    const timers: number[] = [];
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
+        let n = 0;
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
           const el = entry.target as HTMLElement;
           observer.unobserve(el);
-          el.setAttribute("data-revealed", "");
-          const delay = parseFloat(el.style.getPropertyValue("--reveal-delay")) || 0;
-          // Once settled, drop the helper attributes so the element behaves exactly as authored.
-          timers.push(
-            window.setTimeout(() => {
-              el.removeAttribute("data-reveal");
-              el.removeAttribute("data-revealed");
-            }, DURATION_MS + delay * 1000 + 150),
-          );
-        });
+          // Stagger items that enter together (explicit <Reveal delay> wins)
+          if (!el.style.getPropertyValue("--rd")) {
+            el.style.setProperty("--rd", `${Math.min(n, 5) * 0.06}s`);
+          }
+          n++;
+          el.setAttribute("data-in", "");
+        }
       },
-      { rootMargin: "0px 0px -6% 0px", threshold: 0.01 },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0 },
     );
 
-    const frame = requestAnimationFrame(() => scan(observer));
+    // Once an animation finishes, hand the element back to its normal styles.
+    const onEnd = (e: AnimationEvent) => {
+      const el = e.target as HTMLElement;
+      if (!e.animationName.startsWith("rv-") || !el.hasAttribute?.("data-in")) return;
+      el.removeAttribute("data-in");
+      el.setAttribute("data-rd", "");
+    };
+    document.addEventListener("animationend", onEnd);
+
+    const scan = () => {
+      try {
+        document
+          .querySelectorAll<HTMLElement>(`[data-rv]${PENDING}, ${TEXT_SELECTOR}${PENDING}`)
+          .forEach((el) => observer.observe(el));
+      } catch {
+        root.classList.remove("js-reveal"); // never leave content hidden
+      }
+    };
+
+    // Pick up content that mounts later (route changes, tabs, accordions, lazy sections)
+    let queued = 0;
+    const mutations = new MutationObserver(() => {
+      if (queued) return;
+      queued = requestAnimationFrame(() => {
+        queued = 0;
+        scan();
+      });
+    });
+    mutations.observe(document.body, { childList: true, subtree: true });
+    scan();
+
     return () => {
-      cancelAnimationFrame(frame);
+      cancelAnimationFrame(queued);
+      mutations.disconnect();
       observer.disconnect();
-      timers.forEach((t) => window.clearTimeout(t));
+      document.removeEventListener("animationend", onEnd);
     };
   }, [pathname]);
 

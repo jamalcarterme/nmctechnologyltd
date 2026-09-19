@@ -40,7 +40,7 @@ export default function Testimonials() {
           </h2>
         </Reveal>
 
-        <div className="testimonials-slider mt-14 relative">
+        <div data-no-reveal className="testimonials-slider mt-14 relative">
           <AnimatePresence initial={false} custom={direction} mode="popLayout">
             <motion.div
               key={current}

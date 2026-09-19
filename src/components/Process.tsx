@@ -28,6 +28,7 @@ export default function Process() {
         <div className="mt-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
           {process.map((step, i) => (
             <motion.div
+              data-no-reveal
               key={step.title}
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -103,7 +103,7 @@ export default function SlidingCarousel<T>({
   const visibleDot = ((index % total) + total) % total;
 
   return (
-    <div>
+    <div data-no-reveal>
       <div className="relative">
         {showArrows && total > 1 && (
           <>

@@ -10,8 +10,8 @@ export default function BenefitsSection() {
           <Reveal variant="slide-up">
             <div className="relative h-56 w-full overflow-hidden rounded-2xl sm:h-64 lg:h-72">
               <Image
-                src="/images/smart-home-gallery/control-panel-05.jpg"
-                alt="Controlling a home electrical system from a phone app"
+                src="/images/nmc-logo-office-wall.jpg"
+                alt="NMC Technology logo displayed in a modern office"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"

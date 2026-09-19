@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 
 /** Scroll-reveal wrapper. Rendered hidden (via CSS, only when JS is active and
- * motion is allowed) and revealed by <MotionProvider /> when it scrolls into
+ * motion is allowed) and revealed (data-in) by <MotionProvider /> when it scrolls into
  * view. Opacity/transform only, so it never shifts layout. */
 export function Reveal({
   children,
@@ -19,8 +19,8 @@ export function Reveal({
 }) {
   return (
     <div
-      data-reveal={variant}
-      style={{ "--reveal-delay": `${delay}s` } as CSSProperties}
+      data-rv={variant === "pop" || variant === "scale" ? "pop" : "up"}
+      style={delay ? ({ "--rd": `${delay}s` } as CSSProperties) : undefined}
       className={className}
     >
       {children}

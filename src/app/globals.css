@@ -69,39 +69,64 @@
   }
 }
 
-/* ---------- Scroll reveal (opacity + transform only: no layout shift) ---------- */
-.js-reveal [data-reveal] {
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0s);
-}
-
-.js-reveal [data-reveal]:not([data-revealed]) {
+/* ---------- Scroll reveal (opacity + transform only: no layout shift) ----------
+ * Hidden only while JS is active and motion is allowed (.js-reveal is set before paint by
+ * an inline script in layout.tsx). MotionProvider adds data-in when an element enters the
+ * viewport, then data-rd once its animation has finished. KEEP the text selector in sync
+ * with TEXT_SELECTOR in MotionProvider.tsx. */
+.js-reveal [data-rv]:not([data-in]):not([data-rd]) {
   opacity: 0;
-  transform: translate3d(0, 18px, 0);
+  transform: translate3d(0, 14px, 0);
 }
 
-.js-reveal [data-reveal="pop"]:not([data-revealed]) {
-  transform: scale(0.94);
+.js-reveal
+  main
+  > section:not(:first-child)
+  :is(h2, h3, h4, p, li, blockquote):not([data-rv] *, [data-no-reveal] *):not(
+    [data-in]
+  ):not([data-rd]) {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
 }
 
-.js-reveal [data-reveal="scale"]:not([data-revealed]) {
-  transform: scale(0.97);
+.js-reveal [data-rv="pop"]:not([data-in]):not([data-rd]) {
+  transform: scale(0.95);
 }
 
-.js-reveal [data-reveal="fade"]:not([data-revealed]) {
-  transform: none;
+[data-in]:not([data-rd]) {
+  animation: rv-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--rd, 0s) both;
 }
 
-.js-reveal [data-reveal][data-revealed] {
-  opacity: 1;
-  transform: none;
+[data-rv="pop"][data-in]:not([data-rd]) {
+  animation-name: rv-pop;
+}
+
+@keyframes rv-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rv-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---------- CTA "ringing" shake: rotates/vibrates in place, then pauses ---------- */
 @keyframes cta-ring {
   0%,
-  17%,
+  18%,
   100% {
     transform: translateX(0) rotate(0deg);
   }
@@ -133,11 +158,11 @@
 
 .cta-shake {
   transform-origin: 50% 50%;
-  animation: cta-ring 4.4s ease-in-out 1.6s infinite;
+  animation: cta-ring 3.2s ease-in-out 1.2s infinite;
 }
 
 .cta-shake-b {
-  animation-delay: 2.3s;
+  animation-delay: 1.9s;
 }
 
 .cta-shake:hover,
@@ -151,9 +176,10 @@
     animation: none;
   }
 
-  .js-reveal [data-reveal] {
+  [data-in],
+  [data-rv] {
+    animation: none !important;
     opacity: 1 !important;
     transform: none !important;
-    transition: none !important;
   }
 }

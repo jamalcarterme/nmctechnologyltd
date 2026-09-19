@@ -43,6 +43,7 @@ export default function Packages() {
 
         <AnimatePresence mode="wait">
           <motion.div
+            data-no-reveal
             key={group.id}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
