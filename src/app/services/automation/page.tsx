@@ -20,17 +20,6 @@ const automationHeroImages = [
   { src: "/images/automation-panel-clamp-meter.jpg", alt: "Technician using a clamp meter to test a relay control panel" },
 ];
 
-const automationGalleryImages = [
-  ...automationHeroImages,
-  { src: "/images/automation-gallery/control-panel-01.jpg", alt: "Inverter and control panel installed on a wall" },
-  { src: "/images/automation-gallery/control-panel-02.jpg", alt: "Wired distribution board with breakers" },
-  { src: "/images/automation-gallery/control-panel-03.jpg", alt: "Wall-mounted control enclosures" },
-  { src: "/images/automation-gallery/control-panel-04.jpg", alt: "NMC technician wiring a control panel" },
-  { src: "/images/automation-gallery/control-panel-05.jpg", alt: "Controlling a panel from a phone app" },
-  { src: "/images/automation-gallery/control-panel-06.jpg", alt: "Monitoring a system from a phone app" },
-  { src: "/images/automation-gallery/control-panel-07.jpg", alt: "Installed smart control box" },
-];
-
 export const metadata: Metadata = {
   title: "Smart Electrical Automation | NMC Technology",
   description:
@@ -139,7 +128,7 @@ export default function AutomationPage() {
           </Container>
         </section>
 
-        <ServiceGallery images={automationGalleryImages} className="border-t border-paper/10" />
+        <ServiceGallery images={automationHeroImages} className="border-t border-paper/10" />
 
         <InfoSection
           eyebrow="Electrical Automation"

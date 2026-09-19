@@ -12,8 +12,8 @@ const photos = [
   },
   {
     src: "/images/inverter-room-deye-1.jpg",
-    alt: "Three Deye hybrid inverters mounted on a wall above breaker panels",
-    caption: "Deye hybrid inverters",
+    alt: "Deye hybrid inverters and battery bank installed in a plant room",
+    caption: "Deye hybrid inverter room",
   },
   {
     src: "/images/installer-panel-1.jpg",
@@ -27,8 +27,8 @@ const photos = [
   },
   {
     src: "/images/panelboard-tech.jpg",
-    alt: "Technician wiring a control and breaker panel",
-    caption: "Control panel wiring",
+    alt: "Technician wiring a solar distribution and breaker panel",
+    caption: "Distribution panel wiring",
   },
   {
     src: "/images/rooftop-panels-3.jpg",
@@ -52,22 +52,22 @@ const photos = [
   },
   {
     src: "/images/inverter-room-deye-3.jpg",
-    alt: "Technician fitting a distribution board beside two Deye hybrid inverters",
-    caption: "Distribution board fitting",
+    alt: "Two Deye hybrid inverters mounted above distribution boards",
+    caption: "Deye hybrid inverter room",
   },
   {
     src: "/images/inverter-room-deye-4.jpg",
-    alt: "Two Deye hybrid inverters mounted above distribution boards",
-    caption: "Deye inverters & distribution boards",
+    alt: "Deye inverters and battery bank installed in a plant room",
+    caption: "Inverter & battery bank setup",
   },
   {
     src: "/images/inverter-room-deye-closeup.jpg",
-    alt: "Close-up of Deye hybrid inverters and their control displays",
+    alt: "Close-up of Deye hybrid inverter control panels and battery boxes",
     caption: "Deye inverter close-up",
   },
   {
     src: "/images/srne-battery-tower-technician.jpg",
-    alt: "Stacked SRNE lithium battery tower with inverters in a showroom",
+    alt: "NMC Technology technician beside a stacked SRNE lithium battery tower",
     caption: "SRNE lithium battery tower",
   },
   {
@@ -87,13 +87,13 @@ const photos = [
   },
   {
     src: "/images/automation-breaker-panel.jpg",
-    alt: "Wall-mounted control enclosure installed below distribution boards",
-    caption: "Control enclosure installation",
+    alt: "Automatic transfer switch panel being installed and wired",
+    caption: "ATS panel installation",
   },
   {
     src: "/images/automation-panel-wiring.jpg",
-    alt: "Wall-mounted electrical control enclosure with its door open",
-    caption: "Wall-mounted control panel",
+    alt: "Technician wiring an electrical automation control panel",
+    caption: "Automation panel wiring",
   },
   {
     src: "/images/automation-control-panel-field.jpg",
@@ -132,9 +132,8 @@ export default function Gallery() {
             Real installations, by our own technicians
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-            A look at homes and facilities we&apos;ve worked on — rooftop
-            solar arrays, inverter and battery installations, and the
-            control and distribution panels that keep them running.
+            A look at homes and facilities we&apos;ve powered —
+            from rooftop arrays to the plant rooms that keep them running.
           </p>
         </div>
 

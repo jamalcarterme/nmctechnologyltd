@@ -98,7 +98,7 @@ const jsonLd = {
     addressRegion: "Lagos",
     addressCountry: "NG",
   },
-  sameAs: [site.tiktok],
+  sameAs: [site.tiktok, site.instagram, site.facebook],
   makesOffer: [
     "Home solar power systems",
     "Off-grid solar installation",

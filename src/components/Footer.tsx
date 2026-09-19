@@ -5,6 +5,7 @@ import { nav, site, waLink } from "@/lib/data";
 import { Container, Reveal } from "./ui";
 import TikTokIcon from "./TikTokIcon";
 import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
 
 export default function Footer() {
   return (
@@ -99,6 +100,15 @@ export default function Footer() {
               className="flex h-10 w-10 items-center justify-center transition-transform hover:scale-105"
             >
               <InstagramIcon className="h-9 w-9" />
+            </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on Facebook"
+              className="flex h-10 w-10 items-center justify-center transition-transform hover:scale-105"
+            >
+              <FacebookIcon className="h-9 w-9" />
             </a>
           </div>
         </Reveal>

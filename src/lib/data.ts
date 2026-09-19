@@ -7,12 +7,12 @@ export const site = {
   phones: [
     { display: "0901 040 0711", href: "+2349010400711" },
     { display: "0916 456 7887", href: "+2349164567887" },
-    { display: "0706 680 8765", href: "+2347066808765" },
   ],
   whatsapp: "2349010400711",
   address: "Plot 4A, Block XIV, Opposite Unipetrol Estate, Satellite Town, Lagos, Nigeria",
   addressShort: "Satellite Town, Lagos",
   tiktok: "https://www.tiktok.com/@nmc_solar.ng_1",
+  facebook: "https://www.facebook.com/share/1A47jP3Sia/?mibextid=wwXIfr",
   instagram: "https://www.instagram.com/nmc_solar.ng?stkn=MXVrOWJ5dWZrZ2gwZQ%3D%3D&utm_source=qr",
   email: "nmctechnologi@gmail.com",
 };

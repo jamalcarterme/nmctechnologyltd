@@ -228,7 +228,7 @@ export const projectsInfo: InfoBlock[] = [
   {
     heading: "What goes into every installation you see here",
     paragraphs: [
-      "Each project in our gallery — from rooftop panel arrays and inverter installations to battery storage and control panels — represents the same process: a load assessment, a system design matched to that specific property's needs, and installation carried out entirely by our in-house technicians rather than subcontracted labour.",
+      "Each project in our gallery — from rooftop panel arrays to plant-room inverter banks — represents the same process: a load assessment, a system design matched to that specific property's appliances, and installation carried out entirely by our in-house technicians rather than subcontracted labour.",
       "We photograph completed installations partly for our own records and partly so prospective clients can see the standard of cable management, panel mounting and distribution board work they can expect before a single naira changes hands.",
     ],
   },
