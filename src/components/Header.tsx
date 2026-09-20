@@ -119,12 +119,15 @@ export default function Header() {
                   {item.label}
                 </Link>
               ))}
-              <a
-                href={`tel:${site.phones[0].href}`}
-                className="mt-2 flex items-center gap-2 px-3 py-2 text-[15px] font-semibold text-paper/90"
-              >
-                <Phone className="h-4 w-4 text-gold" /> {site.phones[0].display}
-              </a>
+              {site.phones.map((phone, i) => (
+                <a
+                  key={phone.href}
+                  href={`tel:${phone.href}`}
+                  className={`${i === 0 ? "mt-2 " : ""}flex items-center gap-2 px-3 py-2 text-[15px] font-semibold text-paper/90`}
+                >
+                  <Phone className="h-4 w-4 text-gold" /> {phone.display}
+                </a>
+              ))}
               <Link
                 href="/get-quote"
                 onClick={() => setOpen(false)}

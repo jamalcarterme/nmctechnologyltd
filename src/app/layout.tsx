@@ -88,7 +88,7 @@ const jsonLd = {
   image: `${site.domain}/images/hero-panels.jpg`,
   logo: `${site.domain}/images/logo.png`,
   url: site.domain,
-  telephone: site.phones.map((p) => `+${p.href}`).join(", "),
+  telephone: site.phones.map((p) => p.href).join(", "),
   email: site.email,
   priceRange: "₦₦₦",
   address: {
