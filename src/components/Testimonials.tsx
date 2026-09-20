@@ -13,7 +13,7 @@ export default function Testimonials() {
     const timer = setInterval(() => {
       setDirection(1);
       setCurrent((prev) => (prev + 1) % testimonials.length);
-    }, 6000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 

@@ -7,7 +7,7 @@ import Image from "next/image";
  * Renders every image stacked absolutely and fades between them. */
 export default function BackgroundSlider({
   images,
-  intervalMs = 4500,
+  intervalMs = 3500,
 }: {
   images: { src: string; alt: string }[];
   intervalMs?: number;

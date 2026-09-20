@@ -92,7 +92,7 @@ export default function Services() {
                 <SlidingCarousel
                   items={services}
                   visible={3}
-                  intervalMs={3200}
+                  intervalMs={2500}
                   keyExtractor={keyExtractor}
                   renderItem={renderCard}
                   showDots
@@ -103,7 +103,7 @@ export default function Services() {
                 <SlidingCarousel
                   items={services}
                   visible={2}
-                  intervalMs={3200}
+                  intervalMs={2500}
                   keyExtractor={keyExtractor}
                   renderItem={renderCard}
                   showDots
@@ -114,7 +114,7 @@ export default function Services() {
                 <SlidingCarousel
                   items={services}
                   visible={1}
-                  intervalMs={3200}
+                  intervalMs={2500}
                   keyExtractor={keyExtractor}
                   renderItem={renderCard}
                   showDots

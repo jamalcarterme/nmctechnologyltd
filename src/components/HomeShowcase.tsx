@@ -52,7 +52,7 @@ export default function HomeShowcase() {
           <SlidingCarousel
             items={services}
             visible={2}
-            intervalMs={3000}
+            intervalMs={2500}
             keyExtractor={(service, i) => `${service.title}-${i}`}
             renderItem={(service) => <Card service={service} />}
             showDots
@@ -65,7 +65,7 @@ export default function HomeShowcase() {
           <SlidingCarousel
             items={services}
             visible={1}
-            intervalMs={3000}
+            intervalMs={2500}
             keyExtractor={(service, i) => `${service.title}-${i}`}
             renderItem={(service) => <Card service={service} />}
             showDots

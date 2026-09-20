@@ -142,7 +142,7 @@ export default function Gallery() {
           <SlidingCarousel
             items={photos}
             visible={3}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={(photo, i) => `${photo.src}-${i}`}
             renderItem={(photo) => <Slide photo={photo} />}
             showDots
@@ -155,7 +155,7 @@ export default function Gallery() {
           <SlidingCarousel
             items={photos}
             visible={2}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={(photo, i) => `${photo.src}-${i}`}
             renderItem={(photo) => <Slide photo={photo} />}
             showDots
@@ -168,7 +168,7 @@ export default function Gallery() {
           <SlidingCarousel
             items={photos}
             visible={1}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={(photo, i) => `${photo.src}-${i}`}
             renderItem={(photo) => <Slide photo={photo} />}
             showDots

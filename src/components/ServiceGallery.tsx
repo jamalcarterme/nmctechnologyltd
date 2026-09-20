@@ -39,7 +39,7 @@ export default function ServiceGallery({
           <SlidingCarousel
             items={images}
             visible={3}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={keyExtractor}
             renderItem={renderItem}
             showArrows
@@ -49,7 +49,7 @@ export default function ServiceGallery({
           <SlidingCarousel
             items={images}
             visible={2}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={keyExtractor}
             renderItem={renderItem}
             showArrows
@@ -59,7 +59,7 @@ export default function ServiceGallery({
           <SlidingCarousel
             items={images}
             visible={1}
-            intervalMs={3200}
+            intervalMs={2500}
             keyExtractor={keyExtractor}
             renderItem={renderItem}
             showArrows
