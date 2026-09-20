@@ -58,7 +58,7 @@ export const services = [
     description:
       "Professional surveillance and security camera installations. Remote monitoring and HD systems for properties of all sizes.",
     icon: "Camera",
-    image: "/images/projects/project-29.jpeg",
+    image: "/images/cctv-cube-camera-wall.jpg",
     href: "/services/cctv",
   },
   {
@@ -74,7 +74,7 @@ export const services = [
     description:
       "Advanced automation for lighting, climate control, security, and energy management across your entire home.",
     icon: "Wifi",
-    image: "/images/projects/project-28.jpeg",
+    image: "/images/google-smart-home-devices.jpg",
     href: "/services/smart-home",
   },
   {
