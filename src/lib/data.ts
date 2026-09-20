@@ -13,6 +13,7 @@ export const site = {
   addressShort: "Satellite Town, Lagos",
   tiktok: "https://www.tiktok.com/@nmc_solar.ng_1",
   facebook: "https://www.facebook.com/share/1A47jP3Sia/?mibextid=wwXIfr",
+  youtube: "https://www.youtube.com/@NMCTechnology",
   instagram: "https://www.instagram.com/nmc_solar.ng?stkn=MXVrOWJ5dWZrZ2gwZQ%3D%3D&utm_source=qr",
   email: "nmctechnologi@gmail.com",
 };
