@@ -6,14 +6,49 @@ import SlidingCarousel from "./SlidingCarousel";
 
 const photos = [
   {
-    src: "/images/projects/project-01.jpeg",
-    alt: "Inverter Automation",
-    caption: "Inverter Automation",
+    src: "/images/projects/project-24.jpeg",
+    alt: "70 units of 650w solar panels installed at Ikoyi Lagos",
+    caption: "70 units of 650w solar panels installed at Ikoyi Lagos",
+  },
+  {
+    src: "/images/projects/project-29.jpeg",
+    alt: "Solar camera",
+    caption: "Solar camera",
+  },
+  {
+    src: "/images/projects/project-25.jpeg",
+    alt: "Smart electrical installation",
+    caption: "Smart electrical installation",
+  },
+  {
+    src: "/images/projects/project-31.jpeg",
+    alt: "Smart curtains automation",
+    caption: "Smart curtains automation",
   },
   {
     src: "/images/projects/project-02.jpeg",
     alt: "Smart load distribution system",
     caption: "Smart load distribution system",
+  },
+  {
+    src: "/images/projects/project-08.jpeg",
+    alt: "Solar panels installation",
+    caption: "Solar panels installation",
+  },
+  {
+    src: "/images/projects/project-28.jpeg",
+    alt: "Smart staircase lighting",
+    caption: "Smart staircase lighting",
+  },
+  {
+    src: "/images/projects/project-33.jpeg",
+    alt: "Dynamic lighting control panel",
+    caption: "Dynamic lighting control panel",
+  },
+  {
+    src: "/images/projects/project-34.jpeg",
+    alt: "AVR installation",
+    caption: "AVR installation",
   },
   {
     src: "/images/projects/project-03.jpeg",
@@ -37,11 +72,6 @@ const photos = [
   },
   {
     src: "/images/projects/project-07.jpeg",
-    alt: "Solar panels installation",
-    caption: "Solar panels installation",
-  },
-  {
-    src: "/images/projects/project-08.jpeg",
     alt: "Solar panels installation",
     caption: "Solar panels installation",
   },
@@ -121,16 +151,6 @@ const photos = [
     caption: "Corrective maintenance",
   },
   {
-    src: "/images/projects/project-24.jpeg",
-    alt: "70 units of 650w solar panels installed at Ikoyi Lagos",
-    caption: "70 units of 650w solar panels installed at Ikoyi Lagos",
-  },
-  {
-    src: "/images/projects/project-25.jpeg",
-    alt: "Smart electrical installation",
-    caption: "Smart electrical installation",
-  },
-  {
     src: "/images/projects/project-26.jpeg",
     alt: "30kva with 65kwh lithium battery",
     caption: "30kva with 65kwh lithium battery",
@@ -141,39 +161,14 @@ const photos = [
     caption: "76 units of 550w solar panels installed at banana island Lagos",
   },
   {
-    src: "/images/projects/project-28.jpeg",
-    alt: "Smart staircase lighting",
-    caption: "Smart staircase lighting",
-  },
-  {
-    src: "/images/projects/project-29.jpeg",
-    alt: "Solar camera",
-    caption: "Solar camera",
-  },
-  {
     src: "/images/projects/project-30.jpeg",
     alt: "Smart Gate Automation",
     caption: "Smart Gate Automation",
   },
   {
-    src: "/images/projects/project-31.jpeg",
-    alt: "Smart curtains automation",
-    caption: "Smart curtains automation",
-  },
-  {
     src: "/images/projects/project-32.jpeg",
     alt: "Dynamic lighting",
     caption: "Dynamic lighting",
-  },
-  {
-    src: "/images/projects/project-33.jpeg",
-    alt: "Dynamic lighting control panel",
-    caption: "Dynamic lighting control panel",
-  },
-  {
-    src: "/images/projects/project-34.jpeg",
-    alt: "AVR installation",
-    caption: "AVR installation",
   },
 ];
 

@@ -82,7 +82,7 @@ export const services = [
     description:
       "Integrated technology solutions tailored to your specific needs, budget, and space requirements.",
     icon: "Wrench",
-    image: "/images/projects/project-17.jpeg",
+    image: "/images/custom-solutions-inverter-board.jpg",
     href: "/services",
   },
   {
@@ -90,7 +90,7 @@ export const services = [
     description:
       "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
     icon: "ClipboardCheck",
-    image: "/images/projects/project-09.jpeg",
+    image: "/images/professional-support-team.jpg",
   },
 ];
 
