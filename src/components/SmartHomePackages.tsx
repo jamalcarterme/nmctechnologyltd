@@ -28,10 +28,10 @@ function PackagePhoto({ pkg }: { pkg: HomePackage }) {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       src={failed ? pkg.fallbackImage : pkg.image}
-      alt={`${pkg.name} – smart home interior`}
+      alt={`${pkg.name} – NMC Technology smart home`}
       loading="lazy"
       onError={() => setFailed(true)}
-      className="h-full w-full object-cover"
+      className={`h-full w-full ${failed && pkg.fit === "contain" ? "bg-white object-contain p-6" : "object-cover"}`}
     />
   );
 }

@@ -19,6 +19,7 @@ export type HomePackage = {
   ideal: string;
   cta: string;
   image: string; // remote (Unsplash) photo
+  fit?: "contain"; // applies to the fallback product shot only
   fallbackImage: string; // local photo used if the remote one fails to load
 };
 
@@ -74,8 +75,8 @@ export const homePackages: HomePackage[] = [
     ],
     ideal: "2–3 bedroom homes, apartments and modern residences.",
     cta: "Get a Quote",
-    image: u("photo-1502672260266-1c1ef2d93688"),
-    fallbackImage: "/images/smart-home-automation.jpg",
+    image: u("photo-1757862351841-c6f7ac0b0201"),
+    fallbackImage: "/images/smart-home-gallery/control-panel-06.jpg",
   },
   {
     number: "03",
@@ -97,8 +98,9 @@ export const homePackages: HomePackage[] = [
     ],
     ideal: "Homeowners who prioritize security, access control and remote monitoring.",
     cta: "Secure My Home",
-    image: u("photo-1616486338812-3dadae4b4ace"),
-    fallbackImage: "/images/smart-home-automation.jpg",
+    image: u("photo-1560617577-ecd7ffd04b98"),
+    fit: "contain",
+    fallbackImage: "/images/cctv-dome-camera.jpg",
   },
   {
     number: "04",
@@ -139,7 +141,7 @@ export const homePackages: HomePackage[] = [
     ],
     ideal: "Luxury apartments, duplexes and modern family homes.",
     cta: "Design My Smart Home",
-    image: u("photo-1600210492486-724fe5c67fb0"),
+    image: u("photo-1758448755856-01d3add0177b"),
     fallbackImage: "/images/smart-home-automation.jpg",
   },
   {
@@ -176,8 +178,8 @@ export const homePackages: HomePackage[] = [
     },
     ideal: "Luxury residences, mansions, premium apartments, executive homes and high-end developments.",
     cta: "Book a Smart Home Consultation",
-    image: u("photo-1600607687939-ce8a6c25118c"),
-    fallbackImage: "/images/smart-home-automation.jpg",
+    image: u("photo-1770567764570-ebe9b5d0c02b"),
+    fallbackImage: "/images/inverter-room-growatt.jpg",
   },
   {
     number: "06",
@@ -196,7 +198,7 @@ export const homePackages: HomePackage[] = [
     ],
     ideal: "Developers and builders of residential properties for sale.",
     cta: "Discuss a Developer Project",
-    image: u("photo-1600585154340-be6161a56a0c"),
-    fallbackImage: "/images/smart-home-automation.jpg",
+    image: u("photo-1778164909438-c27c813cb480"),
+    fallbackImage: "/images/services-bg-fallback.jpg",
   },
 ];
