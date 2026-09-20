@@ -20,9 +20,9 @@ export const metadata: Metadata = {
 };
 
 const smartHomeHeroImages = [
-  { src: "/images/smart-home-automation.jpg", alt: "Smart home automation controlled from a phone" },
-  { src: "/images/smart-home-gallery/control-panel-05.jpg", alt: "Controlling a home electrical system from a phone app" },
-  { src: "/images/smart-home-gallery/control-panel-06.jpg", alt: "Monitoring a home system from a phone app" },
+  { src: "/images/projects/project-31.jpeg", alt: "Smart curtains automation" },
+  { src: "/images/projects/project-32.jpeg", alt: "Dynamic lighting on a staircase" },
+  { src: "/images/projects/project-30.jpeg", alt: "Smart gate automation controlled from a phone" },
 ];
 
 const smartHomeInfo = [
@@ -117,7 +117,7 @@ export default function SmartHomePage() {
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">
-          <BackgroundSlider images={smartHomeHeroImages} />
+          <BackgroundSlider images={smartHomeHeroImages} drift />
           <div className="absolute inset-0 bg-ink/75" />
           <Container className="relative">
             <div className="flex flex-col items-center text-center">

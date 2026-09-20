@@ -6,99 +6,174 @@ import SlidingCarousel from "./SlidingCarousel";
 
 const photos = [
   {
-    src: "/images/hero-panels.jpg",
-    alt: "Rooftop solar panel array overlooking the city skyline",
-    caption: "Rooftop solar array",
+    src: "/images/projects/project-01.jpeg",
+    alt: "Inverter Automation",
+    caption: "Inverter Automation",
   },
   {
-    src: "/images/inverter-room-deye-1.jpg",
-    alt: "Deye hybrid inverters and battery bank installed in a plant room",
-    caption: "Deye hybrid inverter room",
+    src: "/images/projects/project-02.jpeg",
+    alt: "Smart load distribution system",
+    caption: "Smart load distribution system",
   },
   {
-    src: "/images/installer-panel-1.jpg",
-    alt: "NMC Technology technician installing a rooftop solar panel",
-    caption: "On-site panel installation",
+    src: "/images/projects/project-03.jpeg",
+    alt: "Inverter Automation",
+    caption: "Inverter Automation",
   },
   {
-    src: "/images/inverter-room-growatt.jpg",
-    alt: "Growatt inverter bank with distribution board wiring",
-    caption: "Growatt inverter bank",
+    src: "/images/projects/project-04.jpeg",
+    alt: "Smart generator trigger switch",
+    caption: "Smart generator trigger switch",
   },
   {
-    src: "/images/panelboard-tech.jpg",
-    alt: "Technician wiring a solar distribution and breaker panel",
-    caption: "Distribution panel wiring",
+    src: "/images/projects/project-05.jpeg",
+    alt: "Smartload distribution control",
+    caption: "Smartload distribution control",
   },
   {
-    src: "/images/rooftop-panels-3.jpg",
-    alt: "Solar panel installation on a commercial rooftop",
-    caption: "Commercial rooftop installation",
+    src: "/images/projects/project-06.jpeg",
+    alt: "Generator Automation",
+    caption: "Generator Automation",
   },
   {
-    src: "/images/solar-install-technician.jpg",
-    alt: "NMC Technology technician installing a solar panel",
-    caption: "NMC technician at work",
+    src: "/images/projects/project-07.jpeg",
+    alt: "Solar panels installation",
+    caption: "Solar panels installation",
   },
   {
-    src: "/images/solar-inverters-growatt.jpg",
-    alt: "Growatt solar inverters mounted and wired",
-    caption: "Mounted inverter installation",
+    src: "/images/projects/project-08.jpeg",
+    alt: "Solar panels installation",
+    caption: "Solar panels installation",
   },
   {
-    src: "/images/avr-voltage-regulator.jpg",
-    alt: "Technician servicing a 30000VA automatic voltage regulator",
-    caption: "AVR installation & servicing",
+    src: "/images/projects/project-09.jpeg",
+    alt: "Preventive maintenance",
+    caption: "Preventive maintenance",
   },
   {
-    src: "/images/inverter-room-deye-3.jpg",
-    alt: "Two Deye hybrid inverters mounted above distribution boards",
-    caption: "Deye hybrid inverter room",
+    src: "/images/projects/project-10.jpeg",
+    alt: "6kva inverter system",
+    caption: "6kva inverter system",
   },
   {
-    src: "/images/inverter-room-deye-4.jpg",
-    alt: "Deye inverters and battery bank installed in a plant room",
-    caption: "Inverter & battery bank setup",
+    src: "/images/projects/project-11.jpeg",
+    alt: "12kva with 35kwh lithium battery",
+    caption: "12kva with 35kwh lithium battery",
   },
   {
-    src: "/images/inverter-room-deye-closeup.jpg",
-    alt: "Close-up of Deye hybrid inverter control panels and battery boxes",
-    caption: "Deye inverter close-up",
+    src: "/images/projects/project-12.jpeg",
+    alt: "32kva inverter with 50kwh lithium 40 unit of 650w solar panel",
+    caption: "32kva inverter with 50kwh lithium 40 unit of 650w solar panel",
   },
   {
-    src: "/images/srne-battery-tower-technician.jpg",
-    alt: "NMC Technology technician beside a stacked SRNE lithium battery tower",
-    caption: "SRNE lithium battery tower",
+    src: "/images/projects/project-13.jpeg",
+    alt: "18kva with 50kwh lithium battery 30 units of 650w solar panels",
+    caption: "18kva with 50kwh lithium battery 30 units of 650w solar panels",
   },
   {
-    src: "/images/srne-showroom-wall.jpg",
-    alt: "Showroom wall of SRNE inverters and battery storage units",
-    caption: "SRNE equipment showroom",
+    src: "/images/projects/project-14.jpeg",
+    alt: "ATS",
+    caption: "ATS",
   },
   {
-    src: "/images/solar-rooftop-technician-nmc.jpg",
-    alt: "NMC Technology technician installing a rooftop solar panel",
-    caption: "NMC technician on-site",
+    src: "/images/projects/project-15.jpeg",
+    alt: "12kva with 25kwh lithium battery 20 units of 650w solar panels",
+    caption: "12kva with 25kwh lithium battery 20 units of 650w solar panels",
   },
   {
-    src: "/images/inverter-install-technician.jpg",
-    alt: "Technician wiring Deye hybrid inverters during installation",
-    caption: "Inverter installation",
+    src: "/images/projects/project-16.jpeg",
+    alt: "30kva with 100kwh lithium batteries 76 units of 650w solar panels",
+    caption: "30kva with 100kwh lithium batteries 76 units of 650w solar panels",
   },
   {
-    src: "/images/automation-breaker-panel.jpg",
-    alt: "Automatic transfer switch panel being installed and wired",
-    caption: "ATS panel installation",
+    src: "/images/projects/project-17.jpeg",
+    alt: "Control panel",
+    caption: "Control panel",
   },
   {
-    src: "/images/automation-panel-wiring.jpg",
-    alt: "Technician wiring an electrical automation control panel",
-    caption: "Automation panel wiring",
+    src: "/images/projects/project-18.jpeg",
+    alt: "Generator Automation",
+    caption: "Generator Automation",
   },
   {
-    src: "/images/automation-control-panel-field.jpg",
-    alt: "Technician servicing an industrial electrical control panel on-site",
-    caption: "Field control panel service",
+    src: "/images/projects/project-19.jpeg",
+    alt: "Installation of 12kva inverter system",
+    caption: "Installation of 12kva inverter system",
+  },
+  {
+    src: "/images/projects/project-20.jpeg",
+    alt: "Installation of AVR",
+    caption: "Installation of AVR",
+  },
+  {
+    src: "/images/projects/project-21.jpeg",
+    alt: "Panel installation",
+    caption: "Panel installation",
+  },
+  {
+    src: "/images/projects/project-22.jpeg",
+    alt: "Automatic change over",
+    caption: "Automatic change over",
+  },
+  {
+    src: "/images/projects/project-23.jpeg",
+    alt: "Corrective maintenance",
+    caption: "Corrective maintenance",
+  },
+  {
+    src: "/images/projects/project-24.jpeg",
+    alt: "70 units of 650w solar panels installed at Ikoyi Lagos",
+    caption: "70 units of 650w solar panels installed at Ikoyi Lagos",
+  },
+  {
+    src: "/images/projects/project-25.jpeg",
+    alt: "Smart electrical installation",
+    caption: "Smart electrical installation",
+  },
+  {
+    src: "/images/projects/project-26.jpeg",
+    alt: "30kva with 65kwh lithium battery",
+    caption: "30kva with 65kwh lithium battery",
+  },
+  {
+    src: "/images/projects/project-27.jpeg",
+    alt: "76 units of 550w solar panels installed at banana island Lagos",
+    caption: "76 units of 550w solar panels installed at banana island Lagos",
+  },
+  {
+    src: "/images/projects/project-28.jpeg",
+    alt: "Smart staircase lighting",
+    caption: "Smart staircase lighting",
+  },
+  {
+    src: "/images/projects/project-29.jpeg",
+    alt: "Solar camera",
+    caption: "Solar camera",
+  },
+  {
+    src: "/images/projects/project-30.jpeg",
+    alt: "Smart Gate Automation",
+    caption: "Smart Gate Automation",
+  },
+  {
+    src: "/images/projects/project-31.jpeg",
+    alt: "Smart curtains automation",
+    caption: "Smart curtains automation",
+  },
+  {
+    src: "/images/projects/project-32.jpeg",
+    alt: "Dynamic lighting",
+    caption: "Dynamic lighting",
+  },
+  {
+    src: "/images/projects/project-33.jpeg",
+    alt: "Dynamic lighting control panel",
+    caption: "Dynamic lighting control panel",
+  },
+  {
+    src: "/images/projects/project-34.jpeg",
+    alt: "AVR installation",
+    caption: "AVR installation",
   },
 ];
 
@@ -114,7 +189,7 @@ function Slide({ photo }: { photo: (typeof photos)[number] }) {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/10 to-transparent" />
-        <p className="absolute bottom-4 left-5 text-[14px] font-semibold uppercase tracking-wide text-paper">
+        <p className="absolute bottom-4 left-5 right-5 text-[14px] font-semibold uppercase leading-snug tracking-wide text-paper">
           {photo.caption}
         </p>
       </div>

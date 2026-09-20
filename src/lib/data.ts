@@ -50,7 +50,7 @@ export const services = [
     description:
       "Efficient solar power systems for homes, offices, and businesses. Complete solutions from panel installation to battery storage.",
     icon: "Home",
-    image: "/images/rooftop-panels-2.jpg",
+    image: "/images/projects/project-24.jpeg",
     href: "/services/solar",
   },
   {
@@ -58,7 +58,7 @@ export const services = [
     description:
       "Professional surveillance and security camera installations. Remote monitoring and HD systems for properties of all sizes.",
     icon: "Camera",
-    image: "/images/cctv-cube-camera-wall.jpg",
+    image: "/images/projects/project-29.jpeg",
     href: "/services/cctv",
   },
   {
@@ -66,7 +66,7 @@ export const services = [
     description:
       "Transform conventional systems into intelligent, efficient electrical solutions with automated controls and protection.",
     icon: "Zap",
-    image: "/images/automation-factory-line.jpg",
+    image: "/images/projects/project-05.jpeg",
     href: "/services/automation",
   },
   {
@@ -74,7 +74,7 @@ export const services = [
     description:
       "Advanced automation for lighting, climate control, security, and energy management across your entire home.",
     icon: "Wifi",
-    image: "/images/smart-home-automation.jpg",
+    image: "/images/projects/project-28.jpeg",
     href: "/services/smart-home",
   },
   {
@@ -82,7 +82,7 @@ export const services = [
     description:
       "Integrated technology solutions tailored to your specific needs, budget, and space requirements.",
     icon: "Wrench",
-    image: "/images/custom-solutions-control-board.jpg",
+    image: "/images/projects/project-17.jpeg",
     href: "/services",
   },
   {
@@ -90,7 +90,7 @@ export const services = [
     description:
       "Expert consultation, system assessment, maintenance, troubleshooting, and technical support after installation.",
     icon: "ClipboardCheck",
-    image: "/images/inverter-room-deye-3.jpg",
+    image: "/images/projects/project-09.jpeg",
   },
 ];
 

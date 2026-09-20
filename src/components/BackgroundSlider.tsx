@@ -8,9 +8,12 @@ import Image from "next/image";
 export default function BackgroundSlider({
   images,
   intervalMs = 3500,
+  drift = false,
 }: {
   images: { src: string; alt: string }[];
   intervalMs?: number;
+  /** Slow continuous pan/zoom on every image (Ken Burns), e.g. for hero backdrops. */
+  drift?: boolean;
 }) {
   const [index, setIndex] = useState(0);
 
@@ -34,7 +37,7 @@ export default function BackgroundSlider({
           sizes="100vw"
           className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ease-in-out ${
             i === index ? "opacity-100" : "opacity-0"
-          }`}
+          } ${drift ? (i % 2 === 0 ? "animate-bg-drift" : "animate-bg-drift-alt") : ""}`}
         />
       ))}
     </div>

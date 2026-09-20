@@ -98,7 +98,7 @@ export const homePackages: HomePackage[] = [
     ],
     ideal: "Homeowners who prioritize security, access control and remote monitoring.",
     cta: "Secure My Home",
-    image: u("photo-1560617577-ecd7ffd04b98"),
+    image: "/images/google-nest-hub.jpeg",
     fit: "contain",
     fallbackImage: "/images/cctv-dome-camera.jpg",
   },

@@ -183,3 +183,18 @@
     transform: none !important;
   }
 }
+
+/* Slow continuous drift for the Smart Home hero backdrop */
+@keyframes bg-drift {
+  from { transform: scale(1.06) translate3d(-1.5%, 0, 0); }
+  to { transform: scale(1.16) translate3d(1.5%, -1.5%, 0); }
+}
+@keyframes bg-drift-alt {
+  from { transform: scale(1.16) translate3d(1.5%, 1%, 0); }
+  to { transform: scale(1.06) translate3d(-1.5%, -1%, 0); }
+}
+.animate-bg-drift { animation: bg-drift 16s ease-in-out infinite alternate; }
+.animate-bg-drift-alt { animation: bg-drift-alt 16s ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-bg-drift, .animate-bg-drift-alt { animation: none; }
+}
