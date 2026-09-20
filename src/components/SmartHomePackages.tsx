@@ -8,19 +8,15 @@ import { Container, Eyebrow, Reveal } from "./ui";
 
 const WA_INTRO = "Hi NMC Technology, I'm interested in a Smart Home Automation package.";
 
-function GetStarted({ name, contact = false }: { name: string; contact?: boolean }) {
+function GetStarted({ name, label }: { name: string; label?: string }) {
   return (
     <a
-      href={waLink(
-        contact
-          ? `${WA_INTRO} I'd like more information about the ${name}.`
-          : `${WA_INTRO} I'm interested in the ${name}. Please share next steps.`,
-      )}
+      href={waLink(`${WA_INTRO} I'm interested in the ${name}. Please share next steps.`)}
       target="_blank"
       rel="noopener noreferrer"
       className="mt-7 inline-flex items-center justify-center rounded-full bg-gold px-8 py-3 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
     >
-      {contact ? "Contact us" : "Get Started"}
+      {label ?? "Get Started"}
     </a>
   );
 }
@@ -45,13 +41,18 @@ export default function SmartHomePackages({ id }: { id?: string }) {
     <section id={id} className="scroll-mt-24 bg-ink py-16 md:py-20">
       <Container>
         <div className="max-w-2xl">
-          <Eyebrow>Smart Home Packages</Eyebrow>
+          <Eyebrow>Smart Home Automation</Eyebrow>
           <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">
-            Choose the Package That Fits Your Home
+            Intelligent Living. Seamless Control. Elevated Comfort.
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/60">
-            Start small with one of our starter bundles, or cover your whole home with a complete
-            package. Every package includes supply, professional installation and app setup.
+            Transform your home into an intelligent, connected environment with NMC Technology
+            Smart Home Automation. From lighting and curtains to security, climate control and
+            entertainment, we design and install smart systems tailored to your lifestyle.
+          </p>
+          <p className="mt-3 text-[16px] leading-relaxed text-paper/60">
+            Choose your level of smart living — from essential automation to complete luxury home
+            integration.
           </p>
         </div>
 
@@ -96,7 +97,7 @@ export default function SmartHomePackages({ id }: { id?: string }) {
         </div>
 
         <h3 className="font-display mt-16 text-[13px] font-semibold uppercase tracking-[0.18em] text-gold">
-          Complete home packages
+          Smart home packages
         </h3>
         <div className="mt-5 flex flex-col gap-8">
           {homePackages.map((pkg, i) => (
@@ -109,34 +110,57 @@ export default function SmartHomePackages({ id }: { id?: string }) {
                 <PackagePhoto pkg={pkg} />
               </div>
               <div className="flex flex-col justify-center p-7 sm:p-9">
-                <h4 className="font-display text-[22px] font-semibold text-paper">
-                  {pkg.name}
-                  {pkg.price && <span className="text-gold">: {pkg.price}</span>}
+                <p className="font-display text-[13px] font-semibold uppercase tracking-[0.18em] text-gold">
+                  {pkg.number} — {pkg.name}
+                </p>
+                <h4 className="font-display mt-2 text-[22px] font-semibold text-paper">
+                  {pkg.tagline}
                 </h4>
-                <p className="mt-4 text-[15px] leading-relaxed text-paper/70">{pkg.coverage}</p>
-                {pkg.includes && (
+                <p className="mt-4 text-[15px] leading-relaxed text-paper/70">{pkg.intro}</p>
+                {pkg.includesLead && (
+                  <p className="mt-5 text-[15px] font-semibold text-paper">{pkg.includesLead}</p>
+                )}
+                <ul className="mt-3 flex flex-col gap-2.5 text-[15px] text-paper/75">
+                  {pkg.items.map((item) => (
+                    <li key={item} className="flex items-start gap-3">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                {pkg.scenes && (
                   <>
-                    <p className="mt-5 text-[15px] font-semibold text-paper">
-                      What you get in this package:
-                    </p>
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-paper/70">{pkg.includes}</p>
+                    <p className="mt-6 text-[15px] font-semibold text-paper">Signature Scenes</p>
+                    <ul className="mt-3 flex flex-col gap-2.5 text-[15px] text-paper/75">
+                      {pkg.scenes.map((scene) => (
+                        <li key={scene.name}>
+                          <span className="font-semibold text-gold">{scene.name}</span> — {scene.text}
+                        </li>
+                      ))}
+                    </ul>
                   </>
                 )}
-                {pkg.note && (
-                  <p className="mt-4 text-[15px] leading-relaxed text-paper/70">{pkg.note}</p>
+                {pkg.closing && (
+                  <>
+                    <p className="mt-6 text-[15px] font-semibold text-paper">{pkg.closing.heading}</p>
+                    {pkg.closing.paragraphs.map((para) => (
+                      <p key={para} className="mt-2 text-[15px] leading-relaxed text-paper/70">
+                        {para}
+                      </p>
+                    ))}
+                  </>
                 )}
+                <p className="mt-6 text-[15px] leading-relaxed text-paper/70">
+                  <span className="font-semibold text-paper">Ideal for:</span> {pkg.ideal}
+                </p>
                 <div>
-                  <GetStarted name={pkg.name} contact={!pkg.price} />
+                  <GetStarted name={`${pkg.name} (${pkg.number})`} label={pkg.cta} />
                 </div>
               </div>
             </Reveal>
           ))}
         </div>
-
-        <p className="mt-8 text-center text-[13px] text-paper/40">
-          Final pricing depends on property size, coverage area and the equipment you choose.
-        </p>
-        <p className="mt-6 text-center text-[15px] text-paper/70">
+        <p className="mt-8 text-center text-[15px] text-paper/70">
           Not sure which package fits your property?{" "}
           <a
             href={waLink(`${WA_INTRO} Can you help me figure out which package is right for my property?`)}
@@ -147,6 +171,42 @@ export default function SmartHomePackages({ id }: { id?: string }) {
             Chat with us on WhatsApp
           </a>
         </p>
+      </Container>
+    </section>
+  );
+}
+
+const whyNmc = [
+  { title: "Professional Engineering", text: "Our systems are carefully designed and professionally installed for reliable everyday operation." },
+  { title: "Customized Solutions", text: "Every home is different. We tailor your automation system to your space, lifestyle and budget." },
+  { title: "Seamless Integration", text: "Lighting, security, curtains, climate control, entertainment and energy systems can work together as one connected environment." },
+  { title: "Scalable Technology", text: "Start with selected areas and expand your smart home as your needs grow." },
+  { title: "Premium Experience", text: "From consultation and design to installation and commissioning, we focus on a clean, professional finish." },
+];
+
+export function WhyNmcSmartHome() {
+  return (
+    <section className="bg-charcoal py-16 md:py-20">
+      <Container>
+        <div className="max-w-2xl">
+          <Eyebrow>Why NMC Technology?</Eyebrow>
+          <h2 className="balance mt-4 text-[30px] font-semibold leading-tight text-paper sm:text-[34px]">
+            Designed. Installed. Integrated.
+          </h2>
+        </div>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {whyNmc.map((item, i) => (
+            <Reveal
+              key={item.title}
+              delay={i * 0.06}
+              variant="slide-up"
+              className="rounded-2xl border border-paper/12 bg-paper/[0.03] p-6"
+            >
+              <h3 className="font-display text-[18px] font-semibold text-paper">{item.title}</h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-paper/70">{item.text}</p>
+            </Reveal>
+          ))}
+        </div>
       </Container>
     </section>
   );

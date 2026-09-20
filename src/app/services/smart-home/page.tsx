@@ -6,7 +6,8 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
 import Process from "@/components/Process";
-import SmartHomePackages from "@/components/SmartHomePackages";
+import SmartHomePackages, { WhyNmcSmartHome } from "@/components/SmartHomePackages";
+import { site } from "@/lib/data";
 import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -143,32 +144,44 @@ export default function SmartHomePage() {
 
         <SmartHomePackages id="pricing" />
 
+        <WhyNmcSmartHome />
+
         <Process />
 
         <section className="bg-charcoal py-16 md:py-20">
           <Container>
             <div className="text-center">
-              <Eyebrow>Design your smart home</Eyebrow>
+              <Eyebrow>Ready to make your home smart?</Eyebrow>
               <h2 className="mt-3 font-display text-[26px] font-semibold text-paper sm:text-[30px]">
-                Get a custom smart home plan
+                Let&apos;s Build Your Smart Home.
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-[16px] leading-relaxed text-paper/70">
-                We'll design a smart home automation system tailored to your lifestyle and budget.
+                Tell us what you want to automate, and our team will recommend the right solution for your home.
               </p>
+              <p className="mt-6 font-display text-[15px] font-semibold uppercase tracking-[0.14em] text-gold">
+                NMC Technology
+              </p>
+              <p className="mt-1 text-[15px] text-paper/70">Turning Ideas into Reality.</p>
               <div className="mt-8 flex flex-col gap-3 justify-center sm:flex-row">
-                <a
+                <Link
                   href="/get-quote/smart-home"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-ink transition-colors hover:bg-gold-light"
                 >
-                  Request a Consultation
+                  Book a Smart Home Consultation
                   <ArrowRight className="h-4 w-4" />
-                </a>
+                </Link>
                 <Link
-                  href="/services"
+                  href="/get-quote/smart-home"
                   className="inline-flex items-center justify-center rounded-full border border-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-gold transition-colors hover:bg-gold/10"
                 >
-                  View All Services
+                  Request a Quote
                 </Link>
+                <a
+                  href={`tel:${site.phones[0].href}`}
+                  className="inline-flex items-center justify-center rounded-full border border-gold px-8 py-3.5 text-[13px] font-semibold uppercase tracking-wide text-gold transition-colors hover:bg-gold/10"
+                >
+                  Call NMC Technology
+                </a>
               </div>
             </div>
           </Container>
