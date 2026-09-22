@@ -50,7 +50,7 @@ export const services = [
     description:
       "Efficient solar power systems for homes, offices, and businesses. Complete solutions from panel installation to battery storage.",
     icon: "Home",
-    image: "/images/projects/project-24.jpeg",
+    image: "/images/solar-installation-team.jpg",
     href: "/services/solar",
   },
   {
