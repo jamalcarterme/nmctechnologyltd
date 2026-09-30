@@ -40,7 +40,7 @@ export default function PackagesPage() {
                       href={`/packages/${service.slug}`}
                       className="group flex h-full flex-col rounded-2xl border border-paper/12 bg-paper/[0.03] p-7 transition-colors hover:border-gold/60"
                     >
-                      <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold">
+                      <span className={`${i % 2 ? "cta-shake cta-shake-b" : "cta-shake"} flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold`}>
                         <Icon className="h-6 w-6" strokeWidth={1.75} />
                       </span>
                       <h2 className="font-display mt-5 text-[20px] font-semibold text-paper">

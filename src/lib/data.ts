@@ -50,7 +50,7 @@ export const services = [
     description:
       "Efficient solar power systems for homes, offices, and businesses. Complete solutions from panel installation to battery storage.",
     icon: "Home",
-    image: "/images/solar-installation-team.jpg",
+    image: "/images/solar-installation-sunset.jpg",
     href: "/services/solar",
   },
   {
@@ -388,14 +388,22 @@ export const packageGroups: PackageGroup[] = [
 
 export const testimonials = [
   {
-    name: "Galant Dance360",
+    name: "Steven",
+    company: "Deltech | Smart Homes🇳🇬",
     text: "The services are top notch, they are swift to respond to any complaints or challenges you may encounter with your system.",
     rating: 5,
   },
   {
-    name: "Precious Phonics",
-    text: "I'm living evidence — tasted and trusted. The surest solar plug in the market.",
-    rating: 5,
+    name: "Obiayo Chidubem",
+    company: "DUBEM TECH",
+    text: "Excellent service! Fast, reliable, and professional. They fixed my solar perfectly, and the customer service was outstanding. Highly recommended!",
+    rating: 3,
+  },
+  {
+    name: "Henry Nwachukwu",
+    company: "Baqqi’s cutz",
+    text: "This is one of the best",
+    rating: 4,
   },
 ];
 

@@ -43,7 +43,11 @@ export default function PackagesTeaser() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <p className="mt-8 text-[14px] font-semibold text-gold sm:text-[15px]">
+          Click any package below to see its pricing
+        </p>
+
+        <div className="mt-8 grid grid-cols-2 gap-8 sm:grid-cols-4">
           {tiers.map((tier, i) => {
             // Alternate animations for each tier
             const animationVariant = i % 2 === 0 ? "pop" : "scale";
@@ -53,7 +57,7 @@ export default function PackagesTeaser() {
                   href={tier.href}
                   className="group flex flex-col items-center gap-3 rounded-2xl p-3 transition-colors hover:bg-paper/5"
                 >
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-transform group-hover:scale-105">
+                  <span className={`${i % 2 ? "cta-shake cta-shake-b" : "cta-shake"} flex h-16 w-16 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-transform group-hover:scale-105`}>
                     <tier.icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
                   <p className="text-[13px] font-semibold uppercase tracking-wide text-paper">

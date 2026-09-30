@@ -44,12 +44,12 @@
 
   /* Fixed height for testimonials slider to prevent layout shift */
   .testimonials-slider {
-    height: 280px;
+    height: 360px;
   }
 
   @media (max-width: 640px) {
     .testimonials-slider {
-      height: 320px;
+      height: 400px;
     }
   }
 

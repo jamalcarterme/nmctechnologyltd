@@ -19,7 +19,11 @@ export default function ServiceCategories() {
           </h2>
         </Reveal>
 
-        <div className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <p className="mt-5 text-center text-[14px] font-semibold text-gold sm:text-[15px]">
+          Click any of our services here to learn more
+        </p>
+
+        <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
           {serviceCategories.map((item, i) => {
             const Icon = icons[item.icon];
             // Alternate between pop and slide-up animations
@@ -30,7 +34,7 @@ export default function ServiceCategories() {
                   href={item.href || "#"}
                   className="group flex flex-col items-center text-center transition-all hover:scale-105"
                 >
-                  <span className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-colors group-hover:border-gold/60 group-hover:bg-gold/20">
+                  <span className={`${i % 2 ? "cta-shake cta-shake-b" : "cta-shake"} flex h-14 w-14 items-center justify-center rounded-full border border-gold/30 bg-gold/10 text-gold transition-colors group-hover:border-gold/60 group-hover:bg-gold/20`}>
                     <Icon className="h-6 w-6" strokeWidth={1.75} />
                   </span>
                   <p className="mt-3 text-[14px] font-semibold leading-snug text-paper/85 transition-colors group-hover:text-gold">

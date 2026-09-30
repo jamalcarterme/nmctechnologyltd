@@ -52,21 +52,21 @@ export default function Testimonials() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="absolute inset-0 flex flex-col items-center justify-center px-4"
             >
-              <div className="mx-auto max-w-2xl bg-white rounded-xl p-8 md:p-10 text-center">
-                <p className="text-[16px] md:text-[17px] leading-relaxed text-ink">
+              <div className="relative mx-auto max-w-2xl rounded-xl bg-white p-8 text-center md:p-10">
+                <p className="text-[16px] leading-relaxed text-ink md:text-[17px]">
                   {testimonials[current].text}
                 </p>
-                <p className="mt-6 font-semibold text-ink">
-                  {testimonials[current].name}
-                </p>
-                <div className="mt-2 flex gap-1 justify-center text-gold">
+                <div className="mt-4 flex justify-center gap-1">
                   {Array.from({ length: testimonials[current].rating }).map((_, idx) => (
                     <svg key={idx} className="h-4 w-4 fill-gold" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                     </svg>
                   ))}
                 </div>
+                <span className="absolute left-1/2 top-full h-0 w-0 -translate-x-1/2 border-x-[12px] border-t-[12px] border-x-transparent border-t-white" />
               </div>
+              <p className="mt-7 font-semibold text-white">{testimonials[current].name}</p>
+              <p className="mt-0.5 text-[14px] text-ink">{testimonials[current].company}</p>
             </motion.div>
           </AnimatePresence>
         </div>
