@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import CookieConsent from "@/components/CookieConsent";
 import CtaBar from "@/components/CtaBar";
+import ScrollHint from "@/components/ScrollHint";
 import MotionProvider from "@/components/MotionProvider";
 import { site } from "@/lib/data";
 import "./globals.css";
@@ -142,6 +143,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <CtaBar />
           <CookieConsent />
+          <ScrollHint />
         </MotionProvider>
       </body>
     </html>

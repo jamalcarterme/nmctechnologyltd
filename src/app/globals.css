@@ -171,7 +171,28 @@
   animation: none;
 }
 
+/* Every button-style control vibrates like the hero CTAs (no layout change) */
+:where(button, a[class*="rounded-full"][class*="px-"]):not(.cta-shake):not(:disabled) {
+  transform-origin: 50% 50%;
+  animation: cta-ring 3.2s ease-in-out 1.2s infinite;
+}
+:where(button, a[class*="rounded-full"][class*="px-"]):nth-of-type(even):not(.cta-shake) {
+  animation-delay: 1.9s;
+}
+:where(button, a[class*="rounded-full"][class*="px-"]):not(.cta-shake):hover,
+:where(button, a[class*="rounded-full"][class*="px-"]):not(.cta-shake):focus-visible,
+:where(button, a[class*="rounded-full"][class*="px-"]):not(.cta-shake):active {
+  animation: none;
+}
+
+/* Scroll hint arrows */
+@keyframes hint-down { 0%,100% { transform: translateY(-3px); } 50% { transform: translateY(4px); } }
+@keyframes hint-up { 0%,100% { transform: translateY(3px); } 50% { transform: translateY(-4px); } }
+.hint-down svg { animation: hint-down 1.2s ease-in-out infinite; }
+.hint-up svg { animation: hint-up 1.2s ease-in-out infinite; }
+
 @media (prefers-reduced-motion: reduce) {
+  button, a[class*="rounded-full"], .hint-down svg, .hint-up svg { animation: none !important; }
   .cta-shake {
     animation: none;
   }

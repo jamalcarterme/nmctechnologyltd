@@ -122,7 +122,7 @@ export default function Hero() {
           animate="show"
           className="text-[13px] font-semibold uppercase tracking-widest text-gold"
         >
-          NMC Technology
+          NMC TECHNOLOGY
         </motion.p>
 
         <motion.h1
@@ -142,7 +142,7 @@ export default function Hero() {
           animate="show"
           className="mt-4 text-[12px] font-semibold uppercase tracking-widest text-paper/60"
         >
-          Smart. Reliable. Professional.
+          Engineering Better Power, Security &amp; Smart Living
         </motion.p>
 
         <motion.p
@@ -150,9 +150,11 @@ export default function Hero() {
           custom={3}
           initial="hidden"
           animate="show"
-          className="mt-6 max-w-lg text-[16px] leading-relaxed text-paper/80 sm:text-[17px]"
+          className="mt-6 max-w-xl text-[16px] leading-relaxed text-paper/80 sm:text-[17px]"
         >
-          We provide innovative electrical, solar, security, and automation solutions designed to make homes, offices, and businesses safer, smarter, and more energy-efficient.
+          We deliver professional solutions in solar energy, power systems, electrical automation, smart home technology and CCTV security.
+          <br /><br />
+          From residential homes to commercial facilities, we design, supply, install and maintain reliable technology systems tailored to your specific requirements.
         </motion.p>
 
         <motion.div
