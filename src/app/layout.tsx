@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import CookieConsent from "@/components/CookieConsent";
 import CtaBar from "@/components/CtaBar";
 import MotionProvider from "@/components/MotionProvider";
 import { site } from "@/lib/data";
@@ -140,6 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MotionProvider>
           {children}
           <CtaBar />
+          <CookieConsent />
         </MotionProvider>
       </body>
     </html>

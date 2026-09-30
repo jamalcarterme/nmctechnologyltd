@@ -125,6 +125,18 @@ export default function Footer() {
       </Container>
 
       <Container className="flex flex-col items-center justify-center gap-2 py-8 text-center text-[13px] text-paper/40">
+        <nav aria-label="Legal" className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+          {[
+            ["Privacy Policy", "/privacy-policy"],
+            ["Warranty Policy", "/warranty"],
+            ["Refund & Cancellation", "/refund-cancellation"],
+            ["Terms & Conditions", "/terms-and-conditions"],
+          ].map(([label, href]) => (
+            <Link key={href} href={href} className="text-paper/60 hover:text-gold">
+              {label}
+            </Link>
+          ))}
+        </nav>
         <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
       </Container>
     </footer>
