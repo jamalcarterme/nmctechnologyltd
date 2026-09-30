@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { site } from "@/lib/data";
 import { Container } from "./ui";
+import Typewriter from "./Typewriter";
 
 const easeOut = [0.22, 1, 0.36, 1] as const;
 
@@ -115,47 +116,37 @@ export default function Hero() {
       </div>
 
       <Container className="relative flex flex-col items-center text-center">
-        <motion.p
-          variants={reveal}
-          custom={0}
-          initial="hidden"
-          animate="show"
+        <Typewriter
+          as="p"
+          text="NMC TECHNOLOGY"
+          delay={300}
+          speed={45}
           className="text-[13px] font-semibold uppercase tracking-widest text-gold"
-        >
-          NMC TECHNOLOGY
-        </motion.p>
+        />
 
-        <motion.h1
-          variants={reveal}
-          custom={1}
-          initial="hidden"
-          animate="show"
+        <Typewriter
+          as="h1"
+          text="Turning Ideas Into Reality"
+          delay={1100}
+          speed={40}
           className="max-w-full mt-3 whitespace-nowrap text-[clamp(19px,5.8vw,22px)] font-bold uppercase leading-[1.15] tracking-[0.01em] text-paper sm:text-[40px] lg:text-[48px]"
-        >
-          Turning Ideas Into Reality
-        </motion.h1>
+        />
 
-        <motion.p
-          variants={reveal}
-          custom={2}
-          initial="hidden"
-          animate="show"
+        <Typewriter
+          as="p"
+          text="Engineering Better Power, Security & Smart Living"
+          delay={2300}
+          speed={30}
           className="mt-4 text-[12px] font-semibold uppercase tracking-widest text-paper/60"
-        >
-          Engineering Better Power, Security &amp; Smart Living
-        </motion.p>
+        />
 
-        <motion.p
-          variants={reveal}
-          custom={3}
-          initial="hidden"
-          animate="show"
-          className="mt-6 max-w-xl text-[16px] leading-relaxed text-paper/80 sm:text-[17px]"
-        >
-          We deliver professional solutions in solar energy, power systems, electrical automation, smart home technology and CCTV security.
-          <br /><br />
-          From residential homes to commercial facilities, we design, supply, install and maintain reliable technology systems tailored to your specific requirements.
-        </motion.p>
+        <Typewriter
+          as="p"
+          text={"We deliver professional solutions in solar energy, power systems, electrical automation, smart home technology and CCTV security.\n\nFrom residential homes to commercial facilities, we design, supply, install and maintain reliable technology systems tailored to your specific requirements."}
+          delay={3900}
+          speed={14}
+          className="balance mt-6 max-w-xl text-[15px] leading-[1.7] text-paper/80 sm:text-[17px]"
+        />
 
         <motion.div
           variants={reveal}

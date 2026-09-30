@@ -1,9 +1,3 @@
-const contact = `NMC Technology
-Email: nmctechnologi@gmail.com
-Phone: 09010400711 / 09164567887
-
-Turning Ideas into Reality`;
-
 export const privacy = {
   updated: "September 2026",
   content: `
@@ -71,7 +65,7 @@ We retain personal information only for as long as reasonably necessary for the 
 
 Subject to applicable law, you may have rights regarding your personal information, including requesting access to, correction of, or deletion of certain information.
 
-To make a privacy-related request, contact us using the details below.
+To make a privacy-related request, contact us using the contact details in the website footer.
 
 # 9. Third-Party Websites
 
@@ -81,9 +75,6 @@ Our website may contain links to third-party websites or services. NMC Technolog
 
 We may update this Privacy Policy from time to time. The latest version will be published on our website with the applicable update date.
 
-# 11. Contact
-
-${contact}
 `,
 };
 
@@ -190,9 +181,6 @@ Where applicable, clients may receive product warranty documentation, invoices, 
 
 Clients should retain these documents for future warranty claims.
 
-# 12. Contact
-
-${contact}
 `,
 };
 
@@ -287,9 +275,6 @@ Each request will be reviewed based on the project stage and applicable contract
 
 NMC Technology may update this policy from time to time. The latest version will be published on our website with the applicable update date.
 
-# 12. Contact
-
-${contact}
 `,
 };
 
@@ -522,10 +507,5 @@ NMC Technology reserves the right to update these Terms & Conditions from time t
 
 The latest version will be published on this website, with the applicable “Last Updated” date.
 
-# 24. Contact Us
-
-If you have questions about these Terms & Conditions, our services, quotations or warranty policies, please contact:
-
-${contact}
 `,
 };

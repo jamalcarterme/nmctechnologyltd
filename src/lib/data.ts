@@ -50,7 +50,7 @@ export const services = [
     description:
       "Efficient solar power systems for homes, offices, and businesses. Complete solutions from panel installation to battery storage.",
     icon: "Home",
-    image: "/images/projects/project-24.jpeg",
+    image: "/images/solar-installation-team.jpg",
     href: "/services/solar",
   },
   {
@@ -66,7 +66,7 @@ export const services = [
     description:
       "Transform conventional systems into intelligent, efficient electrical solutions with automated controls and protection.",
     icon: "Zap",
-    image: "/images/projects/project-05.jpeg",
+    image: "/images/electrical-automation-team.jpg",
     href: "/services/automation",
   },
   {
