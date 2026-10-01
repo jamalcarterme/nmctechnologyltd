@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Gallery from "@/components/Gallery";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
+import SocialWork from "@/components/SocialWork";
 import { projectsInfo } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -18,6 +19,7 @@ export default function ProjectsPage() {
       <Header />
       <main className="pt-20">
         <Gallery />
+        <SocialWork />
         <InfoSection
           eyebrow="Our projects"
           title="From Ideas to Reality"
