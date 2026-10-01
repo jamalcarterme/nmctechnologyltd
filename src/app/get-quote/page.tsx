@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import PageHero from "@/components/PageHero";
 import QuoteServiceGrid from "@/components/QuoteServiceGrid";
 
-export const metadata: Metadata = {
-  title: "Get a Free Quote",
+export const metadata: Metadata = pageMeta({
+  title: "Get a Free Quote for Solar, CCTV & Smart Automation",
   description:
-    "Choose the service you're interested in — Solar, CCTV, Smart Electrical Automation, or Smart Home Automation — to get a tailored free quote from NMC Technology.",
-  alternates: { canonical: "/get-quote" },
-};
+    "Choose your service (Solar, CCTV, Smart Electrical Automation or Smart Home) and get a tailored free quote from NMC Technology in Lagos.",
+  path: "/get-quote",
+});
+
+const pageLd = breadcrumbLd([
+  { name: "Home", path: "/" },
+  { name: "Get a Free Quote", path: "/get-quote" },
+]);
 
 export default function GetQuotePage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main>
         <PageHero

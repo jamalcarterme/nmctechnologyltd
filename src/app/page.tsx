@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import BenefitsSection from "@/components/BenefitsSection";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
@@ -7,6 +8,13 @@ import PackagesTeaser from "@/components/PackagesTeaser";
 import Testimonials from "@/components/Testimonials";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { Container, Reveal } from "@/components/ui";
+
+export const metadata: Metadata = {
+  title: { absolute: "NMC Technology | Solar, CCTV & Smart Automation in Lagos, Nigeria" },
+  description:
+    "NMC Technology installs solar power systems, CCTV security cameras, smart electrical automation and smart home systems for homes, offices and estates in Lagos and across Nigeria. Get a free quote.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

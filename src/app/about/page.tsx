@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -11,16 +13,22 @@ import PageHero from "@/components/PageHero";
 import WhoWeServe from "@/components/WhoWeServe";
 import { aboutFaqs, aboutInfo } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "About Us",
+export const metadata: Metadata = pageMeta({
+  title: "About NMC Technology: Solar & Smart Electrical Engineers",
   description:
-    "NMC Technology is a technology and engineering company delivering solar, CCTV, smart electrical automation and smart home solutions for homes and businesses across Nigeria, with every installation done by our own team.",
-  alternates: { canonical: "/about" },
-};
+    "NMC Technology is a Lagos-based engineering company delivering solar, CCTV, smart electrical automation and smart home solutions across Nigeria, with every installation done by our own team.",
+  path: "/about",
+});
+
+const pageLd = breadcrumbLd([
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+]);
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main>
         <PageHero

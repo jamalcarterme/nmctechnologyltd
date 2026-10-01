@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -31,12 +33,29 @@ const automationGalleryImages = [
   { src: "/images/smart-home-gallery/control-panel-07.jpg", alt: "Installed smart control box" },
 ];
 
-export const metadata: Metadata = {
-  title: "Smart Electrical Automation | NMC Technology",
+export const metadata: Metadata = pageMeta({
+  title: "Smart Electrical Automation: ATS, Generator & Load Control",
   description:
-    "Professional electrical automation services including ATS systems, generator automation, load management, surge protection, and smart controls for homes and businesses.",
-  alternates: { canonical: "/services/automation" },
-};
+    "Automatic transfer switch (ATS) panels, generator automation, load management and surge protection for homes and businesses in Lagos and Nigeria. Installed and supported by NMC Technology.",
+  path: "/services/automation",
+  image: "/images/electrical-automation-team.jpg",
+});
+
+const pageLd = [
+  serviceLd({
+    name: "Smart Electrical Automation",
+    serviceType: "Electrical automation and ATS panel installation",
+    description:
+      "Automatic transfer switch (ATS) panels, generator automation, load management and surge protection for homes and businesses in Lagos and Nigeria. Installed and supported by NMC Technology.",
+    path: "/services/automation",
+    image: "/images/electrical-automation-team.jpg",
+  }),
+  breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Smart Electrical Automation", path: "/services/automation" },
+  ]),
+];
 
 const automationInfo = [
   {
@@ -121,6 +140,7 @@ const automationFaqs = [
 export default function AutomationPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">

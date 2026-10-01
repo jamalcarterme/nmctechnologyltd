@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -26,12 +28,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { service: slug } = await params;
   const service = getQuoteService(slug);
-  if (!service) return { title: "Packages & Pricing" };
-  return {
-    title: `Packages & Pricing — ${service.label}`,
-    description: `Pricing tiers for ${service.label} from NMC Technology.`,
-    alternates: { canonical: `/packages/${service.slug}` },
-  };
+  if (!service) return { title: "Packages & Pricing", robots: { index: false, follow: false } };
+  return pageMeta({
+    title: `${service.label} Packages & Pricing in Lagos`,
+    description: `Compare ${service.label} package tiers from NMC Technology — what each includes and who it suits — then request a free quote.`,
+    path: `/packages/${service.slug}`,
+    image: service.heroImage,
+  });
 }
 
 const tiersByService: Record<string, typeof cctvPricingTiers> = {
@@ -52,6 +55,7 @@ export default async function PackagesServicePage({
   if (service.slug === "solar") {
     return (
       <>
+        <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Packages", path: "/packages" }, { name: `${service.label} Packages`, path: `/packages/${service.slug}` }])} />
         <Header />
         <main>
           <PageHero
@@ -108,6 +112,7 @@ export default async function PackagesServicePage({
 
   return (
     <>
+      <JsonLd data={breadcrumbLd([{ name: "Home", path: "/" }, { name: "Packages", path: "/packages" }, { name: `${service.label} Packages`, path: `/packages/${service.slug}` }])} />
       <Header />
       <main>
         <PageHero

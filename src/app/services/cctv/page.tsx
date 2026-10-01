@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import BackgroundVideo from "@/components/BackgroundVideo";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -20,12 +22,29 @@ const cctvGalleryImages = [
   { src: "/images/cctv-cube-camera-wall.jpg", alt: "Compact smart cube camera mounted on an interior wall" },
 ];
 
-export const metadata: Metadata = {
-  title: "CCTV Camera Installation | NMC Technology",
+export const metadata: Metadata = pageMeta({
+  title: "CCTV Camera Installation in Lagos",
   description:
-    "Professional CCTV surveillance and security camera system installation for homes and businesses. IP cameras, HD monitoring, and remote access wherever you're located.",
-  alternates: { canonical: "/services/cctv" },
-};
+    "Professional CCTV and IP security camera installation for homes, offices and estates in Lagos. HD and night-vision cameras, solar PTZ options and remote phone viewing from NMC Technology.",
+  path: "/services/cctv",
+  image: "/images/cctv-cube-camera-wall.jpg",
+});
+
+const pageLd = [
+  serviceLd({
+    name: "CCTV Camera Installation",
+    serviceType: "CCTV security camera installation",
+    description:
+      "Professional CCTV and IP security camera installation for homes, offices and estates in Lagos. HD and night-vision cameras, solar PTZ options and remote phone viewing from NMC Technology.",
+    path: "/services/cctv",
+    image: "/images/cctv-cube-camera-wall.jpg",
+  }),
+  breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "CCTV Camera Installation", path: "/services/cctv" },
+  ]),
+];
 
 const cctvInfo = [
   {
@@ -101,6 +120,7 @@ const cctvFaqs = [
 export default function CCTVPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">

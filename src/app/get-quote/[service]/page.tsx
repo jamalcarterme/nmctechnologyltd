@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
@@ -20,12 +21,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { service: slug } = await params;
   const service = getQuoteService(slug);
-  if (!service) return { title: "Get a Free Quote" };
-  return {
-    title: `Get a Free Quote — ${service.label}`,
-    description: `Tell us what you need for ${service.label} and we'll send a tailored free quote.`,
-    alternates: { canonical: `/get-quote/${service.slug}` },
-  };
+  if (!service) return { title: "Get a Free Quote", robots: { index: false, follow: false } };
+  return pageMeta({
+    title: `Get a Free ${service.label} Quote`,
+    description: `Tell us what you need for ${service.label} and NMC Technology will send a tailored free quote.`,
+    path: `/get-quote/${service.slug}`,
+    noindex: true, // form page: keep out of search results, still crawlable
+  });
 }
 
 export default async function GetQuoteServicePage({

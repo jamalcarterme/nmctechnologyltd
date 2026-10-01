@@ -1,8 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { site } from "@/lib/data";
 import { Container, Eyebrow } from "./ui";
 import SlidingCarousel from "./SlidingCarousel";
+import TikTokIcon from "./TikTokIcon";
+import InstagramIcon from "./InstagramIcon";
+import FacebookIcon from "./FacebookIcon";
+import YouTubeIcon from "./YouTubeIcon";
 
 const photos = [
   {
@@ -244,6 +249,49 @@ export default function Gallery() {
             showDots
             showArrows
           />
+        </div>
+
+        {/* Small note under the slider: where to see more of our work */}
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-3 text-center">
+          <p className="text-[14px] text-paper/60">See our actual work here:</p>
+          <div className="flex items-center gap-2.5">
+            <a
+              href={site.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on TikTok"
+              className="flex h-8 w-8 items-center justify-center rounded-lg border border-paper/25 text-paper transition-colors hover:border-gold hover:text-gold"
+            >
+              <TikTokIcon className="h-4 w-4" />
+            </a>
+            <a
+              href={site.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on Instagram"
+              className="flex h-8 w-8 items-center justify-center transition-transform hover:scale-105"
+            >
+              <InstagramIcon className="h-8 w-8" />
+            </a>
+            <a
+              href={site.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on Facebook"
+              className="flex h-8 w-8 items-center justify-center transition-transform hover:scale-105"
+            >
+              <FacebookIcon className="h-8 w-8" />
+            </a>
+            <a
+              href={site.youtube}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="NMC Technology on YouTube"
+              className="flex h-8 w-8 items-center justify-center transition-transform hover:scale-105"
+            >
+              <YouTubeIcon className="h-8 w-8" />
+            </a>
+          </div>
         </div>
       </Container>
     </section>

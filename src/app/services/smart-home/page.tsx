@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import AutomationGrid from "@/components/AutomationGrid";
 import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
@@ -12,12 +14,29 @@ import { Container, Eyebrow } from "@/components/ui";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export const metadata: Metadata = {
-  title: "Smart Home Automation | NMC Technology",
+export const metadata: Metadata = pageMeta({
+  title: "Smart Home Automation in Lagos",
   description:
-    "Professional smart home automation systems for lighting, temperature, security, and energy management. Custom automation solutions for modern homes, wherever you are.",
-  alternates: { canonical: "/services/smart-home" },
-};
+    "Smart lighting, switches, locks, cameras, climate and voice-assistant control for modern homes in Lagos and Nigeria. Custom smart home automation designed and installed by NMC Technology.",
+  path: "/services/smart-home",
+  image: "/images/smart-home-automation.jpg",
+});
+
+const pageLd = [
+  serviceLd({
+    name: "Smart Home Automation",
+    serviceType: "Smart home automation installation",
+    description:
+      "Smart lighting, switches, locks, cameras, climate and voice-assistant control for modern homes in Lagos and Nigeria. Custom smart home automation designed and installed by NMC Technology.",
+    path: "/services/smart-home",
+    image: "/images/smart-home-automation.jpg",
+  }),
+  breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Smart Home Automation", path: "/services/smart-home" },
+  ]),
+];
 
 const smartHomeHeroImages = [
   { src: "/images/projects/project-31.jpeg", alt: "Smart curtains automation" },
@@ -114,6 +133,7 @@ const smartHomeFaqs = [
 export default function SmartHomePage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">

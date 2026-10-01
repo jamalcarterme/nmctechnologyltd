@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import Contact from "@/components/Contact";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -10,16 +12,22 @@ import { Container } from "@/components/ui";
 import { contactFaqs, contactInfo } from "@/lib/content";
 import { site } from "@/lib/data";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
+export const metadata: Metadata = pageMeta({
+  title: "Contact NMC Technology: Call, WhatsApp or Visit Us in Lagos",
   description:
-    "Call, WhatsApp or send your details to NMC Technology for a solar, CCTV, automation or smart home quote.",
-  alternates: { canonical: "/contact" },
-};
+    "Call, WhatsApp or send your details to NMC Technology for a solar, CCTV, automation or smart home quote. Visit us at Satellite Town, Lagos.",
+  path: "/contact",
+});
+
+const pageLd = breadcrumbLd([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: "/contact" },
+]);
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main>
         <PageHero

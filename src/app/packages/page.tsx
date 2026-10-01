@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import Link from "next/link";
 import { ArrowRight, Camera, Sun, Wifi, Zap } from "lucide-react";
 import Footer from "@/components/Footer";
@@ -7,18 +9,24 @@ import PageHero from "@/components/PageHero";
 import { Container, Reveal } from "@/components/ui";
 import { quoteServices } from "@/lib/quoteServices";
 
-export const metadata: Metadata = {
-  title: "Packages & Pricing",
+export const metadata: Metadata = pageMeta({
+  title: "Packages & Pricing: Solar, CCTV, Automation & Smart Home",
   description:
-    "Choose a service — Solar, CCTV, Smart Electrical Automation, or Smart Home Automation — to view NMC Technology's pricing tiers.",
-  alternates: { canonical: "/packages" },
-};
+    "Compare NMC Technology package tiers for solar power, CCTV, smart electrical automation and smart home installation. Pick a service to see what each package includes.",
+  path: "/packages",
+});
+
+const pageLd = breadcrumbLd([
+  { name: "Home", path: "/" },
+  { name: "Packages & Pricing", path: "/packages" },
+]);
 
 const icons = { Sun, Camera, Zap, Wifi };
 
 export default function PackagesPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main>
         <PageHero

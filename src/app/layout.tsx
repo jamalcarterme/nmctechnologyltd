@@ -4,7 +4,9 @@ import CookieConsent from "@/components/CookieConsent";
 import CtaBar from "@/components/CtaBar";
 import ScrollHint from "@/components/ScrollHint";
 import MotionProvider from "@/components/MotionProvider";
+import JsonLd from "@/components/JsonLd";
 import { site } from "@/lib/data";
+import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -20,45 +22,66 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["500", "600", "700"],
 });
 
+const SITE_TITLE = "NMC Technology | Solar, CCTV & Smart Automation in Lagos, Nigeria";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(site.domain),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "NMC Technology | Solar Power Installation",
+    default: SITE_TITLE,
     template: "%s | NMC Technology",
   },
   description: site.description,
   keywords: [
-    "solar installation",
+    "solar installation Lagos",
     "solar power Nigeria",
-    "inverter and battery system",
+    "inverter and battery installation",
     "off-grid solar system",
     "lithium battery inverter",
-    "solar panel installer",
+    "CCTV installation Lagos",
+    "smart home automation Nigeria",
+    "automatic transfer switch panel",
+    "generator automation",
     "NMC Technology",
   ],
-  authors: [{ name: site.name }],
+  authors: [{ name: site.name, url: SITE_URL }],
   creator: site.name,
+  publisher: site.name,
   applicationName: site.name,
   alternates: { canonical: "/" },
+  formatDetection: { telephone: true, email: true, address: true },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  // Google Search Console HTML-tag verification. Set NEXT_PUBLIC_GSC_VERIFICATION
+  // to the content value Search Console gives you (not needed if you verify via DNS).
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION }
+      : undefined,
   },
   openGraph: {
     type: "website",
     locale: "en_NG",
-    url: site.domain,
+    url: "/",
     siteName: site.name,
-    title: "NMC Technology | Premium Solar Power Systems",
+    title: SITE_TITLE,
     description: site.description,
-    images: [{ url: "/images/hero-panels.jpg", width: 1600, height: 1200, alt: site.name }],
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1600, height: 1200, alt: "NMC Technology solar panel installation" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NMC Technology | Premium Solar Power Systems",
+    title: SITE_TITLE,
     description: site.description,
-    images: ["/images/hero-panels.jpg"],
+    images: [DEFAULT_OG_IMAGE],
   },
   icons: {
     icon: [
@@ -80,41 +103,70 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${site.domain}/#business`,
-  name: site.name,
-  alternateName: "NMC Solar",
-  description: site.description,
-  image: `${site.domain}/images/hero-panels.jpg`,
-  logo: `${site.domain}/images/logo.png`,
-  url: site.domain,
-  telephone: site.phones.map((p) => p.href).join(", "),
-  email: site.email,
-  priceRange: "₦₦₦",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "Plot 4A, Block XIV, Opposite Unipetrol Estate",
-    addressLocality: "Satellite Town",
-    addressRegion: "Lagos",
-    addressCountry: "NG",
+const siteLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+    "@id": `${SITE_URL}/#business`,
+    name: site.name,
+    alternateName: ["NMC Solar", "NMC Technology Ltd"],
+    slogan: site.tagline,
+    description: site.description,
+    image: `${SITE_URL}${DEFAULT_OG_IMAGE}`,
+    logo: `${SITE_URL}/images/logo.png`,
+    url: SITE_URL,
+    telephone: site.phones[0].href,
+    email: site.email,
+    priceRange: "₦₦₦",
+    currenciesAccepted: "NGN",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Plot 4A, Block XIV, Opposite Unipetrol Estate",
+      addressLocality: "Satellite Town",
+      addressRegion: "Lagos",
+      addressCountry: "NG",
+    },
+    areaServed: [
+      { "@type": "City", name: "Lagos" },
+      { "@type": "Country", name: "Nigeria" },
+    ],
+    contactPoint: site.phones.map((p) => ({
+      "@type": "ContactPoint",
+      telephone: p.href,
+      contactType: "sales",
+      areaServed: "NG",
+      availableLanguage: ["English"],
+    })),
+    sameAs: [site.tiktok, site.instagram, site.facebook, site.youtube],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "NMC Technology services",
+      itemListElement: [
+        { name: "Solar Power Installation", path: "/services/solar" },
+        { name: "CCTV Camera Installation", path: "/services/cctv" },
+        { name: "Smart Electrical Automation", path: "/services/automation" },
+        { name: "Smart Home Automation", path: "/services/smart-home" },
+      ].map((s) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: s.name, url: `${SITE_URL}${s.path}` },
+      })),
+    },
   },
-  sameAs: [site.tiktok, site.instagram, site.facebook, site.youtube],
-  makesOffer: [
-    "Home solar power systems",
-    "Off-grid solar installation",
-    "Commercial solar installation",
-    "Inverter and lithium battery systems",
-    "Automatic transfer switch panels",
-    "Solar system maintenance and repair",
-  ],
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: site.name,
+    inLanguage: "en-NG",
+    publisher: { "@id": `${SITE_URL}/#business` },
+  },
+];
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="en-NG"
       className={`${inter.variable} ${spaceGrotesk.variable}`}
       suppressHydrationWarning
     >
@@ -127,18 +179,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: `(function(){try{var d=document.documentElement;if(window.matchMedia("(prefers-reduced-motion: reduce)").matches||!("IntersectionObserver" in window))return;d.classList.add("js-reveal");setTimeout(function(){if(!window.__revealReady)d.classList.remove("js-reveal")},8000)}catch(e){}})();`,
           }}
         />
-        <link
-          rel="preload"
-          as="video"
-          href="/background-video.mp4"
-          type="video/mp4"
-        />
       </head>
       <body className="antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteLd} />
         <MotionProvider>
           {children}
           <CtaBar />

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import BackgroundSlider from "@/components/BackgroundSlider";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
@@ -26,12 +28,29 @@ const solarGalleryImages = [
   })),
 ];
 
-export const metadata: Metadata = {
-  title: "Solar Power Installation | NMC Technology",
+export const metadata: Metadata = pageMeta({
+  title: "Solar Power Installation in Lagos & Nigeria",
   description:
-    "Professional solar power system installation for homes and businesses. Inverters, lithium batteries, solar panels, and complete energy solutions, wherever you're located.",
-  alternates: { canonical: "/services/solar" },
-};
+    "Solar panel, inverter and lithium battery installation for homes, offices and estates in Lagos and across Nigeria. Hybrid and off-grid systems sized to your load, installed by NMC Technology\'s in-house engineers.",
+  path: "/services/solar",
+  image: "/images/solar-inverters-growatt.jpg",
+});
+
+const pageLd = [
+  serviceLd({
+    name: "Solar Power Installation",
+    serviceType: "Solar power system installation",
+    description:
+      "Solar panel, inverter and lithium battery installation for homes, offices and estates in Lagos and across Nigeria. Hybrid and off-grid systems sized to your load, installed by NMC Technology\'s in-house engineers.",
+    path: "/services/solar",
+    image: "/images/solar-inverters-growatt.jpg",
+  }),
+  breadcrumbLd([
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Solar Power Installation", path: "/services/solar" },
+  ]),
+];
 
 const solarInfo = [
   {
@@ -108,6 +127,7 @@ const solarFaqs = [
 export default function SolarPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main className="pt-20">
         <section className="relative overflow-hidden border-t border-paper/10 bg-charcoal py-10 md:py-14">

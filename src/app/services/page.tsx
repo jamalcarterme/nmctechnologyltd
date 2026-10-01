@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import JsonLd from "@/components/JsonLd";
+import { pageMeta, breadcrumbLd, serviceLd } from "@/lib/seo";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import InfoSection from "@/components/InfoSection";
@@ -7,16 +9,22 @@ import Services from "@/components/Services";
 import { Container, Eyebrow, Reveal } from "@/components/ui";
 import { servicesInfo } from "@/lib/content";
 
-export const metadata: Metadata = {
-  title: "Our Services",
+export const metadata: Metadata = pageMeta({
+  title: "Solar, CCTV, Automation & Smart Home Services in Lagos",
   description:
-    "Home solar systems, off-grid power, commercial & estate solar, automatic transfer panels, upgrades and repairs — installed by NMC Technology.",
-  alternates: { canonical: "/services" },
-};
+    "Solar power, CCTV security, smart electrical automation (ATS, generator control) and smart home installation for homes, offices and estates across Lagos and Nigeria — all installed in-house by NMC Technology.",
+  path: "/services",
+});
+
+const pageLd = breadcrumbLd([
+  { name: "Home", path: "/" },
+  { name: "Services", path: "/services" },
+]);
 
 export default function ServicesPage() {
   return (
     <>
+      <JsonLd data={pageLd} />
       <Header />
       <main className="pt-20">
         <ServiceCategories />
