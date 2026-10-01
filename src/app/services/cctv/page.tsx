@@ -78,7 +78,7 @@ const cctvInfo = [
   {
     heading: "Remote monitoring and access",
     paragraphs: [
-      "Once installed, your CCTV system connects to a secure DVR or NVR that stores recorded footage. You can monitor live feed from your phone or computer, receive alerts for motion detection, and review recordings from anywhere.",
+      "Once installed, your CCTV system connects to a secure DVR or NVR that stores recorded footage. You can watch live footage from your phone or computer, receive alerts for motion detection, and review recordings from anywhere.",
       "We configure the system to your preferences and ensure you understand how to use all features before we leave your property.",
     ],
   },
@@ -93,7 +93,7 @@ const cctvFaqs = [
   {
     question: "Can I monitor my cameras remotely?",
     answer:
-      "Yes. All our systems include mobile app access so you can view live feed and recordings from your phone or tablet anywhere with internet connection. You can also configure motion alerts to receive notifications immediately.",
+      "Yes. All our systems include mobile app access so you can view live footage and recordings from your phone or tablet anywhere with an internet connection. You can also configure motion alerts to receive notifications immediately.",
   },
   {
     question: "How long is footage stored?",
@@ -103,7 +103,7 @@ const cctvFaqs = [
   {
     question: "Do I need fast internet for CCTV monitoring?",
     answer:
-      "You don't need high-speed internet for the system to work locally. However, remote monitoring via mobile app works better with stable internet. We recommend minimum 2Mbps upload speed for reliable remote access.",
+      "You don't need high-speed internet for the system to work locally. However, remote monitoring via mobile app works better with stable internet. For reliable remote access, we recommend an upload speed of at least 2Mbps.",
   },
   {
     question: "What happens if the system loses power?",

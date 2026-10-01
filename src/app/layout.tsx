@@ -13,7 +13,7 @@ import "./globals.css";
 const inter = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-inter",
+  variable: "--f-body",
   display: "swap",
 });
 
@@ -21,7 +21,7 @@ const spaceGrotesk = Playfair_Display({
   subsets: ["latin"],
   weight: ["600", "800"],
   style: ["normal", "italic"],
-  variable: "--font-space-grotesk",
+  variable: "--f-head",
   display: "swap",
 });
 

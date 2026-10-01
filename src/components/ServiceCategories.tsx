@@ -20,7 +20,7 @@ export default function ServiceCategories() {
         </Reveal>
 
         <p className="mt-5 text-center text-[14px] font-semibold text-gold sm:text-[15px]">
-          Click any of our services here to learn more
+          Click any service below to learn more
         </p>
 
         <div className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">

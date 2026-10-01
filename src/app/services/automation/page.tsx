@@ -82,7 +82,7 @@ const automationInfo = [
     ],
   },
   {
-    heading: "Automatic Transfer Panels (ATS)",
+    heading: "Automatic Transfer Switch (ATS) Panels",
     paragraphs: [
       "An ATS panel automatically switches your property between different power sources — mains supply, generator, solar inverter — based on availability and demand. This eliminates manual switching, prevents electrical damage from incorrect sequencing, and ensures uninterrupted power.",
       "We design and build custom ATS panels matched to your property's electrical capacity and power sources, ensuring safe, reliable operation.",

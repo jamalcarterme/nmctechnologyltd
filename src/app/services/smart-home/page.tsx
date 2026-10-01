@@ -126,7 +126,7 @@ const smartHomeFaqs = [
   {
     question: "Can I control smart home devices when I'm away?",
     answer:
-      "Yes. With secure mobile app access, you can control and monitor your smart home from anywhere with internet connection. This includes checking cameras, locking doors, adjusting climate, and controlling lights.",
+      "Yes. With secure mobile app access, you can control and monitor your smart home from anywhere with an internet connection. This includes checking cameras, locking doors, adjusting climate, and controlling lights.",
   },
 ];
 

@@ -9,8 +9,8 @@
   --color-gold-light: #e9bd6a;
   --color-gold-dark: #b3822f;
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--f-body), "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--f-head), "Playfair Display", Georgia, serif;
 }
 
 @layer base {
@@ -264,3 +264,16 @@ main > section:nth-child(3n) { border-bottom-right-radius: var(--r); }
 /* Reference reveal: slide + scale, replays */
 @keyframes rv-up { from { opacity: 0; transform: translate3d(0, 50px, 0) scale(.97); } to { opacity: 1; transform: none; } }
 [data-in]:not([data-rd]) { animation-duration: .9s; }
+
+/* Reference typography: Poppins body, Playfair Display headings */
+body, button, input, select, textarea { font-family: var(--f-body), "Poppins", system-ui, sans-serif; }
+h1, h2, h3, .font-display { font-family: var(--f-head), "Playfair Display", Georgia, serif; }
+
+/* Background-image sections with shaped corners (reference .bgi) */
+.bgi { position: relative; isolation: isolate; background-color: #0b1f4d; }
+.bgi::before { content: ""; position: absolute; inset: 0; z-index: -2; border-radius: inherit; background-image: var(--bg); background-size: cover; background-position: center; background-attachment: fixed; }
+.bgi::after { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: linear-gradient(rgba(10,15,20,.88), rgba(11,31,77,.82)); }
+.bgi.cl { border-top-left-radius: var(--r); }
+.bgi.cr2 { border-bottom-right-radius: var(--r); }
+.bgi.cb { border-top-right-radius: var(--r); }
+@media (max-width: 860px) { .bgi::before { background-attachment: scroll; } }

@@ -5,7 +5,7 @@ import { quoteServices } from "@/lib/quoteServices";
 
 const icons = { Sun, Camera, Zap, Wifi };
 
-/** The "which service do you need" question grid used by /get-quote.
+/** The "Which service do you need?" question grid used by /get-quote.
  * Shared so other pages (e.g. /contact) can reuse the exact same
  * questionnaire without duplicating markup. */
 export default function QuoteServiceGrid({

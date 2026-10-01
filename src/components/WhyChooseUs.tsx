@@ -17,7 +17,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-charcoal py-16 md:py-20">
+    <section style={{ "--bg": "url(/images/inverter-room-deye-1.jpg)" } as React.CSSProperties} className="bgi cl bg-charcoal py-16 md:py-20">
       <Container>
         <Reveal className="flex flex-col items-center text-center">
           <Eyebrow>Why choose us</Eyebrow>

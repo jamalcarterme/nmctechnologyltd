@@ -177,7 +177,7 @@ export const aboutInfo: InfoBlock[] = [
     heading: "Our approach to equipment and workmanship",
     paragraphs: [
       "We deliberately work with a narrow set of proven brands and equipment across every service line — inverters and batteries, CCTV and security hardware, automation controllers, and smart home devices — rather than chasing the cheapest option on the market each month. Consistency in what we install means we know its failure points, its quirks and its realistic lifespan, which makes our maintenance and troubleshooting faster and more accurate.",
-      "On the installation side, every panel, camera, control cabinet and distribution board we touch is done to the same internal standard regardless of project size, from a single studio apartment to a multi-site commercial or industrial job.",
+      "On the installation side, every panel, camera, control cabinet and distribution board we touch is done to the same international standards regardless of project size, from a single studio apartment to a multi-site commercial or industrial job.",
     ],
   },
   {

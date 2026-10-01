@@ -26,7 +26,7 @@ const items = [
 
 export default function MissionGrid() {
   return (
-    <section className="bg-ink py-16 md:py-20">
+    <section style={{ "--bg": "url(/images/electrical-automation-team.jpg)" } as React.CSSProperties} className="bgi cb bg-ink py-16 md:py-20">
       <Container>
         <div className="flex flex-col items-center text-center">
           <Eyebrow>What drives us</Eyebrow>

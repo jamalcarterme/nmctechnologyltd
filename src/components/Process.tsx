@@ -6,7 +6,7 @@ import { Container, Eyebrow } from "./ui";
 
 export default function Process() {
   return (
-    <section className="bg-charcoal py-16 md:py-20">
+    <section style={{ "--bg": "url(/images/installer-panel-1.jpg)" } as React.CSSProperties} className="bgi cr2 bg-charcoal py-16 md:py-20">
       <Container>
         <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div className="max-w-lg">

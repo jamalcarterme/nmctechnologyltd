@@ -74,7 +74,7 @@ export default async function PackagesServicePage({
                   Get A Package
                 </h2>
                 <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-                  To move ahead with any of our packages, kindly fill the form and our team will reach out to you as soon as possible with next steps and a confirmed quote.
+                  To move ahead with any of our packages, please fill in the form and our team will contact you shortly with the next steps and a confirmed quote.
                 </p>
                 <ul className="mt-6 flex flex-col gap-3 text-[14px] leading-relaxed text-paper/60">
                   <li>• Installation logistics are confirmed once you approve your quote.</li>

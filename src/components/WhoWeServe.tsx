@@ -21,7 +21,7 @@ const segments = [
 
 export default function WhoWeServe() {
   return (
-    <section className="bg-charcoal py-16 md:py-20">
+    <section style={{ "--bg": "url(/images/rooftop-panels-2.jpg)" } as React.CSSProperties} className="bgi cl bg-charcoal py-16 md:py-20">
       <Container>
         <div className="flex flex-col items-center text-center">
           <Eyebrow>Who we serve</Eyebrow>

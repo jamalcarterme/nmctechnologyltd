@@ -12,8 +12,8 @@ import YouTubeIcon from "./YouTubeIcon";
 const photos = [
   {
     src: "/images/projects/project-24.jpeg",
-    alt: "70 units of 650w solar panels installed at Ikoyi Lagos",
-    caption: "70 units of 650w solar panels installed at Ikoyi Lagos",
+    alt: "70 units of 650W solar panels installed at Ikoyi, Lagos",
+    caption: "70 units of 650W solar panels installed at Ikoyi Lagos",
   },
   {
     src: "/images/projects/project-29.jpeg",
@@ -92,18 +92,18 @@ const photos = [
   },
   {
     src: "/images/projects/project-11.jpeg",
-    alt: "12kva with 35kwh lithium battery",
-    caption: "12kva with 35kwh lithium battery",
+    alt: "12kVA inverter with 35kWh lithium battery",
+    caption: "12kVA inverter with 35kWh lithium battery",
   },
   {
     src: "/images/projects/project-12.jpeg",
-    alt: "32kva inverter with 50kwh lithium 40 unit of 650w solar panel",
-    caption: "32kva inverter with 50kwh lithium 40 unit of 650w solar panel",
+    alt: "32kVA inverter with 50kWh lithium battery and 40 units of 650W solar panels",
+    caption: "32kVA inverter with 50kWh lithium battery and 40 units of 650W solar panels",
   },
   {
     src: "/images/projects/project-13.jpeg",
-    alt: "18kva with 50kwh lithium battery 30 units of 650w solar panels",
-    caption: "18kva with 50kwh lithium battery 30 units of 650w solar panels",
+    alt: "18kVA inverter with 50kWh lithium battery and 30 units of 650W solar panels",
+    caption: "18kVA inverter with 50kWh lithium battery and 30 units of 650W solar panels",
   },
   {
     src: "/images/projects/project-14.jpeg",
@@ -112,13 +112,13 @@ const photos = [
   },
   {
     src: "/images/projects/project-15.jpeg",
-    alt: "12kva with 25kwh lithium battery 20 units of 650w solar panels",
-    caption: "12kva with 25kwh lithium battery 20 units of 650w solar panels",
+    alt: "12kVA inverter with 25kWh lithium battery and 20 units of 650W solar panels",
+    caption: "12kVA inverter with 25kWh lithium battery and 20 units of 650W solar panels",
   },
   {
     src: "/images/projects/project-16.jpeg",
-    alt: "30kva with 100kwh lithium batteries 76 units of 650w solar panels",
-    caption: "30kva with 100kwh lithium batteries 76 units of 650w solar panels",
+    alt: "30kVA inverter with 100kWh lithium battery and 76 units of 650W solar panels",
+    caption: "30kVA inverter with 100kWh lithium battery and 76 units of 650W solar panels",
   },
   {
     src: "/images/projects/project-17.jpeg",
@@ -132,8 +132,8 @@ const photos = [
   },
   {
     src: "/images/projects/project-19.jpeg",
-    alt: "Installation of 12kva inverter system",
-    caption: "Installation of 12kva inverter system",
+    alt: "Installation of a 12kVA inverter system",
+    caption: "Installation of a 12kVA inverter system",
   },
   {
     src: "/images/projects/project-20.jpeg",
@@ -157,13 +157,13 @@ const photos = [
   },
   {
     src: "/images/projects/project-26.jpeg",
-    alt: "30kva with 65kwh lithium battery",
-    caption: "30kva with 65kwh lithium battery",
+    alt: "30kVA inverter with 65kWh lithium battery",
+    caption: "30kVA inverter with 65kWh lithium battery",
   },
   {
     src: "/images/projects/project-27.jpeg",
-    alt: "76 units of 550w solar panels installed at banana island Lagos",
-    caption: "76 units of 550w solar panels installed at banana island Lagos",
+    alt: "76 units of 550W solar panels installed at Banana Island, Lagos",
+    caption: "76 units of 550W solar panels installed at banana island Lagos",
   },
   {
     src: "/images/projects/project-30.jpeg",
@@ -207,8 +207,7 @@ export default function Gallery() {
             Real installations, by our own technicians
           </h2>
           <p className="mt-4 text-[16px] leading-relaxed text-paper/70">
-            A look at homes and facilities we&apos;ve powered —
-            from rooftop arrays to the plant rooms that keep them running.
+            A look at the homes and facilities we have powered, from rooftop arrays to the plant rooms that keep them running.
           </p>
         </div>
 

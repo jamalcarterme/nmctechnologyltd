@@ -28,7 +28,7 @@ export default function Home() {
         <WhyChooseUs />
         <Testimonials />
 
-        <section className="bg-charcoal py-16 md:py-20 border-t border-paper/10">
+        <section style={{ "--bg": "url(/images/rooftop-panels-3.jpg)" } as React.CSSProperties} className="bgi cl bg-charcoal py-16 md:py-20 border-t border-paper/10">
           <Container className="text-center">
             <Reveal>
               <h2 className="balance mt-4 text-[32px] font-semibold leading-tight text-paper sm:text-[34px]">

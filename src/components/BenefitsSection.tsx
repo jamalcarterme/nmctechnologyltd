@@ -4,7 +4,7 @@ import { Container, Reveal } from "./ui";
 
 export default function BenefitsSection() {
   return (
-    <section className="border-t border-paper/10 bg-ink py-16 md:py-20">
+    <section style={{ "--bg": "url(/images/smart-home-automation.jpg)" } as React.CSSProperties} className="bgi cr2 border-t border-paper/10 bg-ink py-16 md:py-20">
       <Container>
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <Reveal variant="slide-up">

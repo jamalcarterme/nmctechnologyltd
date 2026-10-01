@@ -160,7 +160,7 @@ export default function SolarPage() {
 
         <Process />
 
-        <section className="bg-charcoal py-16 md:py-20">
+        <section style={{ "--bg": "url(/images/solar-inverters-growatt.jpg)" } as React.CSSProperties} className="bgi cl bg-charcoal py-16 md:py-20">
           <Container>
             <div className="text-center">
               <Eyebrow>Ready to get started?</Eyebrow>
