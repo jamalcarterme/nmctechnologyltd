@@ -1,7 +1,7 @@
 export const site = {
   name: "NMC Technology",
   tagline: "Turning Ideas Into Reality",
-  domain: "https://www.nmctechnology.com",
+  domain: "https://www.nmctechnology.com.ng",
   description:
     "NMC Technology provides innovative electrical, solar, security, and automation solutions for homes, offices, and businesses. Solar power installation, CCTV security, smart electrical automation, and smart home automation.",
   phones: [
