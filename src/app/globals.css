@@ -219,3 +219,48 @@
 @media (prefers-reduced-motion: reduce) {
   .animate-bg-drift, .animate-bg-drift-alt { animation: none; }
 }
+
+/* ================= Reference-style shapes, motion & type (visual only) ================= */
+h1, h2, h3 { font-family: var(--font-display), Georgia, serif; line-height: 1.15; }
+.font-display { font-family: var(--font-display), Georgia, serif; }
+
+/* Preloader */
+#pre { position: fixed; inset: 0; background: var(--color-ink); z-index: 999; display: grid; place-items: center; transition: opacity .6s, visibility .6s; }
+#pre.off { opacity: 0; visibility: hidden; pointer-events: none; }
+#pre img { height: 120px; width: auto; animation: pre-pulse 1.2s infinite; }
+#pre i { position: absolute; bottom: 30%; width: 160px; height: 4px; background: linear-gradient(90deg, transparent, var(--color-gold), transparent); animation: pre-sweep 1s infinite; }
+@keyframes pre-sweep { 0% { transform: translateX(-80px); opacity: 0; } 50% { opacity: 1; } 100% { transform: translateX(80px); opacity: 0; } }
+@keyframes pre-pulse { 50% { transform: scale(1.08); filter: drop-shadow(0 0 20px var(--color-gold)); } }
+
+/* Buttons: leaf-shaped corners like the reference */
+:where(a[class*="rounded-full"][class*="px-"], button[class*="rounded-full"][class*="px-"]) {
+  border-radius: 50px 12px 50px 12px !important;
+  transition: transform .2s, background-color .2s;
+}
+:where(a[class*="rounded-full"][class*="px-"], button[class*="rounded-full"][class*="px-"]):hover { transform: scale(1.06); }
+
+/* Cards: asymmetric corners + lift on hover */
+.rounded-2xl { border-radius: 0 44px 0 44px; }
+.rounded-3xl { border-radius: 0 60px 0 60px; }
+.rounded-xl { border-radius: 0 28px 0 28px; }
+.rounded-2xl, .rounded-3xl, .rounded-xl { transition: transform .4s, box-shadow .4s; }
+.rounded-2xl:hover, .rounded-3xl:hover, .rounded-xl:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(217, 164, 65, .28); }
+.rounded-2xl img, .rounded-3xl img, .rounded-xl img { transition: transform .6s; }
+.rounded-2xl:hover img, .rounded-3xl:hover img, .rounded-xl:hover img { transform: scale(1.06); }
+
+/* Large section/page-hero corner cut + footer corner (reference --r) */
+:root { --r: 110px; }
+main > section:first-child { border-bottom-left-radius: var(--r); }
+.hero-chevron-cut { clip-path: none; border-bottom-left-radius: var(--r); }
+footer { border-top-left-radius: var(--r); }
+main > section:nth-child(3n+2) { border-top-left-radius: var(--r); }
+main > section:nth-child(3n) { border-bottom-right-radius: var(--r); }
+@media (max-width: 860px) { :root { --r: 70px; } }
+
+/* Scroll buttons: bobbing like the reference */
+.hint-down, .hint-up { animation: cta-ring 3s ease-in-out infinite, hint-bob 1.4s ease-in-out infinite; }
+@keyframes hint-bob { 50% { margin-bottom: 8px; } }
+
+/* Reference reveal: slide + scale, replays */
+@keyframes rv-up { from { opacity: 0; transform: translate3d(0, 50px, 0) scale(.97); } to { opacity: 1; transform: none; } }
+[data-in]:not([data-rd]) { animation-duration: .9s; }

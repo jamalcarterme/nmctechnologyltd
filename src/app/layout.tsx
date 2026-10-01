@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
+import Preloader from "@/components/Preloader";
 import CookieConsent from "@/components/CookieConsent";
 import CtaBar from "@/components/CtaBar";
 import ScrollHint from "@/components/ScrollHint";
@@ -9,17 +10,19 @@ import { site } from "@/lib/data";
 import { SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import "./globals.css";
 
-const inter = Inter({
+const inter = Poppins({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
 
-const spaceGrotesk = Space_Grotesk({
+const spaceGrotesk = Playfair_Display({
   subsets: ["latin"],
+  weight: ["600", "800"],
+  style: ["normal", "italic"],
   variable: "--font-space-grotesk",
   display: "swap",
-  weight: ["500", "600", "700"],
 });
 
 const SITE_TITLE = "NMC Technology | Solar, CCTV & Smart Automation in Lagos, Nigeria";
@@ -181,6 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body className="antialiased">
+        <Preloader />
         <JsonLd data={siteLd} />
         <MotionProvider>
           {children}
