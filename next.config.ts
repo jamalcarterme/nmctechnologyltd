@@ -18,10 +18,6 @@ const nextConfig: NextConfig = {
         ],
       },
       {
-        source: "/sitemap.xml",
-        headers: [{ key: "Content-Type", value: "application/xml; charset=utf-8" }],
-      },
-      {
         // Long-cache static media so repeat visits (and Core Web Vitals) stay fast.
         source: "/images/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=2592000, stale-while-revalidate=86400" }],

@@ -86,15 +86,22 @@ export const metadata: Metadata = {
     description: site.description,
     images: [DEFAULT_OG_IMAGE],
   },
+  // Favicons live in /public. Google Search only uses favicons whose size is a
+  // multiple of 48px (48, 96, 144, 192...), so those are listed explicitly.
+  // The ?v= suffix busts browser/CDN caches after the icon is replaced - bump it
+  // whenever the logo files change.
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
-      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
-      { url: "/android-chrome-192x192.png", type: "image/png", sizes: "192x192" },
-      { url: "/android-chrome-512x512.png", type: "image/png", sizes: "512x512" },
+      { url: "/favicon.ico?v=2", sizes: "any" },
+      { url: "/favicon-16x16.png?v=2", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png?v=2", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-48x48.png?v=2", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-96x96.png?v=2", type: "image/png", sizes: "96x96" },
+      { url: "/android-chrome-192x192.png?v=2", type: "image/png", sizes: "192x192" },
+      { url: "/android-chrome-512x512.png?v=2", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    shortcut: [{ url: "/favicon.ico?v=2" }],
+    apple: [{ url: "/apple-touch-icon.png?v=2", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   category: "Solar Energy Installation",
