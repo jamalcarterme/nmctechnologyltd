@@ -25,7 +25,7 @@ const spaceGrotesk = Playfair_Display({
   display: "swap",
 });
 
-const SITE_TITLE = "NMC Technology | Solar, CCTV & Smart Automation in Lagos, Nigeria";
+const SITE_TITLE = "NMC Technology | Solar installation & Smart Home Automation";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -202,4 +202,4 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </body>
     </html>
   );
-}
+    }
